@@ -32,6 +32,7 @@ function normalizePath(pathname: string) {
 
 <header class="site-header">
   <nav class="navbar glass-panel" aria-label="全站导航">
+    <div class="navbar-inner">
     <a class="brand" href="/" aria-label="SEO小平首页">
       <img class="brand-mark" src="/images/seo-xiaoping-avatar.jpg" alt="" width="40" height="40" />
       <span class="brand-name">SEO小平</span>
@@ -74,6 +75,7 @@ function normalizePath(pathname: string) {
         </a>
       </div>
     </details>
+    </div>
   </nav>
 </header>
 
@@ -82,10 +84,18 @@ function normalizePath(pathname: string) {
     position: sticky;
     top: 0;
     z-index: 30;
-    padding: 1rem clamp(1rem, 3vw, 2rem);
+    padding: 0.85rem 0;
   }
 
   .navbar {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    border-radius: 0;
+  }
+
+  .navbar-inner {
     position: relative;
     display: flex;
     align-items: center;
@@ -93,8 +103,7 @@ function normalizePath(pathname: string) {
     width: min(1120px, 100%);
     min-height: 4rem;
     margin: 0 auto;
-    padding: 0.65rem;
-    border-radius: 8px;
+    padding: 0.65rem 0;
   }
 
   .brand {
@@ -230,6 +239,10 @@ function normalizePath(pathname: string) {
     }
 
     .navbar {
+      padding-inline: clamp(1rem, 5vw, 1.25rem);
+    }
+
+    .navbar-inner {
       min-height: 3.75rem;
     }
   }

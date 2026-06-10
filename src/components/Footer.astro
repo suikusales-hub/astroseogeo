@@ -31,60 +31,97 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <div class="footer-inner glass-panel">
-    <section class="footer-brand" aria-label="站点信息">
-      <a class="brand" href="/" aria-label="SEO小平首页">
-        <img class="brand-mark" src="/images/seo-xiaoping-avatar.jpg" alt="" width="40" height="40" />
-        <span class="brand-name">SEO小平</span>
-      </a>
-      <p>技术 SEO、AI 搜索与内容工程笔记。</p>
-      <p class="copyright">© {year} SEO小平. All rights reserved.</p>
-    </section>
+  <div class="footer-shell glass-panel">
+    <div class="footer-inner">
+      <section class="footer-brand" aria-label="站点信息">
+        <a class="brand" href="/" aria-label="SEO小平首页">
+          <img class="brand-mark" src="/images/seo-xiaoping-avatar.jpg" alt="" width="40" height="40" />
+          <span class="brand-name">SEO小平</span>
+        </a>
+        <p>技术 SEO、AI 搜索与内容工程笔记。</p>
+        <p class="copyright">© {year} SEO小平. All rights reserved.</p>
+      </section>
 
-    <nav class="footer-nav" aria-label="页脚导航">
-      {navLinks.map((item) => (
-        <a href={item.href}>{item.label}</a>
-      ))}
-    </nav>
-
-    <div class="footer-connect">
-      <nav class="social-nav" aria-label="社交链接">
-        {socialLinks.map((item) => (
-          <a href={item.href} aria-label={item.label}>
-            <i class={item.icon} aria-hidden="true"></i>
-            <span>{item.label}</span>
-          </a>
+      <nav class="footer-nav" aria-label="页脚导航">
+        {navLinks.map((item) => (
+          <a href={item.href}>{item.label}</a>
         ))}
       </nav>
 
-      <figure class="wechat-qr">
-        <img
-          src="/images/seo-xiaoping-wechat-qr.png"
-          alt="SEO 小平微信二维码"
-          width="120"
-          height="120"
-          loading="lazy"
-          decoding="async"
-        />
-        <figcaption>微信咨询</figcaption>
-      </figure>
+      <div class="footer-connect">
+        <nav class="social-nav" aria-label="社交链接">
+          {socialLinks.map((item) => (
+            <a href={item.href} aria-label={item.label}>
+              <i class={item.icon} aria-hidden="true"></i>
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </nav>
+
+        <figure class="wechat-qr">
+          <img
+            src="/images/seo-xiaoping-wechat-qr.png"
+            alt="SEO 小平微信二维码"
+            width="120"
+            height="120"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>微信咨询</figcaption>
+        </figure>
+      </div>
     </div>
+    <object
+      class="footer-figure"
+      data="/images/footer-dynamic-figure.svg"
+      type="image/svg+xml"
+      aria-hidden="true"
+      tabindex="-1"
+    ></object>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    padding: 2rem clamp(1rem, 3vw, 2rem) 2.5rem;
+    padding: 2rem 0 0;
+  }
+
+  .footer-shell {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0;
+    padding: 0 clamp(1rem, 3vw, 2rem);
   }
 
   .footer-inner {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(10rem, 0.8fr) minmax(10rem, 0.8fr);
     gap: 1.5rem;
     width: min(1120px, 100%);
     margin: 0 auto;
-    padding: clamp(1.25rem, 3vw, 2rem);
-    border-radius: 8px;
+    padding: clamp(1.25rem, 3vw, 2rem) 0;
+  }
+
+  .footer-figure {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    object-position: right bottom;
+    pointer-events: none;
+    opacity: 0.68;
+    mix-blend-mode: multiply;
   }
 
   .footer-brand {
@@ -208,8 +245,17 @@ const year = new Date().getFullYear();
   }
 
   @media (max-width: 760px) {
+    .footer-shell {
+      padding-inline: clamp(1rem, 5vw, 1.25rem);
+    }
+
     .footer-inner {
       grid-template-columns: 1fr;
+    }
+
+    .footer-figure {
+      height: 56%;
+      opacity: 0.13;
     }
 
     .wechat-qr,

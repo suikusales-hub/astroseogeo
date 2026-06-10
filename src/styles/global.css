@@ -1,0 +1,168 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+@theme {
+  --color-primary: #EF7D00;
+  --color-caramel-text: #1F150F;
+  --color-caramel-surface: #FCF6F0;
+  --font-sans: "Inter", "Noto Sans SC", sans-serif;
+}
+
+:root {
+  --color-primary: #EF7D00;
+  --color-text: #1F150F;
+  --color-surface: #FCF6F0;
+  --glass-background: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.72);
+  --glass-shadow: 0 24px 80px rgba(239, 125, 0, 0.16);
+  --glass-blur: 20px;
+  --bokeh-blur: 80px;
+  color-scheme: light;
+}
+
+html {
+  min-height: 100%;
+  background: var(--color-surface);
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(255, 219, 176, 0.65), transparent 32rem),
+    var(--color-surface);
+  color: var(--color-text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(239, 125, 0, 0.22);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(239, 125, 0, 0.45);
+  text-underline-offset: 0.18em;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.glass-panel {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-background);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.bokeh-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(135deg, #FCF6F0 0%, #FFF9F2 48%, #F8E6D5 100%);
+}
+
+.bokeh-background .spot,
+.bokeh-background [class^="spot-"],
+.bokeh-background [class*=" spot-"] {
+  position: absolute;
+  display: block;
+  border-radius: 9999px;
+  filter: blur(var(--bokeh-blur));
+  opacity: 0.72;
+  mix-blend-mode: screen;
+  will-change: transform;
+  animation: bokeh-float 18s ease-in-out infinite alternate;
+}
+
+.spot-1 {
+  width: 26rem;
+  height: 26rem;
+  top: -8rem;
+  left: -7rem;
+  background: rgba(239, 125, 0, 0.38);
+  animation-duration: 19s;
+}
+
+.spot-2 {
+  width: 22rem;
+  height: 22rem;
+  top: 8vh;
+  right: 6vw;
+  background: rgba(255, 184, 77, 0.42);
+  animation-duration: 23s;
+  animation-delay: -6s;
+}
+
+.spot-3 {
+  width: 28rem;
+  height: 28rem;
+  right: -9rem;
+  bottom: 8vh;
+  background: rgba(255, 132, 105, 0.34);
+  animation-duration: 21s;
+  animation-delay: -10s;
+}
+
+.spot-4 {
+  width: 18rem;
+  height: 18rem;
+  left: 18vw;
+  bottom: -6rem;
+  background: rgba(255, 221, 150, 0.46);
+  animation-duration: 25s;
+  animation-delay: -4s;
+}
+
+.spot-5 {
+  width: 20rem;
+  height: 20rem;
+  left: 42vw;
+  top: 42vh;
+  background: rgba(205, 108, 37, 0.28);
+  animation-duration: 27s;
+  animation-delay: -14s;
+}
+
+@keyframes bokeh-float {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(2.5rem, -1.75rem, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-1.5rem, 2rem, 0) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .bokeh-background .spot,
+  .bokeh-background [class^="spot-"],
+  .bokeh-background [class*=" spot-"] {
+    animation: none;
+  }
+}

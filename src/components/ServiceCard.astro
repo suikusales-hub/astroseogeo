@@ -1,0 +1,22 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { icon, title, description, href } = Astro.props as Props;
+---
+
+<article class="group flex min-h-full flex-col rounded-lg border border-white/75 bg-white/[0.65] p-8 shadow-[0_24px_80px_rgba(239,125,0,0.16)] backdrop-blur-[20px] transition hover:-translate-y-1 hover:border-orange-300 hover:shadow-[0_26px_90px_rgba(239,125,0,0.2)]">
+  <div class="mb-6 grid h-14 w-14 place-items-center rounded-lg bg-gradient-to-br from-orange-100 to-yellow-50 text-2xl text-orange-500 shadow-sm transition group-hover:scale-105">
+    <i class={icon} aria-hidden="true"></i>
+  </div>
+  <h3 class="mb-3 text-xl font-extrabold tracking-normal text-[#1F150F]">{title}</h3>
+  <p class="mb-6 line-clamp-3 flex-1 text-sm leading-7 text-[#4A3E38]">{description}</p>
+  <a href={href} class="inline-flex items-center gap-2 text-sm font-bold text-orange-500 transition hover:text-orange-600">
+    <span>了解更多</span>
+    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+  </a>
+</article>

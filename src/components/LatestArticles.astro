@@ -1,0 +1,49 @@
+---
+import LatestPostCard from './LatestPostCard.astro';
+
+interface PostPreview {
+  title: string;
+  description: string;
+  pubDate: Date;
+  heroImage: string;
+  tags: string[];
+  slug: string;
+}
+
+interface Props {
+  posts: PostPreview[];
+}
+
+const { posts } = Astro.props as Props;
+---
+
+<section class="py-12" aria-labelledby="latest-title">
+  <div class="mb-10 flex items-end justify-between gap-6">
+    <div>
+      <h2 id="latest-title" class="mb-4 text-3xl font-black tracking-normal text-[#1F150F]">最新干货分享</h2>
+      <div class="h-1 w-16 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+    </div>
+    <a href="/seo-tutorial" class="hidden items-center gap-2 text-sm font-bold text-[#78685E] transition hover:text-orange-500 md:inline-flex">
+      <span>查看全部</span>
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  {posts.length > 0 ? (
+    <div class="mb-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {posts.map((post) => (
+        <LatestPostCard post={post} />
+      ))}
+    </div>
+  ) : (
+    <div class="rounded-lg border border-white/75 bg-white/[0.65] p-8 text-center shadow-[0_24px_80px_rgba(239,125,0,0.16)] backdrop-blur-[20px]">
+      <p class="font-semibold text-[#4A3E38]">最新文章正在整理中。</p>
+    </div>
+  )}
+
+  <div class="text-center md:hidden">
+    <a href="/seo-tutorial" class="inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-orange-300/70 bg-white/70 px-6 font-bold text-[#1F150F] backdrop-blur-lg transition hover:border-orange-400 hover:bg-white">
+      查看全部干货
+    </a>
+  </div>
+</section>

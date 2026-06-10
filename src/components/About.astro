@@ -1,0 +1,95 @@
+---
+const avatar = '/images/seo-xiaoping-avatar.jpg';
+
+const traits = [
+  { icon: 'fa-solid fa-hammer', label: '死磕谷歌 SEO 的隔壁老王' },
+  { icon: 'fa-solid fa-fish', label: 'SEO 捕鱼大师' },
+  { icon: 'fa-solid fa-cart-shopping', label: '10 年独立站卖家' },
+  { icon: 'fa-solid fa-language', label: '纯血小语种 SEO 专家' },
+  { icon: 'fa-solid fa-robot', label: 'AI Vibe Coding 玩家' },
+];
+
+const features = [
+  {
+    icon: 'fa-solid fa-graduation-cap',
+    title: '教育背景',
+    body: '商务日语专业，具备扎实的日语商务沟通能力，助力小语种市场开拓。',
+    tone: 'text-orange-500 bg-orange-100',
+  },
+  {
+    icon: 'fa-solid fa-route',
+    title: '职业轨迹',
+    body: 'B2B 外贸、亚马逊运营、独立站卖家、SEO 实战专家、创业者、培训师。',
+    tone: 'text-sky-500 bg-sky-50',
+  },
+  {
+    icon: 'fa-solid fa-star',
+    title: '核心优势',
+    body: '兼具外贸业务、电商运营与技术 SEO 三重能力，结合商业需求与技术优化。',
+    tone: 'text-emerald-500 bg-emerald-50',
+  },
+  {
+    icon: 'fa-solid fa-bullseye',
+    title: '内容定位',
+    body: '聚焦谷歌 SEO、小语种 SEO、AI 建站自动化、联盟营销四大领域。',
+    tone: 'text-violet-500 bg-violet-50',
+  },
+];
+---
+
+<section class="py-12" aria-labelledby="about-title">
+  <div class="mb-12 text-center">
+    <h2 id="about-title" class="mb-4 text-3xl font-black tracking-normal text-[#1F150F]">站长简介</h2>
+    <div class="mx-auto h-1 w-16 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+  </div>
+
+  <div class="grid gap-6 lg:grid-cols-[1.12fr_0.88fr]">
+    <div class="rounded-lg border border-white/75 bg-white/[0.65] p-6 shadow-[0_24px_80px_rgba(239,125,0,0.16)] backdrop-blur-[20px] md:p-8 lg:p-10">
+      <div class="grid gap-7">
+        <div>
+          <h3 class="mb-5 text-2xl font-extrabold leading-snug tracking-normal text-[#1F150F]">
+            SEO 小平：死磕谷歌 SEO 的独立站实战派博主
+          </h3>
+          <figure class="relative mb-7 h-[300px] w-[300px] max-w-full overflow-hidden rounded-lg border border-white/80 bg-white/60 p-2 shadow-[0_24px_70px_rgba(31,21,15,0.16)]">
+            <img
+              src={avatar}
+              alt="SEO 小平头像"
+              width="300"
+              height="300"
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full rounded-lg object-cover"
+            />
+            <figcaption class="absolute bottom-5 left-5 rounded-lg border border-white/70 bg-white/75 px-3 py-2 text-xs font-black text-orange-600 shadow-lg backdrop-blur-lg">
+              SEO 小平
+            </figcaption>
+          </figure>
+          <p class="mb-8 text-lg leading-9 text-[#4A3E38]">
+            SEO 小平，籍贯四川，居于深圳。自 2016 年起深耕跨境电商独立站 SEO 运营，是一位拥有十年外贸经验的创业者、C 端 B 端双赛道玩家，只专注谷歌 SEO 引流。作为知名 SEO 博主与培训师，多年以来使用 AI 做全球各个国家的纯血小语种独立站 SEO，帮助外贸客户开拓海外市场，并持续输出独立站谷歌 SEO 领域的实战干货。
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            {traits.map((trait) => (
+              <span class="inline-flex items-center gap-2 rounded-lg border border-orange-500/20 bg-orange-500/10 px-3 py-2 text-sm font-semibold text-[#4A3E38] transition hover:bg-orange-500 hover:text-white">
+                <i class={`${trait.icon} text-orange-500`} aria-hidden="true"></i>
+                <span>{trait.label}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      {features.map((feature) => (
+        <article class="rounded-lg border border-white/75 bg-white/[0.65] p-6 shadow-[0_18px_54px_rgba(239,125,0,0.12)] backdrop-blur-[20px]">
+          <div class={`mb-4 grid h-10 w-10 place-items-center rounded-lg ${feature.tone}`}>
+            <i class={feature.icon} aria-hidden="true"></i>
+          </div>
+          <h3 class="mb-2 text-lg font-bold tracking-normal text-[#1F150F]">{feature.title}</h3>
+          <p class="text-sm leading-7 text-[#78685E]">{feature.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

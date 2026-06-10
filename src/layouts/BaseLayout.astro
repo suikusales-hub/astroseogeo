@@ -1,0 +1,105 @@
+---
+import SeoHead from '../components/SeoHead.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FloatingInquiry from '../components/FloatingInquiry.astro';
+import '../styles/global.css';
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  image?: string;
+  schemaType?: string | string[];
+  datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  keywords?: string[];
+  noindex?: boolean;
+  faqs?: FaqItem[];
+  breadcrumbs?: BreadcrumbItem[];
+  bodyClass?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.url?.pathname ?? '/',
+  image,
+  schemaType,
+  datePublished,
+  dateModified,
+  authorName,
+  keywords,
+  noindex,
+  faqs,
+  breadcrumbs,
+  bodyClass = '',
+} = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <SeoHead
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+      image={image}
+      schemaType={schemaType}
+      datePublished={datePublished}
+      dateModified={dateModified}
+      authorName={authorName}
+      keywords={keywords}
+      noindex={noindex}
+      faqs={faqs}
+      breadcrumbs={breadcrumbs}
+    />
+  </head>
+  <body class={bodyClass}>
+    <div class="bokeh-background" aria-hidden="true">
+      <span class="spot spot-1"></span>
+      <span class="spot spot-2"></span>
+      <span class="spot spot-3"></span>
+      <span class="spot spot-4"></span>
+      <span class="spot spot-5"></span>
+    </div>
+
+    <AnnouncementBar />
+    <Navbar />
+
+    <main id="main-content" class="site-main">
+      <slot />
+    </main>
+
+    <Footer />
+    <FloatingInquiry />
+  </body>
+</html>
+
+<style>
+  .site-main {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 100%);
+    min-height: 60vh;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+
+  :global(.site-footer) {
+    position: relative;
+    z-index: 1;
+  }
+</style>

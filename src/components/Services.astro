@@ -1,0 +1,55 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+const services = [
+  {
+    icon: 'fa-solid fa-magnifying-glass',
+    title: '关键词研究与布局',
+    description: '深度关键词调研，制定精准的关键词策略，挖掘长尾蓝海，为独立站带来高转化流量。',
+    href: '/keyword-content',
+  },
+  {
+    icon: 'fa-solid fa-link',
+    title: '外链建设策略',
+    description: '白帽高质量外链资源建设，获取行业权威域名反向链接，安全快速提升网站权重与排名。',
+    href: '/seo-tutorial',
+  },
+  {
+    icon: 'fa-solid fa-gears',
+    title: '技术SEO优化',
+    description: '底层代码架构优化、Core Web Vitals提速、移动端深度适配及富文本结构化数据配置。',
+    href: '/technical-seo',
+  },
+  {
+    icon: 'fa-solid fa-chart-line',
+    title: 'SEO数据分析',
+    description: '基于 GA4 与 GSC 的深度数据洞察，竞品流量追踪，建立完善的 SEO 效果监控与迭代机制。',
+    href: '/technical-seo',
+  },
+  {
+    icon: 'fa-solid fa-pen-to-square',
+    title: '博客写作技巧',
+    description: '传授高转化 SEO 文章结构与写作 SOP，结合十年一线经验，避开内容营销常见雷区。',
+    href: '/keyword-content',
+  },
+  {
+    icon: 'fa-solid fa-robot',
+    title: '生成式引擎优化 GEO',
+    description: '拥抱 AI 时代，针对 ChatGPT、Gemini 等 AI 搜索引擎进行品牌布局，抢占新兴流量入口。',
+    href: '/ai-geo',
+  },
+];
+---
+
+<section class="py-12" aria-labelledby="services-title">
+  <div class="mb-12 text-center">
+    <h2 id="services-title" class="mb-4 text-3xl font-black tracking-normal text-[#1F150F]">核心SEO服务</h2>
+    <div class="mx-auto h-1 w-16 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {services.map((service) => (
+      <ServiceCard {...service} />
+    ))}
+  </div>
+</section>

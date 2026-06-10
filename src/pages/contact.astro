@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="联系SEO小平"
+  description="联系 SEO小平，咨询谷歌 SEO、独立站 SEO、小语种 SEO、GEO 与内容工程陪跑服务。"
+  canonicalUrl="/contact"
+  keywords={['SEO小平', 'SEO咨询', '谷歌SEO陪跑', '独立站SEO']}
+>
+  <section class="grid gap-8 py-12" aria-labelledby="contact-title">
+    <div class="rounded-lg border border-white/75 bg-white/[0.65] p-8 shadow-[0_24px_80px_rgba(239,125,0,0.16)] backdrop-blur-[20px]">
+      <p class="mb-3 text-sm font-black text-orange-600">Contact</p>
+      <h1 id="contact-title" class="mb-4 text-4xl font-black leading-tight tracking-normal text-[#1F150F]">联系SEO小平</h1>
+      <p class="max-w-3xl text-lg leading-8 text-[#4A3E38]">
+        如果你正在做外贸独立站、谷歌 SEO、小语种 SEO 或 GEO 流量布局，可以通过微信或邮箱联系我。
+      </p>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-2">
+      <article class="rounded-lg border border-white/75 bg-white/[0.65] p-6 shadow-[0_18px_54px_rgba(239,125,0,0.12)] backdrop-blur-[20px]">
+        <div class="mb-4 grid h-12 w-12 place-items-center rounded-lg bg-orange-100 text-xl text-orange-500">
+          <i class="fa-brands fa-weixin" aria-hidden="true"></i>
+        </div>
+        <h2 class="mb-2 text-xl font-black tracking-normal text-[#1F150F]">微信咨询</h2>
+        <p class="text-[#4A3E38]">Xiao_Ping_Up</p>
+      </article>
+
+      <article class="rounded-lg border border-white/75 bg-white/[0.65] p-6 shadow-[0_18px_54px_rgba(239,125,0,0.12)] backdrop-blur-[20px]">
+        <div class="mb-4 grid h-12 w-12 place-items-center rounded-lg bg-orange-100 text-xl text-orange-500">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        </div>
+        <h2 class="mb-2 text-xl font-black tracking-normal text-[#1F150F]">邮箱联系</h2>
+        <a class="font-bold text-orange-600 transition hover:text-orange-700" href="mailto:hello@seogeo.cc">hello@seogeo.cc</a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

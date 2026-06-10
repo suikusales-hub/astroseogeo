@@ -1,0 +1,221 @@
+---
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface SocialLink extends FooterLink {
+  icon: string;
+}
+
+interface Props {
+  navLinks?: FooterLink[];
+  socialLinks?: SocialLink[];
+}
+
+const {
+  navLinks = [
+    { label: 'SEO教程', href: '/seo-tutorial' },
+    { label: 'AI搜索', href: '/ai-geo' },
+    { label: '案例库', href: '/case-study' },
+    { label: '关于', href: '/about' },
+    { label: '联系', href: '/contact' },
+  ],
+  socialLinks = [
+    { label: 'RSS', href: '/rss.xml', icon: 'fa-solid fa-rss' },
+    { label: 'Email', href: 'mailto:hello@seogeo.cc', icon: 'fa-solid fa-envelope' },
+  ],
+} = Astro.props as Props;
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner glass-panel">
+    <section class="footer-brand" aria-label="站点信息">
+      <a class="brand" href="/" aria-label="SEO小平首页">
+        <img class="brand-mark" src="/images/seo-xiaoping-avatar.jpg" alt="" width="40" height="40" />
+        <span class="brand-name">SEO小平</span>
+      </a>
+      <p>技术 SEO、AI 搜索与内容工程笔记。</p>
+      <p class="copyright">© {year} SEO小平. All rights reserved.</p>
+    </section>
+
+    <nav class="footer-nav" aria-label="页脚导航">
+      {navLinks.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="footer-connect">
+      <nav class="social-nav" aria-label="社交链接">
+        {socialLinks.map((item) => (
+          <a href={item.href} aria-label={item.label}>
+            <i class={item.icon} aria-hidden="true"></i>
+            <span>{item.label}</span>
+          </a>
+        ))}
+      </nav>
+
+      <figure class="wechat-qr">
+        <img
+          src="/images/seo-xiaoping-wechat-qr.png"
+          alt="SEO 小平微信二维码"
+          width="120"
+          height="120"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>微信咨询</figcaption>
+      </figure>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 2rem clamp(1rem, 3vw, 2rem) 2.5rem;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(10rem, 0.8fr) minmax(10rem, 0.8fr);
+    gap: 1.5rem;
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: 8px;
+  }
+
+  .footer-brand {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: max-content;
+    color: var(--color-text);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    display: block;
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.82);
+    background: #fff;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(239, 125, 0, 0.28);
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+    letter-spacing: 0;
+  }
+
+  p {
+    max-width: 30rem;
+    margin: 0;
+    color: rgba(31, 21, 15, 0.7);
+    line-height: 1.8;
+  }
+
+  .copyright {
+    color: rgba(31, 21, 15, 0.52);
+    font-size: 0.9rem;
+  }
+
+  .footer-nav,
+  .social-nav {
+    display: grid;
+    align-content: start;
+    gap: 0.5rem;
+  }
+
+  .footer-connect {
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    gap: 0.85rem;
+  }
+
+  .footer-nav a,
+  .social-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: max-content;
+    max-width: 100%;
+    border-radius: 8px;
+    color: rgba(31, 21, 15, 0.72);
+    font-size: 0.95rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition:
+      background 180ms ease,
+      color 180ms ease;
+  }
+
+  .footer-nav a {
+    padding: 0.2rem 0;
+  }
+
+  .social-nav a {
+    padding: 0.25rem 0;
+  }
+
+  .footer-nav a:hover,
+  .social-nav a:hover {
+    color: var(--color-text);
+  }
+
+  .social-nav i {
+    width: 1.1rem;
+    color: var(--color-primary);
+    text-align: center;
+  }
+
+  .wechat-qr {
+    display: grid;
+    gap: 0.45rem;
+    width: 7.5rem;
+    margin: 0.35rem 0 0;
+  }
+
+  .wechat-qr img {
+    display: block;
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 1px solid rgba(239, 125, 0, 0.14);
+    border-radius: 8px;
+    background: #fff;
+    object-fit: contain;
+    padding: 0.35rem;
+    box-shadow: 0 14px 34px rgba(31, 21, 15, 0.08);
+  }
+
+  .wechat-qr figcaption {
+    color: rgba(31, 21, 15, 0.58);
+    font-size: 0.82rem;
+    font-weight: 750;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  @media (max-width: 760px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .wechat-qr,
+    .wechat-qr img {
+      width: 6.75rem;
+      height: 6.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPostCategory, POST_CATEGORIES, type PostCategorySlug } from '../data/categories';
+import { toPostSlug } from '../lib/slug';
+
+interface Props {
+  categorySlug: PostCategorySlug;
+}
+
+const { categorySlug } = Astro.props as Props;
+const category = getPostCategory(categorySlug);
+
+if (!category) {
+  throw new Error(`Unknown category: ${categorySlug}`);
+}
+
+const posts = (await getCollection('posts'))
+  .filter((post) => post.data.category === categorySlug)
+  .map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    pubDate: post.data.pubDate,
+    tags: post.data.tags,
+    slug: toPostSlug(post.id),
+  }))
+  .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
+
+const dateFormatter = new Intl.DateTimeFormat('zh-CN', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+---
+
+<BaseLayout
+  title={`${category.name}文章`}
+  description={category.description}
+  canonicalUrl={`/${category.slug}`}
+  keywords={[category.name, 'SEO小平', '谷歌SEO', '独立站SEO']}
+>
+  <section class="grid gap-8 py-10" aria-labelledby="category-title">
+    <header class="rounded-lg border border-white/75 bg-white/[0.65] p-8 shadow-[0_24px_80px_rgba(239,125,0,0.16)] backdrop-blur-[20px]">
+      <p class="mb-3 text-sm font-black text-orange-600">SEO小平文章分类</p>
+      <h1 id="category-title" class="mb-4 text-4xl font-black leading-tight tracking-normal text-[#1F150F]">{category.name}</h1>
+      <p class="max-w-3xl text-lg leading-8 text-[#4A3E38]">{category.description}</p>
+    </header>
+
+    <div class="flex flex-wrap gap-3" aria-label="全部文章分类">
+      {POST_CATEGORIES.map((item) => (
+        <a
+          href={`/${item.slug}`}
+          class:list={[
+            'rounded-lg border px-4 py-2 text-sm font-bold transition',
+            item.slug === category.slug
+              ? 'border-orange-500 bg-orange-500 text-white'
+              : 'border-orange-500/20 bg-white/65 text-[#4A3E38] hover:border-orange-400 hover:text-orange-600',
+          ]}
+        >
+          {item.name}
+        </a>
+      ))}
+    </div>
+
+    <div class="grid gap-5">
+      {posts.map((post) => (
+        <article class="rounded-lg border border-white/75 bg-white/[0.65] p-6 shadow-[0_18px_54px_rgba(239,125,0,0.12)] backdrop-blur-[20px]">
+          <div class="mb-3 flex flex-wrap gap-3 text-xs font-bold text-orange-600">
+            <time datetime={post.pubDate.toISOString()}>{dateFormatter.format(post.pubDate)}</time>
+            {post.tags.slice(0, 3).map((tag) => (
+              <span>{tag}</span>
+            ))}
+          </div>
+          <h2 class="mb-2 text-2xl font-black leading-snug tracking-normal text-[#1F150F]">
+            <a href={`/${post.slug}`} class="transition hover:text-orange-600">{post.title}</a>
+          </h2>
+          <p class="max-w-4xl text-sm leading-7 text-[#4A3E38]">{post.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

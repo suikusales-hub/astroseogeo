@@ -1,0 +1,72 @@
+<div class="announcement-bar" aria-label="网站公告">
+  <div class="announcement-track">
+    <span>本网站为 Codex AI 建站作品展示，欢迎交流</span>
+    <span aria-hidden="true">本网站为 Codex AI 建站作品展示，欢迎交流</span>
+    <span aria-hidden="true">本网站为 Codex AI 建站作品展示，欢迎交流</span>
+  </div>
+</div>
+
+<style>
+  .announcement-bar {
+    position: relative;
+    z-index: 35;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.62);
+    color: var(--color-text);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 12px 34px rgba(239, 125, 0, 0.1);
+  }
+
+  .announcement-track {
+    display: flex;
+    width: max-content;
+    min-width: 100%;
+    gap: 4rem;
+    padding: 0.55rem 0;
+    animation: announcement-scroll 24s linear infinite;
+  }
+
+  .announcement-track span {
+    flex: 0 0 auto;
+    color: #1f150f;
+    font-size: 0.92rem;
+    font-weight: 850;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .announcement-track span::before {
+    content: "";
+    display: inline-block;
+    width: 0.48rem;
+    height: 0.48rem;
+    margin: 0 0.65rem 0 0;
+    border-radius: 999px;
+    background: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(239, 125, 0, 0.12);
+    vertical-align: 0.08rem;
+  }
+
+  @keyframes announcement-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .announcement-track {
+      width: 100%;
+      justify-content: center;
+      animation: none;
+    }
+
+    .announcement-track span:not(:first-child) {
+      display: none;
+    }
+  }
+</style>

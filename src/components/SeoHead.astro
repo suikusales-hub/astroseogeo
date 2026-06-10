@@ -1,0 +1,234 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  image?: string;
+  schemaType?: string | string[];
+  datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  keywords?: string[];
+  noindex?: boolean;
+  faqs?: FaqItem[];
+  breadcrumbs?: BreadcrumbItem[];
+}
+
+const SITE_URL = 'https://seogeo.cc';
+const SITE_NAME = 'SEO小平';
+const DEFAULT_DESCRIPTION = 'SEO小平的个人知识博客，记录技术 SEO、AI 搜索、GEO 和内容工程的实战方法。';
+const DEFAULT_AUTHOR = 'SEO小平';
+const LANGUAGE = 'zh-CN';
+
+const {
+  title = SITE_NAME,
+  description = DEFAULT_DESCRIPTION,
+  canonicalUrl = Astro.url?.pathname ?? '/',
+  image,
+  schemaType = 'WebPage',
+  datePublished,
+  dateModified,
+  authorName = DEFAULT_AUTHOR,
+  keywords = [],
+  noindex = false,
+  faqs = [],
+  breadcrumbs = [],
+} = Astro.props as Props;
+
+const schemaTypes = Array.isArray(schemaType) ? schemaType : [schemaType];
+const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const canonical = normalizeSiteUrl(canonicalUrl);
+const imageUrl = image ? normalizeAssetUrl(image) : undefined;
+const robotsContent = noindex
+  ? 'noindex,nofollow'
+  : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
+
+const entityBaseUrl = canonical === `${SITE_URL}/` ? `${SITE_URL}/home` : canonical;
+const personId = `${SITE_URL}/seo-xiaoping-person`;
+const websiteId = `${SITE_URL}/seo-xiaoping-website`;
+const webpageId = `${entityBaseUrl}-webpage`;
+
+const personSchema = {
+  '@type': 'Person',
+  '@id': personId,
+  name: authorName,
+  url: SITE_URL,
+  jobTitle: '技术 SEO 与 AI 搜索研究者',
+  description: DEFAULT_DESCRIPTION,
+  knowsAbout: ['Google SEO', 'Technical SEO', 'AI Search', 'GEO', 'Content Engineering'],
+};
+
+const websiteSchema = {
+  '@type': 'WebSite',
+  '@id': websiteId,
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: DEFAULT_DESCRIPTION,
+  publisher: { '@id': personId },
+  inLanguage: LANGUAGE,
+};
+
+const webpageSchema = {
+  '@type': 'WebPage',
+  '@id': webpageId,
+  url: canonical,
+  name: pageTitle,
+  description,
+  isPartOf: { '@id': websiteId },
+  about: { '@id': personId },
+  primaryImageOfPage: imageUrl
+    ? {
+        '@type': 'ImageObject',
+        url: imageUrl,
+      }
+    : undefined,
+  inLanguage: LANGUAGE,
+};
+
+const graph: Record<string, unknown>[] = [personSchema, websiteSchema, webpageSchema];
+
+if (schemaTypes.includes('BlogPosting')) {
+  graph.push({
+    '@type': 'BlogPosting',
+    '@id': `${entityBaseUrl}-blogposting`,
+    mainEntityOfPage: { '@id': webpageId },
+    headline: title,
+    description,
+    image: imageUrl ? [imageUrl] : undefined,
+    author: { '@id': personId },
+    publisher: { '@id': personId },
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    inLanguage: LANGUAGE,
+  });
+}
+
+if (schemaTypes.includes('FAQPage') && faqs.length > 0) {
+  graph.push({
+    '@type': 'FAQPage',
+    '@id': `${entityBaseUrl}-faq`,
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+    inLanguage: LANGUAGE,
+  });
+}
+
+if (breadcrumbs.length > 0) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${entityBaseUrl}-breadcrumb`,
+    itemListElement: breadcrumbs.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: normalizeSiteUrl(item.url),
+    })),
+  });
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': cleanJsonLd(graph),
+};
+
+function normalizeSiteUrl(value: string) {
+  const url = new URL(value || '/', SITE_URL);
+  url.protocol = 'https:';
+  url.hostname = 'seogeo.cc';
+  url.search = '';
+  url.hash = '';
+  url.pathname = normalizePath(url.pathname);
+
+  return url.toString();
+}
+
+function normalizeAssetUrl(value: string) {
+  const url = new URL(value, SITE_URL);
+  url.search = '';
+  url.hash = '';
+  url.pathname = normalizePath(url.pathname, false);
+
+  return url.toString();
+}
+
+function normalizePath(pathname: string, stripHtml = true) {
+  let normalized = pathname.toLowerCase();
+
+  if (stripHtml) {
+    normalized = normalized.replace(/\.html$/, '');
+  }
+
+  normalized = normalized.replace(/\/+$/, '');
+
+  return normalized === '' ? '/' : normalized;
+}
+
+function cleanJsonLd(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map(cleanJsonLd).filter((item) => item !== undefined);
+  }
+
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value)
+        .filter(([, entry]) => {
+          if (entry === undefined || entry === null || entry === '') return false;
+          if (Array.isArray(entry) && entry.length === 0) return false;
+          return true;
+        })
+        .map(([key, entry]) => [key, cleanJsonLd(entry)]),
+    );
+  }
+
+  return value;
+}
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={robotsContent} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<link rel="canonical" href={canonical} />
+<link rel="icon" type="image/png" href="/images/site-icon.png" />
+<link rel="apple-touch-icon" href="/images/site-icon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:type" content={schemaTypes.includes('BlogPosting') ? 'article' : 'website'} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+{imageUrl && <meta property="og:image" content={imageUrl} />}
+{schemaTypes.includes('BlogPosting') && datePublished && (
+  <meta property="article:published_time" content={datePublished} />
+)}
+{schemaTypes.includes('BlogPosting') && (dateModified ?? datePublished) && (
+  <meta property="article:modified_time" content={dateModified ?? datePublished} />
+)}
+
+<meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={description} />
+{imageUrl && <meta name="twitter:image" content={imageUrl} />}
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd, null, 2)}></script>

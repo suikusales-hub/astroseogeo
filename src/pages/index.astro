@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import About from '../components/About.astro';
+import Hero from '../components/Hero.astro';
+import LatestArticles from '../components/LatestArticles.astro';
+import Services from '../components/Services.astro';
+import { toPostSlug } from '../lib/slug';
+
+const posts = (await getCollection('posts'))
+  .map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    pubDate: post.data.pubDate,
+    heroImage: post.data.heroImage,
+    tags: post.data.tags,
+    slug: toPostSlug(post.id),
+  }))
+  .filter((post) => post.slug)
+  .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
+  .slice(0, 12);
+---
+
+<BaseLayout
+  title="专业谷歌SEO独立站优化专家"
+  description="SEO小平，拥有10年谷歌SEO实战经验的专业独立站优化专家。专注跨境电商SEO、关键词研究、外链建设、技术SEO优化，助力企业抢占全球市场流量。"
+  canonicalUrl="/"
+  keywords={['SEO小平', '谷歌SEO', '独立站SEO', '跨境电商SEO', 'SEO优化', '关键词研究', '外链建设', '技术SEO', '陪跑客']}
+>
+  <div class="space-y-12 pb-12">
+    <Hero />
+    <About />
+    <Services />
+    <LatestArticles posts={posts} />
+  </div>
+</BaseLayout>

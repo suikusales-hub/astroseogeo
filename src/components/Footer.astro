@@ -71,13 +71,6 @@ const year = new Date().getFullYear();
         </figure>
       </div>
     </div>
-    <object
-      class="footer-figure"
-      data="/images/footer-animated.svg"
-      type="image/svg+xml"
-      aria-hidden="true"
-      tabindex="-1"
-    ></object>
   </div>
 </footer>
 
@@ -105,23 +98,6 @@ const year = new Date().getFullYear();
     width: min(1120px, 100%);
     margin: 0 auto;
     padding: clamp(1.25rem, 3vw, 2rem) 0;
-  }
-
-  .footer-figure {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    display: block;
-    width: auto;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    object-position: right bottom;
-    pointer-events: none;
-    opacity: 0.68;
-    mix-blend-mode: multiply;
   }
 
   .footer-brand {
@@ -251,11 +227,6 @@ const year = new Date().getFullYear();
 
     .footer-inner {
       grid-template-columns: 1fr;
-    }
-
-    .footer-figure {
-      height: 56%;
-      opacity: 0.13;
     }
 
     .wechat-qr,

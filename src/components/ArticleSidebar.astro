@@ -6,37 +6,45 @@ interface SidebarPost {
   slug: string;
 }
 
-interface SidebarGroup {
+interface SidebarCategory {
   slug: PostCategorySlug;
   name: string;
-  posts: SidebarPost[];
 }
 
 interface Props {
-  groups: SidebarGroup[];
+  categories: SidebarCategory[];
+  posts: SidebarPost[];
 }
 
-const { groups } = Astro.props as Props;
+const { categories, posts } = Astro.props as Props;
 ---
 
 <aside class="rounded-lg border border-white/75 bg-white/[0.65] p-5 shadow-[0_24px_80px_rgba(239,125,0,0.14)] backdrop-blur-[20px]" aria-label="文章分类与推荐文章">
-  <h2 class="mb-4 text-lg font-black tracking-normal text-[#1F150F]">文章分类</h2>
-  <div class="grid gap-5">
-    {groups.map((group) => (
-      <section aria-labelledby={`sidebar-${group.slug}`}>
-        <a id={`sidebar-${group.slug}`} href={`/${group.slug}`} class="mb-3 inline-flex items-center gap-2 font-extrabold text-orange-600 transition hover:text-orange-700">
-          <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
-          <span>{group.name}</span>
-        </a>
-        <ol class="grid gap-2">
-          {group.posts.map((post, index) => (
-            <li class="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-2 text-sm leading-6">
-              <span class="text-xs font-black text-orange-500/70">{String(index + 1).padStart(2, '0')}</span>
-              <a href={`/${post.slug}`} class="text-[#4A3E38] transition hover:text-orange-600">{post.title}</a>
-            </li>
-          ))}
-        </ol>
-      </section>
-    ))}
+  <div class="grid gap-6">
+    <section aria-labelledby="sidebar-categories">
+      <h2 id="sidebar-categories" class="mb-4 text-lg font-black tracking-normal text-[#1F150F]">全部文章分类</h2>
+      <nav class="grid gap-2" aria-label="全部文章分类">
+        {categories.map((category) => (
+          <a href={`/${category.slug}`} class="inline-flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-extrabold text-orange-600 transition hover:bg-orange-500/10 hover:text-orange-700">
+            <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+            <span>{category.name}</span>
+          </a>
+        ))}
+      </nav>
+    </section>
+
+    <section aria-labelledby="sidebar-recommended-posts">
+      <h2 id="sidebar-recommended-posts" class="mb-4 text-lg font-black tracking-normal text-[#1F150F]">推荐阅读</h2>
+      <ol class="grid gap-2">
+        {posts.map((post, index) => (
+          <li class="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-2 text-sm leading-6">
+            <span class="text-xs font-black text-orange-500/70">{String(index + 1).padStart(2, '0')}</span>
+            <a href={`/${post.slug}`} class="text-[#4A3E38] transition hover:text-orange-600">
+              {post.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
   </div>
 </aside>

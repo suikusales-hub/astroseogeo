@@ -45,18 +45,26 @@ const canonicalUrl = `/${slug}`;
 const publishedIso = pubDate.toISOString();
 const updatedIso = updatedDate.toISOString();
 const allPosts = await getCollection('posts');
-const sidebarGroups = POST_CATEGORIES.map((category) => ({
-  slug: category.slug,
-  name: category.name,
-  posts: allPosts
-    .filter((entry) => entry.data.category === category.slug)
-    .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-    .slice(0, 10)
-    .map((entry) => ({
-      title: entry.data.title,
-      slug: toPostSlug(entry.id),
-    })),
-}));
+const orderedPosts = allPosts
+  .map((entry) => ({
+    title: entry.data.title,
+    pubDate: entry.data.pubDate,
+    slug: toPostSlug(entry.id),
+  }))
+  .filter((entry) => entry.slug)
+  .sort((a, b) => {
+    const dateDiff = b.pubDate.getTime() - a.pubDate.getTime();
+    return dateDiff || a.slug.localeCompare(b.slug);
+  });
+
+const currentPostIndex = orderedPosts.findIndex((entry) => entry.slug === slug);
+const recommendedPosts =
+  currentPostIndex === -1
+    ? orderedPosts.slice(0, 10)
+    : Array.from({ length: Math.min(10, Math.max(orderedPosts.length - 1, 0)) }, (_, index) => {
+        const nextIndex = (currentPostIndex + index + 1) % orderedPosts.length;
+        return orderedPosts[nextIndex];
+      });
 
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('zh-CN', {
@@ -104,7 +112,7 @@ function formatDate(date: Date) {
       </div>
     </article>
 
-    <ArticleSidebar groups={sidebarGroups} />
+    <ArticleSidebar categories={POST_CATEGORIES} posts={recommendedPosts} />
   </div>
 </BaseLayout>
 

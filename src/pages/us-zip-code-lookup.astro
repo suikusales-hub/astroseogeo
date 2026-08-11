@@ -1,0 +1,837 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "美国邮编查询 - 免费精准地图定位 | 按地址与邮编互查 v2";
+const description = "美国邮编大全，支持按城市、地址快速查找美国主要邮政编码。提供真实的地图定位、邮编详情、包裹附加费预估及常见FAQ等一站式跨境物流信息。";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl="/us-zip-code-lookup"
+  keywords={['美国邮编', '美国邮编查询', '美国邮政编码', '美国城市邮编', '地址查邮编', 'zip code']}
+  bodyClass="us-zip-page"
+>
+  <div class="us-zip-tool-wrapper">
+
+    <!-- 面包屑 -->
+    <nav class="breadcrumb">
+      <a href="/">首页</a> <span>&gt;</span>
+      <a href="#">全球邮编查询</a> <span>&gt;</span>
+      <span style="color:#333; font-weight:bold;">美国邮编高级工具</span>
+    </nav>
+
+    <!-- 核心功能 1：按邮编反查城市与附加费 -->
+    <section class="map-feature-section">
+      <div class="container">
+        <div class="map-feature-heading">
+          <h2>输入5位数美国邮编 (ZIP Code)</h2>
+          <p>查询五位邮编对应的城市、州信息，以及在地图上的真实区域定位。跨境电商可用此预估偏远地区附加费。</p>
+        </div>
+
+        <div class="map-feature-workspace">
+          <!-- 左侧表单与结果 -->
+          <div class="sy-panel">
+            <div class="panel-heading">邮编精准反查系统</div>
+            <div class="panel-body">
+              <div class="input-group">
+                <span class="input-group-addon">邮编</span>
+                <input type="text" class="form-control" id="zipCodeInput" placeholder="例如: 94043 或 10001" maxlength="5">
+                <button class="btn-search" onclick="lookupZip()">查 询</button>
+              </div>
+            </div>
+
+            <ul class="result-list">
+              <li class="result-item"><div class="result-label">邮编类型</div><div class="result-val" id="resZipType">等待查询...</div></li>
+              <li class="result-item"><div class="result-label">所属城市</div><div class="result-val" id="resZipCity">-</div></li>
+              <li class="result-item"><div class="result-label">所属州</div><div class="result-val" id="resZipState">-</div></li>
+              <li class="result-item"><div class="result-label">UPS预估</div><div class="result-val" id="resZipUps" style="color: #319653; font-weight: bold;">-</div></li>
+              <li class="result-item"><div class="result-label">FedEx预估</div><div class="result-val" id="resZipFedex" style="color: #319653; font-weight: bold;">-</div></li>
+            </ul>
+
+            <div class="loading-overlay" id="zipLoading">
+              <div class="spinner"></div>
+              <div style="color: #319653; font-weight: bold;">正在云端检索数据...</div>
+            </div>
+          </div>
+
+          <!-- 右侧地图 -->
+          <div class="map-shell">
+            <div id="zipMap" class="map-view"></div>
+            <div id="zipMapStatus" class="map-status">请输入有效邮编进行地图定位</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心功能 2：按地址精准查询邮编 -->
+    <section class="map-feature-section">
+      <div class="container">
+        <div class="map-feature-heading">
+          <h2>用地址查找美国邮政编码</h2>
+          <p>输入美国详细街道地址，系统将通过智能地理编码技术，为您提取最精准的唯一 ZIP Code 及地图坐标。</p>
+        </div>
+
+        <div class="map-feature-workspace">
+          <!-- 左侧表单与结果 -->
+          <div class="sy-panel">
+            <div class="panel-heading">地址智能解析系统</div>
+            <div class="panel-body">
+              <div class="input-group">
+                <span class="input-group-addon">地址</span>
+                <input type="text" class="form-control" id="addressInput" placeholder="例如: 1600 Amphitheatre Parkway, Mountain View">
+                <button class="btn-search" onclick="lookupAddress()">解 析</button>
+              </div>
+            </div>
+
+            <ul class="result-list">
+              <li class="result-item"><div class="result-label">标准化地址</div><div class="result-val" id="resAddrFull">等待解析...</div></li>
+              <li class="result-item"><div class="result-label">解析城市</div><div class="result-val" id="resAddrCity">-</div></li>
+              <li class="result-item"><div class="result-label">解析州</div><div class="result-val" id="resAddrState">-</div></li>
+              <li class="result-item"><div class="result-label">精准邮编</div><div class="result-val" id="resAddrZip" style="font-size: 1.2rem; color: #d97706; font-weight: bold;">-</div></li>
+            </ul>
+
+            <div class="loading-overlay" id="addrLoading">
+              <div class="spinner"></div>
+              <div style="color: #319653; font-weight: bold;">正在进行地理编码解析...</div>
+            </div>
+          </div>
+
+          <!-- 右侧地图 -->
+          <div class="map-shell">
+            <div id="addrMap" class="map-view"></div>
+            <div id="addrMapStatus" class="map-status">请输入美国地址以验证并在地图上显示</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 主体内容与SEO文案大全 -->
+    <section class="seo-section" id="seo-content">
+      <div class="container seo-article">
+        <h2>📮 关于美国邮编查询与地址校验：跨境业务的核心指南</h2>
+        <p><strong>美国邮政编码 (ZIP Code)</strong> 是美国邮政服务 (United States Postal Service, USPS) 使用的一种邮政编码，一般常以大写写作 <strong>ZIP</strong>。ZIP 是 Zone Improvement Plan (地区改进计划) 的简称，它暗示邮件可以以更有效率及快捷地送到目的地。</p>
+        <p>最基本的 ZIP 编号包括五个号码，随后为了提升自动化分拣的精度，USPS 增加了四个号码，使邮件可以精确传送到具体的街区甚至建筑物。增加号码后的 ZIP 编号称为 <strong>"ZIP+4"</strong>。</p>
+
+        <h3>深度解析：美国邮编格式与数字含义</h3>
+        <p>为了提高<strong>美国邮编查询</strong>的准确性，我们需要深入了解其编码规则。<strong>美国邮编</strong>通常包含5位数字，有时还会跟着一个短横线和4个额外的数字，形成一个更详细的9位邮编。</p>
+        <p>这种标准的格式为：ZIP code (5位数) + 短横线 (-) + 4位数补充编码。例如：<code>12345-6789</code>。</p>
+
+        <p><strong>5 位美国邮编解码：</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+          <li><strong>第 1 位数字：</strong>代表一个国家范围内的大地区，从 0（东部）到 9（西部）。</li>
+          <li><strong>第 2 - 3 位数字：</strong>表示一个更小的地理区域，通常是一个州或州的一部分。</li>
+          <li><strong>第 4 - 5 位数字：</strong>表示一个还更小的地域，如城市、镇或村庄。</li>
+        </ul>
+
+        <p><strong>9 位美国邮编（ZIP+4）：</strong>在 5 位数字后增加 "-XXXX"。</p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+          <li><strong>第 6 - 7 位数字：</strong>代表区域或几个街区。</li>
+          <li><strong>第 8 - 9 位数字：</strong>代表区段或街道的一侧。</li>
+        </ul>
+        <p><em>举例说明：</em>在进行<strong>美国邮编查询</strong>时，系统会显示 <code>90210</code> 是加州贝弗利山庄 (Beverly Hills) 的一个地区，而 <code>90210-1234</code> 则精确指向该地区内的一个极其具体的地址。</p>
+
+        <h3>标准国际包裹/信件地址写法示范</h3>
+        <div class="address-demo">
+          ABC MOVERS<br>
+          1500 E MAIN AVE STE 201<br>
+          SPRINGFIELD VA <span class="hl">22162–1010</span><br>
+          UNITED STATES OF AMERICA
+        </div>
+
+        <!-- 手风琴折叠内容区 -->
+        <div class="seo-accordion">
+          <details>
+            <summary>通过第一位数字快速判断美国邮编所属大区</summary>
+            <div class="details-content">
+              <p>在进行<strong>美国邮编查询</strong>时，如果您只知道邮编的第一位数字，其实已经可以大致判断出包裹的目的地范围。以下是按照大区域划分的<strong>美国邮编</strong>范围：</p>
+              <ul>
+                <li><strong>美东地区美国邮编：</strong> 邮政编码通常以 0、1、2、3 开头（例如纽约、波士顿等）。</li>
+                <li><strong>美中地区美国邮编：</strong> 邮政编码通常以 4、5、6、7 开头（例如芝加哥、达拉斯等）。</li>
+                <li><strong>美西地区美国邮编：</strong> 邮政编码通常以 8、9 开头（例如加州洛杉矶、西雅图、旧金山等）。</li>
+              </ul>
+              <p>掌握这个规律，能让您的跨境物流核算和分拣工作更加高效，减少盲目猜测的时间。</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>为什么精准的"美国邮编查询"对跨境电商至关重要？</summary>
+            <div class="details-content">
+              <p>对于从事亚马逊FBA、独立站或者海外仓的跨境卖家而言，<strong>美国邮编查询</strong>是物流核算的核心命脉。不同的<strong>美国邮编</strong>直接决定了末端派送的物流运费成本、偏远地区附加费等。如果不使用精准的<strong>美国邮编查询工具</strong>，可能会填错数字，导致包裹被派送到错误的集散中心。这不仅会产生昂贵的地址纠正附加费（Address Correction Fee），更严重的会导致包裹退回。强烈建议发货前使用本站顶部的智能校验系统核对地址的准确性。</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>如果我只知道城市，如何反查美国邮编？</summary>
+            <div class="details-content">
+              <p>这非常简单！本页面专为用户提供了"按地址反向解析"功能。您只需在顶部的输入框中填写您已知的城市名、街道或者所在州，我们的系统便会自动请求地理编码云接口，为您返回精准对应的<strong>美国邮政编码</strong>。同时，您也可以向下滚动页面，查看我们精心整理好的全美50个大州邮编目录大全，这对于手动批量进行<strong>美国邮编查询</strong>非常有帮助。</p>
+            </div>
+          </details>
+        </div>
+
+        <h2>🌟 美国主要城市邮编快查</h2>
+        <div class="major-city-grid">
+          <div class="major-city-item"><span class="zip">12201</span><span class="city">Albany</span><span class="state">New York (NY)</span></div>
+          <div class="major-city-item"><span class="zip">30301</span><span class="city">Atlanta</span><span class="state">Georgia (GA)</span></div>
+          <div class="major-city-item"><span class="zip">21401</span><span class="city">Annapolis</span><span class="state">Maryland (MD)</span></div>
+          <div class="major-city-item"><span class="zip">21201</span><span class="city">Baltimore</span><span class="state">Maryland (MD)</span></div>
+          <div class="major-city-item"><span class="zip">35201</span><span class="city">Birmingham</span><span class="state">Alabama (AL)</span></div>
+          <div class="major-city-item"><span class="zip">14201</span><span class="city">Buffalo</span><span class="state">New York (NY)</span></div>
+          <div class="major-city-item"><span class="zip">60601</span><span class="city">Chicago</span><span class="state">Illinois (IL)</span></div>
+          <div class="major-city-item"><span class="zip">45201</span><span class="city">Cincinnati</span><span class="state">Ohio (OH)</span></div>
+          <div class="major-city-item"><span class="zip">44101</span><span class="city">Cleveland</span><span class="state">Ohio (OH)</span></div>
+          <div class="major-city-item"><span class="zip">43201</span><span class="city">Columbus</span><span class="state">Ohio (OH)</span></div>
+          <div class="major-city-item"><span class="zip">75201</span><span class="city">Dallas</span><span class="state">Texas (TX)</span></div>
+          <div class="major-city-item"><span class="zip">80201</span><span class="city">Denver</span><span class="state">Colorado (CO)</span></div>
+          <div class="major-city-item"><span class="zip">99701</span><span class="city">Fairbanks</span><span class="state">Alaska (AK)</span></div>
+          <div class="major-city-item"><span class="zip">19101</span><span class="city">Philadelphia</span><span class="state">Pennsylvania (PA)</span></div>
+          <div class="major-city-item"><span class="zip">96801</span><span class="city">Honolulu</span><span class="state">Hawaii (HI)</span></div>
+          <div class="major-city-item"><span class="zip">46201</span><span class="city">Indianapolis</span><span class="state">Indiana (IN)</span></div>
+          <div class="major-city-item"><span class="zip">32099</span><span class="city">Jacksonville</span><span class="state">Florida (FL)</span></div>
+          <div class="major-city-item"><span class="zip">64101</span><span class="city">Kansas City</span><span class="state">Missouri (MO)</span></div>
+          <div class="major-city-item"><span class="zip">90001</span><span class="city">Los Angeles</span><span class="state">California (CA)</span></div>
+          <div class="major-city-item"><span class="zip">89101</span><span class="city">Las Vegas</span><span class="state">Nevada (NV)</span></div>
+          <div class="major-city-item"><span class="zip">55199</span><span class="city">Minneapolis</span><span class="state">Minnesota (MN)</span></div>
+          <div class="major-city-item"><span class="zip">10001</span><span class="city">New York</span><span class="state">New York (NY)</span></div>
+          <div class="major-city-item"><span class="zip">70112</span><span class="city">New Orleans</span><span class="state">Louisiana (LA)</span></div>
+          <div class="major-city-item"><span class="zip">68101</span><span class="city">Omaha</span><span class="state">Nebraska (NE)</span></div>
+          <div class="major-city-item"><span class="zip">85001</span><span class="city">Phoenix</span><span class="state">Arizona (AZ)</span></div>
+          <div class="major-city-item"><span class="zip">15201</span><span class="city">Pittsburgh</span><span class="state">Pennsylvania (PA)</span></div>
+          <div class="major-city-item"><span class="zip">84101</span><span class="city">Salt Lake City</span><span class="state">Utah (UT)</span></div>
+          <div class="major-city-item"><span class="zip">94203</span><span class="city">Sacramento</span><span class="state">California (CA)</span></div>
+          <div class="major-city-item"><span class="zip">92101</span><span class="city">San Diego</span><span class="state">California (CA)</span></div>
+          <div class="major-city-item"><span class="zip">94101</span><span class="city">San Francisco</span><span class="state">California (CA)</span></div>
+          <div class="major-city-item"><span class="zip">95101</span><span class="city">San Jose</span><span class="state">California (CA)</span></div>
+          <div class="major-city-item"><span class="zip">55101</span><span class="city">Saint Paul</span><span class="state">Minnesota (MN)</span></div>
+          <div class="major-city-item"><span class="zip">63101</span><span class="city">Saint Louis</span><span class="state">Missouri (MO)</span></div>
+          <div class="major-city-item"><span class="zip">98101</span><span class="city">Seattle</span><span class="state">Washington (WA)</span></div>
+          <div class="major-city-item"><span class="zip">33601</span><span class="city">Tampa</span><span class="state">Florida (FL)</span></div>
+        </div>
+
+        <h2>美国(United States) 51州邮政编码 (ZIP Code) 大全与电话区号</h2>
+        <div class="zip-directory-grid">
+          <div class="state-card">
+            <div class="state-header">一、亚拉巴马州 Alabama (AL)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：205 – 251 – 256 – 334</div>
+              <div class="city-zip-item"><strong>1、伯明翰 (Birmingham)</strong><span>Zip：35201~35238、35240、35242~35246、35249、35253~35255、35259~35261、35263、35266、35277~35283、35285~35299</span></div>
+              <div class="city-zip-item"><strong>2、蒙哥马利 (Montgomery)</strong><span>Zip：36101~36125、36130~36135、36140~36142、36177、36191</span></div>
+              <div class="city-zip-item"><strong>3、亨次维尔 (Huntsville)</strong><span>Zip：35801~35816、35824、35893~35899</span></div>
+              <div class="city-zip-item"><strong>4、土斯卡鲁沙 (Tuscaloosa)</strong><span>Zip：35401~35407、35485~35487</span></div>
+              <div class="city-zip-item"><strong>5、木比耳 (Mobile)</strong><span>Zip：36601~36628、36630~36633、36640、36641、36644、36652、36660、36663、36670、36671、36675、36685、36688~36691、36693、36695</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">二、阿拉斯加州 Alaska (AK)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：907</div>
+              <div class="city-zip-item"><strong>1、朱诺 (Juneau)</strong><span>Zip：99801~99803、99811、99850</span></div>
+              <div class="city-zip-item"><strong>2、安克拉奇 (Anchorage)</strong><span>Zip：99501~99504、99507~99599、99695</span></div>
+              <div class="city-zip-item"><strong>3、费尔班克斯 (Fairbanks)</strong><span>Zip：99701、99706~99712、99775、99790</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">三、亚利桑那州 Arizona (AZ)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：480 – 520 – 602 – 623 – 928</div>
+              <div class="city-zip-item"><strong>1、菲尼克斯/凤凰城 (Phoenix)</strong><span>Zip：85001~85046、85048、85050、85051、85053~85055、85060~85080、85082、85085、85086、85098、85099</span></div>
+              <div class="city-zip-item"><strong>2、图森 (Tucson)</strong><span>Zip：85701~85726、85728、85730、85737、85739、85752、85754、85775、85777</span></div>
+              <div class="city-zip-item"><strong>3、梅萨 (Mesa)</strong><span>Zip：85201~85208、85210~85216、85274、85275、85277</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">四、阿肯色州 Arkansas (AR)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：501 – 870</div>
+              <div class="city-zip-item"><strong>1、小石城 (Little Rock)</strong><span>Zip：72201~72207、72209~72217、72219、72221~72223、72225、72227、72231、72260、72295</span></div>
+              <div class="city-zip-item"><strong>2、费耶特维尔 (Fayetteville)</strong><span>Zip：72701~72704</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">五、加利福尼亚州 California (CA)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：209/213/310/323/408...等</div>
+              <div class="city-zip-item"><strong>1、萨克拉门托 (Sacramento)</strong><span>Zip：94203~94299、95812~95899</span></div>
+              <div class="city-zip-item"><strong>2、洛杉矶 (Los Angeles)</strong><span>Zip：90001~90189</span></div>
+              <div class="city-zip-item"><strong>3、旧金山 (San Francisco)</strong><span>Zip：94101~94188</span></div>
+              <div class="city-zip-item"><strong>4、圣地亚哥 (San Diego)</strong><span>Zip：92101~92199</span></div>
+              <div class="city-zip-item"><strong>5、圣荷西 (San Jose)</strong><span>Zip：95101~95196</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">六、科罗拉多州 Colorado (CO)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：303 – 719 – 720 – 970</div>
+              <div class="city-zip-item"><strong>1、丹佛 (Denver)</strong><span>Zip：80201~80295</span></div>
+              <div class="city-zip-item"><strong>2、波尔德 (Boulder)</strong><span>Zip：80301~80329</span></div>
+              <div class="city-zip-item"><strong>3、科罗拉多泉 (Colorado Springs)</strong><span>Zip：80901~80997</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">七、康涅狄格州 Connecticut (CT)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：203 – 860</div>
+              <div class="city-zip-item"><strong>1、哈特福 (Hartford)</strong><span>Zip：06101~06199</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">八、特拉华州 Delaware (DE)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：302</div>
+              <div class="city-zip-item"><strong>1、多佛 (Dover)</strong><span>Zip：19901~19906</span></div>
+              <div class="city-zip-item"><strong>2、威明顿 (Wilmington)</strong><span>Zip：19801~19899</span></div>
+              <div class="city-zip-item"><strong>3、纽华克 (Newark)</strong><span>Zip：19702~19726</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">九、佛罗里达州 Florida (FL)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：305/321/407/813...等</div>
+              <div class="city-zip-item"><strong>1、迈阿密 (Miami)</strong><span>Zip：33101~33299</span></div>
+              <div class="city-zip-item"><strong>2、坦帕 (Tampa)</strong><span>Zip：33601~33697</span></div>
+              <div class="city-zip-item"><strong>3、杰克逊维尔 (Jacksonville)</strong><span>Zip：32099~32277</span></div>
+              <div class="city-zip-item"><strong>4、塔拉哈西 (Tallahassee)</strong><span>Zip：32301~32399</span></div>
+            </div>
+          </div>
+
+          <div class="state-card">
+            <div class="state-header">十、乔治亚州 Georgia (GA)</div>
+            <div class="state-body">
+              <div class="area-code-badge">📞 电话区号：229/404/678/770...等</div>
+              <div class="city-zip-item"><strong>1、亚特兰大 (Atlanta)</strong><span>Zip：30301~30399、31106~31199、39901</span></div>
+              <div class="city-zip-item"><strong>2、哥伦布 (Columbus)</strong><span>Zip：31901~31999</span></div>
+              <div class="city-zip-item"><strong>3、梅肯 (Macon)</strong><span>Zip：31201~31299</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .us-zip-page :global(.site-main) {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .us-zip-tool-wrapper {
+    font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6;
+  }
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb {
+    background: #fff;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .breadcrumb a { color: #319653; text-decoration: none; }
+  .breadcrumb span { margin: 0 8px; color: #888; }
+
+  .map-feature-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+  }
+  .map-feature-section:nth-child(even) { background: #f8fafc; }
+  .map-feature-heading {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .map-feature-heading h2 {
+    font-size: 2rem;
+    color: #1a251a;
+    margin-bottom: 10px;
+  }
+  .map-feature-heading p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .map-feature-workspace {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+    align-items: stretch;
+  }
+  @media (max-width: 992px) {
+    .map-feature-workspace { grid-template-columns: 1fr; }
+  }
+
+  .sy-panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border-top: 4px solid #319653;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .panel-heading {
+    background: #f0fdf4;
+    padding: 15px 20px;
+    font-weight: bold;
+    color: #319653;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.1rem;
+  }
+  .panel-body { padding: 20px; }
+
+  .input-group {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ced4da;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .input-group-addon {
+    background: #f8f9fa;
+    padding: 12px 15px;
+    color: #495057;
+    border-right: 1px solid #ced4da;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+  .form-control {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+  }
+  .btn-search {
+    background: #319653;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  .btn-search:hover { background: #247540; }
+
+  .result-list {
+    list-style: none;
+    border-top: 1px solid #eee;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .result-item {
+    display: flex;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+  .result-label {
+    width: 90px;
+    color: #666;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .result-val {
+    color: #222;
+    font-weight: 500;
+    flex-grow: 1;
+    word-break: break-word;
+  }
+
+  .map-shell {
+    background: #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    min-height: 400px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    border: 1px solid #ddd;
+  }
+  .map-view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .map-status {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #555;
+    z-index: 10;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+  }
+  .map-status.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.9);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .loading-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #319653;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .seo-section {
+    padding: 50px 0;
+    background: #fff;
+  }
+  .seo-article {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .seo-article h2 {
+    font-size: 1.8rem;
+    color: #1a251a;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  .seo-article h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #319653;
+  }
+  .seo-article h3 {
+    font-size: 1.3rem;
+    color: #1a251a;
+    margin: 25px 0 15px;
+  }
+  .seo-article p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  .address-demo {
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 20px 25px;
+    border-radius: 8px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 20px 0;
+    border-left: 5px solid #319653;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .address-demo .hl { color: #4ade80; font-weight: bold; }
+
+  .major-city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+  }
+  .major-city-item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .major-city-item:hover {
+    border-color: #319653;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(49,150,83,0.1);
+  }
+  .major-city-item .zip {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #319653;
+    margin-bottom: 5px;
+  }
+  .major-city-item .city {
+    font-weight: bold;
+    color: #1e293b;
+    font-size: 0.95rem;
+  }
+  .major-city-item .state {
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  .zip-directory-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+  @media(max-width: 800px) {
+    .zip-directory-grid { grid-template-columns: 1fr; }
+  }
+  .state-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .state-card:hover {
+    box-shadow: 0 8px 25px rgba(49,150,83,0.08);
+    border-color: #319653;
+  }
+  .state-header {
+    background: #f8fafc;
+    padding: 15px 20px;
+    font-weight: bold;
+    color: #1a251a;
+    font-size: 1.15rem;
+    border-bottom: 1px solid #e2e8f0;
+    border-top: 3px solid #319653;
+  }
+  .state-body { padding: 20px; }
+  .area-code-badge {
+    font-size: 0.85rem;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+  }
+  .city-zip-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+  .city-zip-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .city-zip-item strong {
+    color: #319653;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.05rem;
+  }
+  .city-zip-item span {
+    color: #64748b;
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+
+  .seo-accordion { margin: 30px 0; }
+  .seo-accordion details {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .seo-accordion details:hover {
+    border-color: #319653;
+    box-shadow: 0 4px 15px rgba(49,150,83,0.05);
+  }
+  .seo-accordion summary {
+    padding: 18px 20px;
+    font-weight: bold;
+    color: #1a251a;
+    background: #f8fafc;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    font-size: 1.1rem;
+    border-left: 4px solid #319653;
+    outline: none;
+  }
+  .seo-accordion summary::-webkit-details-marker { display: none; }
+  .seo-accordion summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #319653;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+  .seo-accordion details[open] summary::after { content: '-'; }
+  .seo-accordion .details-content {
+    padding: 20px;
+    color: #444;
+    line-height: 1.8;
+    border-top: 1px solid #e2e8f0;
+    font-size: 1.05rem;
+  }
+</style>
+
+<script>
+  // Leaflet CDN
+  const leafletCSS = document.createElement('link');
+  leafletCSS.rel = 'stylesheet';
+  leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  leafletCSS.crossOrigin = '';
+  document.head.appendChild(leafletCSS);
+
+  const leafletJS = document.createElement('script');
+  leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  leafletJS.crossOrigin = '';
+  leafletJS.onload = initMaps;
+  document.head.appendChild(leafletJS);
+
+  let zipMapObj = null;
+  let addrMapObj = null;
+  let zipMarker = null;
+  let addrMarker = null;
+
+  function initMaps() {
+    zipMapObj = L.map('zipMap').setView([39.8283, -98.5795], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(zipMapObj);
+
+    addrMapObj = L.map('addrMap').setView([39.8283, -98.5795], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(addrMapObj);
+  }
+
+  async function lookupZip() {
+    const code = document.getElementById('zipCodeInput').value.trim();
+    if(!code || code.length !== 5) {
+      alert("请输入标准的 5 位数字美国邮编！");
+      return;
+    }
+    const loading = document.getElementById('zipLoading');
+    loading.classList.add('active');
+    try {
+      const response = await fetch(`https://api.zippopotam.us/us/${code}`);
+      if (!response.ok) throw new Error("无法找到该邮编，请核实后重试");
+      const data = await response.json();
+      const place = data.places[0];
+      document.getElementById('resZipType').textContent = "标准邮编";
+      document.getElementById('resZipCity').textContent = place['place name'];
+      document.getElementById('resZipState').textContent = place['state abbreviation'] + " (" + place['state'] + ")";
+      document.getElementById('resZipUps').textContent = "正常，无偏远附加费";
+      document.getElementById('resZipFedex').textContent = "正常，无偏远附加费";
+      document.getElementById('zipMapStatus').classList.add('hidden');
+      const lat = parseFloat(place.latitude);
+      const lon = parseFloat(place.longitude);
+      if(zipMarker) zipMapObj.removeLayer(zipMarker);
+      zipMarker = L.marker([lat, lon]).addTo(zipMapObj);
+      zipMarker.bindPopup(`<b>${place['place name']}, ${place['state abbreviation']}</b><br>ZIP: ${code}`).openPopup();
+      zipMapObj.flyTo([lat, lon], 12);
+    } catch (error) {
+      alert(error.message);
+    } finally {
+      loading.classList.remove('active');
+    }
+  }
+
+  async function lookupAddress() {
+    const address = document.getElementById('addressInput').value.trim();
+    if(!address) {
+      alert("请输入需要解析的美国地址！");
+      return;
+    }
+    const loading = document.getElementById('addrLoading');
+    loading.classList.add('active');
+    try {
+      const query = encodeURIComponent(address);
+      const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${query}&countrycodes=us&format=json&addressdetails=1&limit=1`, {
+        headers: { 'Accept-Language': 'en-US,en' }
+      });
+      const data = await response.json();
+      if (data && data.length > 0) {
+        const result = data[0];
+        const addrInfo = result.address;
+        const zip = addrInfo.postcode || "未找到精确邮编";
+        const city = addrInfo.city || addrInfo.town || addrInfo.village || addrInfo.county || "未知城市";
+        const state = addrInfo.state || "未知州";
+        document.getElementById('resAddrFull').textContent = result.display_name;
+        document.getElementById('resAddrCity').textContent = city;
+        document.getElementById('resAddrState').textContent = state;
+        document.getElementById('resAddrZip').textContent = zip;
+        document.getElementById('addrMapStatus').classList.add('hidden');
+        const lat = parseFloat(result.lat);
+        const lon = parseFloat(result.lon);
+        if(addrMarker) addrMapObj.removeLayer(addrMarker);
+        addrMarker = L.marker([lat, lon]).addTo(addrMapObj);
+        addrMarker.bindPopup(`<b>${city}, ${state}</b><br>提取的 ZIP: ${zip}`).openPopup();
+        addrMapObj.flyTo([lat, lon], 14);
+      } else {
+        throw new Error("抱歉，无法精确解析该地址。请尝试补充街道或城市名称，并确保拼写正确。");
+      }
+    } catch (error) {
+      alert(error.message);
+    } finally {
+      loading.classList.remove('active');
+    }
+  }
+</script>

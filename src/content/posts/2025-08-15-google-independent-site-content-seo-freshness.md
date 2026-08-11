@@ -1,15 +1,17 @@
 ---
 title: "独立站要搞懂：谷歌SEO内容新鲜度（Content Freshness）"
-description: "大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up"
+description: "解释 Google 为什么重视内容新鲜度，独立站文章如何更新、补充案例和维护旧页面，避免内容长期不动影响排名。"
 pubDate: 2025-08-15
 updatedDate: 2025-08-15
 heroImage: "/images/posts/2025-08-15-google-independent-site-content-seo-freshness/image-001-777d3daffe.png"
 category: "keyword-content"
 tags:
-  - "关键词与内容"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "SEO内容"
+  - "内容新鲜度"
+  - "Google内容更新"
+  - "旧文章维护"
+  - "独立站内容SEO"
+  - "Freshness算法"
+  - "页面更新策略"
 ---
 大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up
 

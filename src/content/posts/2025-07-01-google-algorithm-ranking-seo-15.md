@@ -1,15 +1,17 @@
 ---
 title: "算法又更新？一次性搞懂谷歌SEO排名的15大算法"
-description: "大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码"
+description: "结合 Google 算法和排名波动，分析 15 个影响独立站 SEO 的关键因素，帮助站长判断问题出在哪里。"
 pubDate: 2025-07-01
 updatedDate: 2025-07-01
 heroImage: "/images/posts/2025-07-01-google-algorithm-ranking-seo-15/image-001-fdf9495210.png"
 category: "google-algorithm"
 tags:
-  - "谷歌算法更新"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "谷歌算法"
+  - "Google算法"
+  - "排名波动"
+  - "SEO排名因素"
+  - "算法更新"
+  - "独立站诊断"
+  - "搜索排名"
 ---
 大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码
 

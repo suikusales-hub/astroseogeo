@@ -1,9 +1,9 @@
 ---
 title: "3月7-8日 外贸SEO陪跑开始报名，可免费复训"
-description: "2026年3月7-8日，SEO小平在深圳举办新一期外贸SEO课程！加微信Xiao_Ping_Up 直接报名，全国各地均可报名，线下课需至深圳参加。（不售线上课）"
+description: "2026年3月7-8日，SEO小平在深圳举办新一期外贸SEO课程！加微信Xiao_Ping_Up 直接报名，全国各地均可报名，线下课需至深圳参加。（不售线上课）  ![3月7-8日 外贸SEO陪跑开始报名，可免费复训 配图](/images/posts/2026-02-24-fo"
 pubDate: 2026-02-24
 updatedDate: 2026-02-24
-heroImage: "/images/posts/2026-02-24-foreign-trade-coaching-free-3-7/image-001-4d2df95881.png"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "SEO陪跑"
 ---
+
 2026年3月7-8日，SEO小平在深圳举办新一期外贸SEO课程！加微信Xiao_Ping_Up 直接报名，全国各地均可报名，线下课需至深圳参加。（不售线上课）
 
 ![3月7-8日 外贸SEO陪跑开始报名，可免费复训 配图](/images/posts/2026-02-24-foreign-trade-coaching-free-3-7/image-001-4d2df95881.png)

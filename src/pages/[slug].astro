@@ -2,7 +2,8 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ArticleSidebar from '../components/ArticleSidebar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { POST_CATEGORIES } from '../data/categories';
+import PostCover from '../components/PostCover.astro';
+import { getPostCategory, POST_CATEGORIES } from '../data/categories';
 import { toPostSlug } from '../lib/slug';
 
 type PostEntry = CollectionEntry<'posts'>;
@@ -41,6 +42,7 @@ export async function getStaticPaths() {
 const { post, slug } = Astro.props as Props;
 const { Content } = await render(post);
 const { title, description, pubDate, updatedDate, heroImage, tags } = post.data;
+const category = getPostCategory(post.data.category);
 const canonicalUrl = `/${slug}`;
 const publishedIso = pubDate.toISOString();
 const updatedIso = updatedDate.toISOString();
@@ -66,12 +68,54 @@ const recommendedPosts =
         return orderedPosts[nextIndex];
       });
 
+const metaKeywords = buildMetaKeywords({
+  title,
+  tags,
+  categoryName: category?.name,
+});
+
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('zh-CN', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
   }).format(date);
+}
+
+function buildMetaKeywords({
+  title,
+  tags,
+  categoryName,
+}: {
+  title: string;
+  tags: string[];
+  categoryName?: string;
+}) {
+  const titleKeywords = title
+    .split(/[|｜:：,，、;；!！?？()（）[\]【】/]+/)
+    .map((value) => value.replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+    .slice(0, 3);
+
+  if (titleKeywords.length === 0) {
+    titleKeywords.push(title.trim());
+  }
+
+  const deduped = new Map<string, string>();
+
+  for (const keyword of [...titleKeywords, ...(categoryName ? [categoryName] : []), ...tags]) {
+    const normalized = keyword.replace(/\s+/g, ' ').trim();
+
+    if (!normalized) continue;
+
+    const key = normalized.toLowerCase();
+
+    if (!deduped.has(key)) {
+      deduped.set(key, normalized);
+    }
+  }
+
+  return Array.from(deduped.values()).slice(0, 8);
 }
 ---
 
@@ -83,7 +127,7 @@ function formatDate(date: Date) {
   schemaType="BlogPosting"
   datePublished={publishedIso}
   dateModified={updatedIso}
-  keywords={tags}
+  keywords={metaKeywords}
 >
   <div class="article-layout">
     <article class="article-shell glass-panel">
@@ -105,7 +149,7 @@ function formatDate(date: Date) {
         </div>
       </header>
 
-      <img class="hero-image" src={heroImage} alt={title} loading="eager" decoding="async" />
+      <PostCover image={heroImage} title={title} variant="hero" loading="eager" decoding="async" />
 
       <div class="article-content">
         <Content />
@@ -127,7 +171,7 @@ function formatDate(date: Date) {
     display: grid;
     gap: clamp(1.5rem, 3vw, 2.5rem);
     padding: clamp(1.25rem, 4vw, 3rem);
-    border-radius: 8px;
+    border-radius: 18px;
   }
 
   .article-header {
@@ -143,19 +187,19 @@ function formatDate(date: Date) {
   }
 
   h1 {
-    max-width: 46rem;
+    max-width: 60rem;
     margin: 0;
     color: var(--color-text);
-    font-size: 0.5rem;
+    font-size: 2.05rem;
     font-weight: 900;
     line-height: 1.32;
     letter-spacing: 0;
   }
 
   .article-description {
-    max-width: 44rem;
+    max-width: 58rem;
     margin: 0;
-    color: rgba(31, 21, 15, 0.72);
+    color: rgba(255, 255, 255, 0.72);
     font-size: 1.14rem;
     line-height: 1.9;
   }
@@ -164,7 +208,7 @@ function formatDate(date: Date) {
     display: flex;
     flex-wrap: wrap;
     gap: 0.55rem;
-    color: rgba(31, 21, 15, 0.56);
+    color: rgba(255, 255, 255, 0.56);
     font-size: 0.94rem;
   }
 
@@ -175,9 +219,9 @@ function formatDate(date: Date) {
   }
 
   .tag-list span {
-    border: 1px solid rgba(239, 125, 0, 0.18);
-    border-radius: 8px;
-    background: rgba(239, 125, 0, 0.1);
+    border: 1px solid rgba(217, 83, 0, 0.26);
+    border-radius: 18px;
+    background: rgba(217, 83, 0, 0.16);
     color: var(--color-text);
     font-size: 0.86rem;
     font-weight: 750;
@@ -185,19 +229,12 @@ function formatDate(date: Date) {
     padding: 0.48rem 0.65rem;
   }
 
-  .hero-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 24px 70px rgba(31, 21, 15, 0.12);
-  }
-
   .article-content {
-    max-width: 46rem;
-    color: rgba(31, 21, 15, 0.86);
+    max-width: 60rem;
+    color: rgba(255, 255, 255, 0.82);
     font-size: 1.04rem;
     line-height: 1.95;
+    overflow-wrap: anywhere;
   }
 
   .article-content :global(*) {
@@ -254,42 +291,214 @@ function formatDate(date: Date) {
 
   .article-content :global(blockquote) {
     border-left: 4px solid var(--color-primary);
-    border-radius: 8px;
-    background: rgba(239, 125, 0, 0.08);
-    color: rgba(31, 21, 15, 0.76);
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(239, 125, 0, 0.12), rgba(255, 247, 215, 0.06)),
+      rgba(255, 255, 255, 0.045);
+    color: rgba(255, 255, 255, 0.76);
     padding: 0.85rem 1rem;
+  }
+
+  .article-content :global(table) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid rgba(217, 83, 0, 0.22);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.035)),
+      rgba(23, 23, 28, 0.72);
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.22);
+  }
+
+  .article-content :global(th),
+  .article-content :global(td) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    min-width: 10rem;
+    padding: 0.85rem 0.95rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .article-content :global(th) {
+    background: rgba(217, 83, 0, 0.16);
+    color: var(--color-text);
+    font-size: 0.92rem;
+    font-weight: 900;
+  }
+
+  .article-content :global(td) {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .article-content :global(tr:last-child td) {
+    border-bottom: 0;
+  }
+
+  .article-content :global(th:last-child),
+  .article-content :global(td:last-child) {
+    border-right: 0;
   }
 
   .article-content :global(code) {
     border-radius: 6px;
-    background: rgba(31, 21, 15, 0.08);
-    color: var(--color-text);
+    background: rgba(248, 233, 165, 0.16);
+    color: #1f150f;
     font-size: 0.9em;
     padding: 0.15rem 0.35rem;
   }
 
   .article-content :global(pre) {
     overflow-x: auto;
-    border-radius: 8px;
-    background: #1f150f;
-    color: #fff7ed;
-    padding: 1rem;
+    border: 1px solid rgba(245, 213, 92, 0.5);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 247, 212, 0.97), rgba(246, 231, 162, 0.94));
+    color: #1f150f;
+    box-shadow: 0 18px 48px rgba(118, 80, 23, 0.18);
+    padding: clamp(1rem, 2.8vw, 1.25rem);
   }
 
   .article-content :global(pre code) {
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-word;
     background: transparent;
     color: inherit;
+    font-size: 0.95rem;
+    line-height: 1.85;
     padding: 0;
   }
 
+  .article-content :global(pre strong),
+  .article-content :global(pre span),
+  .article-content :global(pre em) {
+    color: #1f150f;
+  }
+
   .article-content :global(img) {
-    border-radius: 8px;
+    border-radius: 18px;
+  }
+
+  .article-content :global(.content-lead) {
+    margin: 0 0 1.6rem;
+    border: 1px solid rgba(239, 125, 0, 0.2);
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(255, 248, 229, 0.08), rgba(239, 125, 0, 0.08)),
+      rgba(255, 255, 255, 0.045);
+    box-shadow: 0 18px 44px rgba(239, 125, 0, 0.1);
+    padding: clamp(1rem, 3vw, 1.45rem);
+  }
+
+  .article-content :global(.content-lead strong),
+  .article-content :global(.insight-card strong),
+  .article-content :global(.quote-card strong) {
+    color: var(--color-primary);
+  }
+
+  .article-content :global(.insight-card),
+  .article-content :global(.quote-card),
+  .article-content :global(.action-list),
+  .article-content :global(.figure-card) {
+    margin: 1.4rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035)),
+      rgba(23, 23, 28, 0.72);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: clamp(1rem, 3vw, 1.35rem);
+  }
+
+  .article-content :global(.insight-card) {
+    border-color: rgba(239, 125, 0, 0.2);
+  }
+
+  .article-content :global(.quote-card) {
+    border-left: 5px solid var(--color-primary);
+  }
+
+  .article-content :global(.metric-strip) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1.4rem 0;
+  }
+
+  .article-content :global(.metric-strip > div) {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035)),
+      rgba(23, 23, 28, 0.72);
+    padding: 1rem;
+  }
+
+  .article-content :global(.metric-strip span) {
+    display: block;
+    color: var(--color-primary);
+    font-size: 0.84rem;
+    font-weight: 850;
+  }
+
+  .article-content :global(.metric-strip strong) {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--color-text);
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .article-content :global(.comparison-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .article-content :global(.comparison-grid > div) {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035)),
+      rgba(23, 23, 28, 0.72);
+    padding: 1.1rem;
+  }
+
+  .article-content :global(.comparison-grid h3) {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 1.08rem;
+  }
+
+  .article-content :global(.action-list ol),
+  .article-content :global(.action-list ul) {
+    margin-bottom: 0;
+  }
+
+  .article-content :global(.figure-card img) {
+    width: 100%;
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
+  }
+
+  .article-content :global(.figure-card figcaption) {
+    margin-top: 0.7rem;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.9rem;
+    line-height: 1.7;
   }
 
   @media (max-width: 680px) {
     h1 {
       max-width: 100%;
-      font-size: 0.5rem;
+      font-size: 1.55rem;
     }
 
     .article-shell {
@@ -303,6 +512,11 @@ function formatDate(date: Date) {
     .article-content :global(h2) {
       font-size: 1.55rem;
     }
+
+    .article-content :global(.metric-strip),
+    .article-content :global(.comparison-grid) {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (min-width: 1080px) {
@@ -313,8 +527,6 @@ function formatDate(date: Date) {
     .article-layout :global(aside) {
       position: sticky;
       top: 6rem;
-      max-height: calc(100vh - 7rem);
-      overflow: auto;
     }
   }
 </style>

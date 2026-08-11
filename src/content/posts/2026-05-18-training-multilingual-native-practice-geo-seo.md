@@ -1,9 +1,9 @@
 ---
 title: "小班制培训：GEO + SEO + 纯血小语种2天1夜实操课"
-description: "5 月 16 日 - 17 日，SEO 小平 “独立站 SEO 运营” 两天一夜线下陪跑特训在深圳龙华圆满落幕。"
+description: "5 月 16 日 - 17 日，SEO 小平 “独立站 SEO 运营” 两天一夜线下陪跑特训在深圳龙华圆满落幕。  ![小班制培训：GEO + SEO + 纯血小语种2天1夜实操课 配图](/images/posts/2026-05-18-training-multilingua"
 pubDate: 2026-05-18
 updatedDate: 2026-05-18
-heroImage: "/images/posts/2026-05-18-training-multilingual-native-practice-geo-seo/image-001-4b9e7009a0.jpg"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -12,6 +12,7 @@ tags:
   - "GEO"
   - "小语种SEO"
 ---
+
 5 月 16 日 - 17 日，SEO 小平 “独立站 SEO 运营” 两天一夜线下陪跑特训在深圳龙华圆满落幕。
 
 ![小班制培训：GEO + SEO + 纯血小语种2天1夜实操课 配图](/images/posts/2026-05-18-training-multilingual-native-practice-geo-seo/image-001-4b9e7009a0.jpg)

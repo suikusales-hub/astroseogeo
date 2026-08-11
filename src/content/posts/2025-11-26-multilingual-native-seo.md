@@ -1,14 +1,17 @@
 ---
 title: "什么是纯血版小语种SEO，这为什么是蓝海市场"
-description: "各位做SEO老铁们大家好，我是死磕谷歌SEO独立站9年的SEO小平，专注英语以及各个国家小语种独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up"
+description: "系统说明纯血版小语种 SEO 的核心标准，强调一站一语言、本地关键词、文化适配和 AI 原生内容生产。"
 pubDate: 2025-11-26
 updatedDate: 2025-11-26
 heroImage: "/images/posts/2025-11-26-multilingual-native-seo/image-001-4e9b83d7ad.png"
 category: "multilingual-seo"
 tags:
-  - "小语种SEO"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "纯血版小语种SEO"
+  - "一站一语言"
+  - "本地关键词研究"
+  - "文化适配"
+  - "AI原生内容"
+  - "多语言独立站"
 ---
 各位做SEO老铁们大家好，我是死磕谷歌SEO独立站9年的SEO小平，专注英语以及各个国家小语种独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up
 

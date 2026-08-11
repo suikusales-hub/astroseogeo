@@ -1,16 +1,17 @@
 ---
 title: "深耕实战・赋能外贸！SEO 小平第八期外贸 SEO+GEO 陪跑圆满落幕"
-description: "SEO的老铁们，大家好，我是死磕谷歌SEO独立站9年的SEO小平，专注英语以及各个国家小语种独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up"
+description: "记录第八期外贸 SEO+GEO 陪跑课的核心内容，涵盖外贸独立站、AI 搜索优化、实操训练与一年陪跑赋能安排。"
 pubDate: 2025-11-23
 updatedDate: 2025-11-23
 heroImage: "/images/posts/2025-11-23-foreign-trade-coaching-seo-geo/image-001-bc024d5be9.jpg"
 category: "ai-geo"
 tags:
-  - "AI与GEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "GEO"
-  - "SEO陪跑"
+  - "外贸SEO陪跑"
+  - "GEO培训"
+  - "AI搜索优化"
+  - "深圳SEO课程"
+  - "跨境独立站"
+  - "SEO实战训练"
 ---
 SEO的老铁们，大家好，我是死磕谷歌SEO独立站9年的SEO小平，专注英语以及各个国家小语种独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up
 

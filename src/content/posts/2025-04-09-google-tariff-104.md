@@ -1,14 +1,17 @@
 ---
 title: "关税飙升到104%，出口企业如何借谷歌平台另辟蹊径"
-description: "外贸以及跨境电商行业的朋友大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "从 104% 关税话题切入，分析外贸企业为什么要尽早布局 Google SEO、小语种市场和低成本自然流量渠道。"
 pubDate: 2025-04-09
 updatedDate: 2025-04-09
 heroImage: "/images/posts/2025-04-09-google-tariff-104/image-001-a079643588.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "104关税"
+  - "外贸SEO应对"
+  - "低成本流量"
+  - "小语种市场"
+  - "Google自然流量"
+  - "外贸风险"
 ---
 外贸以及跨境电商行业的朋友大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

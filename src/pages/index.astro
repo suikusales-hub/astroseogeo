@@ -5,6 +5,7 @@ import About from '../components/About.astro';
 import Hero from '../components/Hero.astro';
 import LatestArticles from '../components/LatestArticles.astro';
 import Services from '../components/Services.astro';
+import HomeCta from '../components/HomeCta.astro';
 import { toPostSlug } from '../lib/slug';
 
 const posts = (await getCollection('posts'))
@@ -32,5 +33,6 @@ const posts = (await getCollection('posts'))
     <About />
     <Services />
     <LatestArticles posts={posts} />
+    <HomeCta />
   </div>
 </BaseLayout>

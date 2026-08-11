@@ -1,15 +1,16 @@
 ---
 title: "NotebookLM 做的PPT 颜色太单调，怎么改"
-description: "最近很火的谷歌知识库工具NotebookLM 火出圈了，但是我看到很多博主发出来的NotebookLM 做的演示文稿和信息图这些配色很死板，很单调，很压抑。 你看我上面的图片配色就是根据我定制的需求做出来的。 今天SEO小平教你怎么改掉这个死板的配色。 方法一： 点开NotebookLM的编辑功能…"
+description: "最近很火的谷歌知识库工具NotebookLM 火出圈了，但是我看到很多博主发出来的NotebookLM 做的演示文稿和信息图这些配色很死板，很单调，很压抑。  你看我上面的图片配色就是根据我定制的需求做出来的。  今天SEO小平教你怎么改掉这个死板的配色。 方法一： 点开Note"
 pubDate: 2026-01-16
 updatedDate: 2026-01-16
-heroImage: "/images/posts/2026-01-16-notebooklm-ppt/image-001-c798bd5850.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 最近很火的谷歌知识库工具NotebookLM 火出圈了，但是我看到很多博主发出来的NotebookLM 做的演示文稿和信息图这些配色很死板，很单调，很压抑。
 
 你看我上面的图片配色就是根据我定制的需求做出来的。

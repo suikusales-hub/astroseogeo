@@ -1,15 +1,17 @@
 ---
 title: "谷歌算法又双叒叕更新？Google SEO算法为啥一直在更新？"
-description: "大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。"
+description: "从谷歌算法更新带来的流量波动出发，讲解独立站如何通过多站布局、小语种市场和白帽策略降低风险。"
 pubDate: 2025-03-20
 updatedDate: 2025-03-20
 heroImage: "/images/posts/2025-03-20-google-algorithm-seo/image-001-8d8a6e9515.png"
 category: "google-algorithm"
 tags:
   - "谷歌算法更新"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "谷歌算法"
+  - "流量波动"
+  - "白帽SEO策略"
+  - "多站布局"
+  - "风险分散"
+  - "小语种SEO"
 ---
 大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。
 

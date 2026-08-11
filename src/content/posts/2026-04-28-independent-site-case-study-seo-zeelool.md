@@ -1,9 +1,9 @@
 ---
 title: "拆解SEO养鱼模式成功案例 Zeelool 眼镜独立站"
-description: "大家好，我是做了10年谷歌SEO的跨境电商卖家：SEO小平。今天我们来拆解一个眼镜品牌独立站。Zeelool.com"
+description: "大家好，我是做了10年谷歌SEO的跨境电商卖家：SEO小平。今天我们来拆解一个眼镜品牌独立站。Zeelool.com  ![拆解SEO养鱼模式成功案例 Zeelool 眼镜独立站 配图](/images/posts/2026-04-28-independent-site-case"
 pubDate: 2026-04-28
 updatedDate: 2026-04-28
-heroImage: "/images/posts/2026-04-28-independent-site-case-study-seo-zeelool/image-001-a67b1de35a.png"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "SEO案例"
 ---
+
 大家好，我是做了10年谷歌SEO的跨境电商卖家：SEO小平。今天我们来拆解一个眼镜品牌独立站。Zeelool.com
 
 ![拆解SEO养鱼模式成功案例 Zeelool 眼镜独立站 配图](/images/posts/2026-04-28-independent-site-case-study-seo-zeelool/image-001-a67b1de35a.png)

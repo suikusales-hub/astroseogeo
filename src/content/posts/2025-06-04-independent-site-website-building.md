@@ -1,14 +1,17 @@
 ---
 title: "独立站建站多少钱？住“城中村” 或者“别墅” 你选哪一个档次？"
-description: "大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码"
+description: "分享独立站建站的实战思路，从工具选择、页面结构、SEO 基础到后续运营，帮助新手避免只建不推广。"
 pubDate: 2025-06-04
 updatedDate: 2025-06-04
 heroImage: "/images/posts/2025-06-04-independent-site-website-building/image-001-fdf9495210.png"
 category: "website-building"
 tags:
   - "独立站建站"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "外贸网站建设"
+  - "建站实战"
+  - "SEO基础配置"
+  - "页面结构"
+  - "网站运营"
 ---
 大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码
 

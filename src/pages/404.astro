@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { toPostSlug } from '../lib/slug';
+
+const categoryLinks = [
+  { href: '/seo-tutorial', label: 'SEO基础教程', icon: 'fa-solid fa-graduation-cap' },
+  { href: '/google-algorithm', label: '谷歌算法更新', icon: 'fa-solid fa-wave-square' },
+  { href: '/ai-geo', label: 'AI与GEO', icon: 'fa-solid fa-wand-magic-sparkles' },
+  { href: '/multilingual-seo', label: '小语种SEO', icon: 'fa-solid fa-language' },
+  { href: '/website-building', label: '独立站建站', icon: 'fa-solid fa-layer-group' },
+  { href: '/keyword-content', label: '关键词与内容', icon: 'fa-solid fa-pen-nib' },
+  { href: '/technical-seo', label: '技术SEO工具', icon: 'fa-solid fa-screwdriver-wrench' },
+  { href: '/case-study', label: '案例与陪跑', icon: 'fa-solid fa-chart-line' },
+];
+
+const recommendedPosts = (await getCollection('posts'))
+  .map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    pubDate: post.data.pubDate,
+    slug: toPostSlug(post.id),
+  }))
+  .filter((post) => post.slug)
+  .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
+  .slice(0, 4);
+---
+
+<BaseLayout
+  title="404 页面走丢了"
+  description="你访问的页面不存在。回到 SEO小平首页，或继续查看谷歌 SEO、AI GEO、独立站建站与技术 SEO 文章。"
+  canonicalUrl="/404"
+  noindex={true}
+>
+  <section class="grid gap-8 py-10" aria-labelledby="not-found-title">
+    <header class="glass-panel rounded-2xl p-8 text-center md:p-10">
+      <p class="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#f59e0b]">404 Not Found</p>
+      <h1 id="not-found-title" class="mx-auto mb-5 max-w-3xl text-4xl font-black leading-tight tracking-tight text-white">
+        这页跑去做 SEO 了，暂时没回来
+      </h1>
+      <p class="mx-auto max-w-2xl text-base leading-8 text-white/72 md:text-lg">
+        你访问的链接可能输错了、文章地址变了，或者这个页面已经悄悄下线。别急，流量可以丢，方向不能丢。
+      </p>
+
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href="/"
+          class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-br from-[#f59e0b] via-[#d95300] to-[#d4087c] px-6 font-bold text-white shadow-[0_0_20px_rgba(217,83,0,0.35)] transition hover:brightness-110 sm:w-auto"
+        >
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>回到首页</span>
+        </a>
+        <a
+          href="/seo-tutorial"
+          class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/5 px-6 font-bold text-white backdrop-blur-md transition hover:border-[#d95300] hover:text-[#f59e0b] sm:w-auto"
+        >
+          <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+          <span>看SEO教程</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/5 px-6 font-bold text-white backdrop-blur-md transition hover:border-[#d95300] hover:text-[#f59e0b] sm:w-auto"
+        >
+          <i class="fa-brands fa-weixin" aria-hidden="true"></i>
+          <span>联系小平</span>
+        </a>
+      </div>
+    </header>
+
+    <section class="glass-panel rounded-2xl p-6 md:p-8" aria-labelledby="not-found-categories">
+      <div class="mb-6 flex items-end justify-between gap-4">
+        <div>
+          <h2 id="not-found-categories" class="mb-2 text-2xl font-black tracking-tight text-white">换条路继续逛</h2>
+          <p class="text-sm leading-7 text-white/68">下面这些入口都是真实存在的，适合继续找干货。</p>
+        </div>
+      </div>
+
+      <nav class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="推荐分类">
+        {categoryLinks.map((link) => (
+          <a
+            href={link.href}
+            class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 font-bold text-white/78 transition hover:border-[#d95300]/35 hover:text-[#f59e0b]"
+          >
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#d95300]/12 text-[#f59e0b]">
+              <i class={link.icon} aria-hidden="true"></i>
+            </span>
+            <span>{link.label}</span>
+          </a>
+        ))}
+      </nav>
+    </section>
+
+    <section class="glass-panel rounded-2xl p-6 md:p-8" aria-labelledby="not-found-posts">
+      <div class="mb-6">
+        <h2 id="not-found-posts" class="mb-2 text-2xl font-black tracking-tight text-white">最近更新</h2>
+        <p class="text-sm leading-7 text-white/68">页面没找到，但文章还在更新。</p>
+      </div>
+
+      <div class="grid gap-4">
+        {recommendedPosts.map((post) => (
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-[#d95300]/35">
+            <h3 class="mb-2 text-[18px] font-black leading-snug tracking-tight text-white">
+              <a href={`/${post.slug}`} class="transition hover:text-[#f59e0b]">{post.title}</a>
+            </h3>
+            <p class="line-clamp-2 text-sm leading-7 text-white/68">{post.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </section>
+</BaseLayout>

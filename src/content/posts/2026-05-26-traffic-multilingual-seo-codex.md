@@ -1,9 +1,9 @@
 ---
 title: "SEO小平实战 Codex做小语种SEO 流量翻三倍"
-description: "大家好，我是死磕谷歌 SEO 10年的独立站卖家的 SEO小平。我最近宣传了一下Codex做外贸站群，很多人担心说内容AI写的，代码也是AI写的会不会被处罚。"
+description: "大家好，我是死磕谷歌 SEO 10年的独立站卖家的 SEO小平。我最近宣传了一下Codex做外贸站群，很多人担心说内容AI写的，代码也是AI写的会不会被处罚。  SEO小平自己是卖家，自己公司所有网站都是这么操作的，我的成功案例能支撑我的说法。那直接来看SEO小平的结果吧，这是我"
 pubDate: 2026-05-26
 updatedDate: 2026-05-26
-heroImage: "/images/posts/2026-05-26-traffic-multilingual-seo-codex/image-001-149b6d5fa5.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "小语种SEO"
 ---
+
 大家好，我是死磕谷歌 SEO 10年的独立站卖家的 SEO小平。我最近宣传了一下Codex做外贸站群，很多人担心说内容AI写的，代码也是AI写的会不会被处罚。
 
 SEO小平自己是卖家，自己公司所有网站都是这么操作的，我的成功案例能支撑我的说法。那直接来看SEO小平的结果吧，这是我们的一个波兰语网站（一个网站就唯一的一种语言：波兰语），是一个老网站，使用Codex（之前是用的claude code不流畅，Codex用上之后效率更高了）

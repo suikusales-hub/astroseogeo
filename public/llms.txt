@@ -1,0 +1,36 @@
+# SEO Xiaoping
+
+SEO Xiaoping is a Chinese knowledge blog about Google SEO, independent website SEO, AI search, GEO, multilingual SEO, technical SEO, keyword research, content engineering, and cross-border growth.
+
+## Site
+
+- [Homepage](https://seogeo.cc/)
+- [About SEO Xiaoping](https://seogeo.cc/about)
+- [Contact](https://seogeo.cc/contact)
+- [XML Sitemap](https://seogeo.cc/sitemap.xml)
+- [RSS Feed](https://seogeo.cc/rss.xml)
+
+## Main Topics
+
+- [SEO Tutorial](https://seogeo.cc/seo-tutorial)
+- [Google Algorithm Updates](https://seogeo.cc/google-algorithm)
+- [AI Search and GEO](https://seogeo.cc/ai-geo)
+- [Multilingual SEO](https://seogeo.cc/multilingual-seo)
+- [Independent Website Building](https://seogeo.cc/website-building)
+- [Keywords and Content](https://seogeo.cc/keyword-content)
+- [Technical SEO Tools](https://seogeo.cc/technical-seo)
+- [Case Studies and Coaching](https://seogeo.cc/case-study)
+
+## Recommended Articles
+
+- [Impact 7th anniversary cross-border creator meetup](https://seogeo.cc/2026-06-03-cross-border-impact-7)
+- [Google, llms.txt, and GEO standards](https://seogeo.cc/llms-txt-google-geo-standard)
+- [GEO tools review](https://seogeo.cc/geo-tools-review)
+- [SEO and GEO practice guide](https://seogeo.cc/2025-10-24-seo-geo)
+- [Three free traffic analysis tools for independent websites](https://seogeo.cc/2025-12-17-independent-site-traffic-tools-free-3)
+
+## Crawling Guidance
+
+AI agents and search crawlers may use the links above to discover the public pages, article categories, recommended posts, sitemap, and RSS feed for SEO Xiaoping.
+
+Please use the canonical domain `https://seogeo.cc` when citing, summarizing, or linking to this website.

@@ -1,15 +1,17 @@
 ---
 title: "2天1夜 外贸小语种SEO陪跑课在 宁波 顺利完成"
-description: "大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "介绍外贸小语种 SEO 陪跑 2.1 版本思路，聚焦团队配置、AI 使用、本地化内容和多语言独立站执行流程。"
 pubDate: 2025-04-29
 updatedDate: 2025-04-29
 heroImage: "/images/posts/2025-04-29-foreign-trade-coaching-multilingual-2-1/image-001-bcb44ffb5c.jpg"
 category: "multilingual-seo"
 tags:
-  - "小语种SEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "SEO陪跑"
+  - "外贸陪跑"
+  - "小语种SEO培训"
+  - "多语言独立站"
+  - "AI内容流程"
+  - "团队配置"
+  - "本地化执行"
 ---
 大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

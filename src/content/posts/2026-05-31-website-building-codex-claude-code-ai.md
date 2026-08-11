@@ -1,9 +1,9 @@
 ---
 title: "Codex和Claude Code 模块化AI建站，可长期维护"
-description: "我是2016年开始做独立站的SEO小平。今年已经10年了。最近AI建站很多人都在尝试，因为AI大多数是创建的纯静态网站，这个SEO小平太有经验了，因为十年前SEO小平创建的网站也有纯静态网站，也有Saas网站。而且这多年虽然SEO小平换到了不同的公司，但是每个公司里在SEO小平的坚持下都还保留了多…"
+description: "我是2016年开始做独立站的SEO小平。今年已经10年了。最近AI建站很多人都在尝试，因为AI大多数是创建的纯静态网站，这个SEO小平太有经验了，因为十年前SEO小平创建的网站也有纯静态网站，也有Saas网站。而且这多年虽然SEO小平换到了不同的公司，但是每个公司里在SEO小平的"
 pubDate: 2026-05-31
 updatedDate: 2026-05-31
-heroImage: "/images/posts/2026-05-31-website-building-codex-claude-code-ai/image-001-1d8b3de9d9.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -12,6 +12,7 @@ tags:
   - "AI"
   - "独立站建站"
 ---
+
 我是2016年开始做独立站的SEO小平。今年已经10年了。最近AI建站很多人都在尝试，因为AI大多数是创建的纯静态网站，这个SEO小平太有经验了，因为十年前SEO小平创建的网站也有纯静态网站，也有Saas网站。而且这多年虽然SEO小平换到了不同的公司，但是每个公司里在SEO小平的坚持下都还保留了多多少少的几个纯静态电商网站（前端静态，后端结算支付这些是动态数据库）。
 
 ![Codex和Claude Code 模块化AI建站，可长期维护 配图](/images/posts/2026-05-31-website-building-codex-claude-code-ai/image-001-1d8b3de9d9.png)

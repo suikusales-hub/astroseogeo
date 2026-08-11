@@ -1,15 +1,16 @@
 ---
 title: "坏人专门在假期攻击你的网站，让你服务器崩溃"
-description: "实际上SEO小平今天已经是开工第三天了，我们公司每年都是放假比法定日期提前，开工也比法定日期提前。进行错峰出行，但是照样很堵。"
+description: "大家开工大吉啊，祝大家在农历马年排名飙升。  ![坏人专门在假期攻击你的网站，让你服务器崩溃 配图](/images/posts/2026-02-24-hosting-website/image-001-73840d81c8.png)  实际上SEO小平今天已经是开工第三天了，我"
 pubDate: 2026-02-24
 updatedDate: 2026-02-24
-heroImage: "/images/posts/2026-02-24-hosting-website/image-001-73840d81c8.png"
+heroImage: "/images/default-post.png"
 category: "website-building"
 tags:
   - "独立站建站"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家开工大吉啊，祝大家在农历马年排名飙升。
 
 ![坏人专门在假期攻击你的网站，让你服务器崩溃 配图](/images/posts/2026-02-24-hosting-website/image-001-73840d81c8.png)

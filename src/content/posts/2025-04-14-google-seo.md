@@ -1,14 +1,17 @@
 ---
 title: "Google SEO常见错误盘点，老司机也犯错，丢人啊! 别再踩坑了"
-description: "大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "盘点新手和老手都容易犯的 Google SEO 错误，包括关键词调研、页面布局、收录判断和执行节奏，帮你少走弯路。"
 pubDate: 2025-04-14
 updatedDate: 2025-04-14
 heroImage: "/images/posts/2025-04-14-google-seo/image-001-b0ac1e79a2.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "Google SEO错误"
+  - "SEO避坑"
+  - "关键词调研误区"
+  - "独立站优化"
+  - "新手SEO"
+  - "SEO经验复盘"
 ---
 ## 大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

@@ -1,9 +1,9 @@
 ---
 title: "4月18-19日 独立站SEO + GEO陪跑课"
-description: "加微信 Xiao_Ping_Up 直接报名 全国各地均可报名，线下课需至深圳参加（不售线上课）"
+description: "加微信 Xiao_Ping_Up 直接报名 全国各地均可报名，线下课需至深圳参加（不售线上课）  视频解说一下陪跑的三个阶段  ### 陪跑服务体系（三阶段一年赋能）  三阶段一年陪跑，从线下特训到线上复盘，全程护航。  第一阶段：线下特训（4月18、19日两天一夜）  掌握SE"
 pubDate: 2026-04-07
 updatedDate: 2026-04-07
-heroImage: "/images/posts/2026-04-07-independent-site-coaching-4-18-19/image-001-585820cdce.jpg"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -12,6 +12,7 @@ tags:
   - "GEO"
   - "SEO陪跑"
 ---
+
 加微信 Xiao_Ping_Up 直接报名
 全国各地均可报名，线下课需至深圳参加（不售线上课）
 

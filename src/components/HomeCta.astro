@@ -1,0 +1,39 @@
+<section class="relative overflow-hidden py-24 md:py-32" aria-labelledby="home-cta-title">
+  <div class="absolute right-6 top-1/2 hidden -translate-y-1/2 opacity-25 transition-opacity duration-500 hover:opacity-90 lg:block" aria-hidden="true">
+    <svg viewBox="0 0 200 200" width="250" height="250" class="cta-spin">
+      <path id="link-circle" d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" stroke="none" fill="none" />
+      <path d="M 75 100 L 125 100 M 110 85 L 125 100 L 110 115" stroke="white" stroke-width="2" fill="none" />
+      <text fill="white" font-size="16" font-weight="bold" letter-spacing="3">
+        <textPath href="#link-circle">SEO XIAOPING * UNLOCK GROWTH *</textPath>
+      </text>
+    </svg>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-2 text-center lg:text-left">
+    <h2 id="home-cta-title" class="mb-8 text-5xl font-black leading-tight tracking-tight text-white md:text-7xl">
+      准备好获取 <br />
+      <span class="text-gradient">全球自然流量？</span>
+    </h2>
+    <a href="/contact" class="inline-flex min-h-14 items-center justify-center rounded-full bg-[#d95300] px-10 text-lg font-bold text-white shadow-[0_0_30px_rgba(217,83,0,0.32)] transition hover:bg-orange-600">
+      立即在线咨询
+    </a>
+  </div>
+</section>
+
+<style>
+  .cta-spin {
+    animation: cta-spin 15s linear infinite;
+  }
+
+  @keyframes cta-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-spin {
+      animation: none;
+    }
+  }
+</style>

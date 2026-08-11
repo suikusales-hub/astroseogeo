@@ -1,4 +1,6 @@
 ---
+import SearchBox from './SearchBox.astro';
+
 interface NavItem {
   label: string;
   href: string;
@@ -33,48 +35,50 @@ function normalizePath(pathname: string) {
 <header class="site-header">
   <nav class="navbar glass-panel" aria-label="全站导航">
     <div class="navbar-inner">
-    <a class="brand" href="/" aria-label="SEO小平首页">
-      <img class="brand-mark" src="/images/seo-xiaoping-avatar.jpg" alt="" width="40" height="40" />
-      <span class="brand-name">SEO小平</span>
-    </a>
+      <a class="brand" href="/" aria-label="SEO小平首页">
+        <img class="brand-mark" src="/images/seo-xiaoping-avatar.jpg" alt="" width="40" height="40" />
+        <span class="brand-name">SEO<span>小平</span></span>
+      </a>
 
-    <div class="nav-links desktop-links">
-      {items.map((item) => (
-        <a
-          class:list={['nav-link', normalizePath(item.href) === currentPath && 'is-active']}
-          href={item.href}
-          aria-current={normalizePath(item.href) === currentPath ? 'page' : undefined}
-        >
-          {item.label}
-        </a>
-      ))}
-    </div>
-
-    <a class="nav-cta desktop-cta" href={ctaHref}>
-      <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-      <span>{ctaLabel}</span>
-    </a>
-
-    <details class="mobile-menu">
-      <summary aria-label="打开导航菜单">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </summary>
-      <div class="mobile-panel glass-panel">
+      <div class="nav-links desktop-links">
         {items.map((item) => (
           <a
-            class:list={['mobile-link', normalizePath(item.href) === currentPath && 'is-active']}
+            class:list={['nav-link', normalizePath(item.href) === currentPath && 'is-active']}
             href={item.href}
             aria-current={normalizePath(item.href) === currentPath ? 'page' : undefined}
           >
             {item.label}
           </a>
         ))}
-        <a class="mobile-cta" href={ctaHref}>
-          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-          <span>{ctaLabel}</span>
-        </a>
       </div>
-    </details>
+
+      <SearchBox />
+
+      <a class="nav-cta desktop-cta" href={ctaHref}>
+        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        <span>{ctaLabel}</span>
+      </a>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开导航菜单">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </summary>
+        <div class="mobile-panel glass-panel">
+          {items.map((item) => (
+            <a
+              class:list={['mobile-link', normalizePath(item.href) === currentPath && 'is-active']}
+              href={item.href}
+              aria-current={normalizePath(item.href) === currentPath ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+          <a class="mobile-cta" href={ctaHref}>
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            <span>{ctaLabel}</span>
+          </a>
+        </div>
+      </details>
     </div>
   </nav>
 </header>
@@ -84,7 +88,7 @@ function normalizePath(pathname: string) {
     position: sticky;
     top: 0;
     z-index: 30;
-    padding: 0.85rem 0;
+    padding: 0.75rem 0;
   }
 
   .navbar {
@@ -93,6 +97,7 @@ function normalizePath(pathname: string) {
     margin: 0;
     padding: 0 clamp(1rem, 3vw, 2rem);
     border-radius: 0;
+    background: rgba(23, 23, 28, 0.82);
   }
 
   .navbar-inner {
@@ -100,8 +105,8 @@ function normalizePath(pathname: string) {
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: min(1120px, 100%);
-    min-height: 4rem;
+    width: min(var(--site-content-width), 100%);
+    min-height: 4.5rem;
     margin: 0 auto;
     padding: 0.65rem 0;
   }
@@ -111,39 +116,44 @@ function normalizePath(pathname: string) {
     align-items: center;
     gap: 0.65rem;
     min-width: max-content;
-    color: var(--color-text);
-    font-weight: 800;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 0.04em;
     text-decoration: none;
+  }
+
+  .brand span span {
+    color: rgba(255, 255, 255, 0.62);
+    font-weight: 350;
   }
 
   .brand-mark {
     display: block;
-    width: 2.35rem;
-    height: 2.35rem;
-    border-radius: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.82);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 83, 0, 0.5);
     background: #fff;
     object-fit: cover;
-    box-shadow: 0 12px 30px rgba(239, 125, 0, 0.28);
+    box-shadow: 0 0 24px rgba(217, 83, 0, 0.28);
   }
 
   .brand-name {
-    font-size: 1.05rem;
-    letter-spacing: 0;
+    font-size: 1.15rem;
   }
 
   .nav-links {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.25rem;
+    gap: 0.35rem;
     flex: 1;
   }
 
   .nav-link,
   .mobile-link {
-    border-radius: 8px;
-    color: rgba(31, 21, 15, 0.76);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.72);
     font-size: 0.95rem;
     font-weight: 650;
     text-decoration: none;
@@ -153,15 +163,15 @@ function normalizePath(pathname: string) {
   }
 
   .nav-link {
-    padding: 0.7rem 0.9rem;
+    padding: 0.7rem 0.95rem;
   }
 
   .nav-link:hover,
   .nav-link.is-active,
   .mobile-link:hover,
   .mobile-link.is-active {
-    background: rgba(239, 125, 0, 0.12);
-    color: var(--color-text);
+    background: rgba(217, 83, 0, 0.16);
+    color: #fff;
   }
 
   .nav-cta,
@@ -170,18 +180,18 @@ function normalizePath(pathname: string) {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 8px;
-    background: var(--color-primary);
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
     color: #fff;
     font-weight: 800;
     line-height: 1;
     text-decoration: none;
-    box-shadow: 0 14px 34px rgba(239, 125, 0, 0.24);
+    box-shadow: 0 0 18px rgba(217, 83, 0, 0.35);
   }
 
   .nav-cta {
-    min-height: 2.55rem;
-    padding: 0 1rem;
+    min-height: 2.65rem;
+    padding: 0 1.15rem;
   }
 
   .mobile-menu {
@@ -191,11 +201,11 @@ function normalizePath(pathname: string) {
 
   .mobile-menu summary {
     display: grid;
-    width: 2.55rem;
-    height: 2.55rem;
+    width: 2.65rem;
+    height: 2.65rem;
     place-items: center;
-    border-radius: 8px;
-    color: var(--color-text);
+    border-radius: 999px;
+    color: #fff;
     cursor: pointer;
     list-style: none;
   }
@@ -205,7 +215,7 @@ function normalizePath(pathname: string) {
   }
 
   .mobile-menu[open] summary {
-    background: rgba(239, 125, 0, 0.12);
+    background: rgba(217, 83, 0, 0.16);
   }
 
   .mobile-panel {
@@ -215,8 +225,9 @@ function normalizePath(pathname: string) {
     display: grid;
     width: min(18rem, calc(100vw - 2rem));
     gap: 0.35rem;
-    padding: 0.55rem;
-    border-radius: 8px;
+    padding: 0.65rem;
+    border-radius: 20px;
+    background: rgba(13, 13, 18, 0.94);
   }
 
   .mobile-link {

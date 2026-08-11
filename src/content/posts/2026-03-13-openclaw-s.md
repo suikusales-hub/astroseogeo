@@ -1,15 +1,16 @@
 ---
 title: "本想让OpenClaw成印钞机，他却成了老S批"
-description: "大家好，我是独立站搞卖家SEO小平，昨天我去参加了联盟平台 Tyroo | CJ 举办的联盟营销的自媒体博主和KOL聚会。"
+description: "大家好，我是独立站搞卖家SEO小平，昨天我去参加了联盟平台 Tyroo | CJ 举办的联盟营销的自媒体博主和KOL聚会。  聚会晚宴肯定少不了谈论最近很火的龙虾OpenClaw。  有朋友讲了一个段子：有人使用Openclaw让他研究那些全球最赚钱的网站方法，然后来总结教程教他"
 pubDate: 2026-03-13
 updatedDate: 2026-03-13
-heroImage: "/images/posts/2026-03-13-openclaw-s/image-001-9ebfbe0ab9.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好，我是独立站搞卖家SEO小平，昨天我去参加了联盟平台 Tyroo | CJ 举办的联盟营销的自媒体博主和KOL聚会。
 
 聚会晚宴肯定少不了谈论最近很火的龙虾OpenClaw。

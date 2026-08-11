@@ -1,9 +1,9 @@
 ---
 title: "ChatGPT自助广告后台今日正式上线，独立站如何抢占 AI 流量红利？"
-description: "OpenAI Ads Manager 正式开放：独立站卖家的 AI 广告时代已来。"
+description: "## OpenAI Ads Manager 正式开放：独立站卖家的 AI 广告时代已来。  美国时间2026 年 5 月 5 日，OpenAI 面向全美广告主正式推出Ads Manager 测试版，广告投放进入自助化、CPC 竞价的新阶段  ![ChatGPT自助广告后台今日正式"
 pubDate: 2026-05-06
 updatedDate: 2026-05-06
-heroImage: "/images/posts/2026-05-06-independent-site-traffic-chatgpt-ai/image-001-fe954e4425.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "AI"
 ---
+
 ## OpenAI Ads Manager 正式开放：独立站卖家的 AI 广告时代已来。
 
 美国时间2026 年 5 月 5 日，OpenAI 面向全美广告主正式推出Ads Manager 测试版，广告投放进入自助化、CPC 竞价的新阶段

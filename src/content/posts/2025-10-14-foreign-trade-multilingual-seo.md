@@ -1,14 +1,17 @@
 ---
 title: "外贸小语种 SEO 新蓝海，从从容容，游刃有余地赚钱"
-description: "大家好！我是SEO小平，9年独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up"
+description: "从外贸市场竞争和关税变化出发，分析小语种 SEO 为什么是新蓝海，以及企业如何用独立站避开英语红海。"
 pubDate: 2025-10-14
 updatedDate: 2025-10-14
 heroImage: "/images/posts/2025-10-14-foreign-trade-multilingual-seo/image-001-1644b67a99.png"
 category: "multilingual-seo"
 tags:
-  - "小语种SEO"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "外贸小语种SEO"
+  - "小语种蓝海"
+  - "非英语市场"
+  - "本地化独立站"
+  - "跨境流量"
+  - "外贸增长"
 ---
 大家好！我是SEO小平，9年独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up
 

@@ -1,14 +1,17 @@
 ---
 title: "我的SEO排名很好，为什么询盘这么少？"
-description: "像私家教练一样陪跑一年SEO，让你彻底突破流量困局，抢占全球市场！加微信 Xiao_Ping_Up 咨询课程详情"
+description: "从排名到询盘的转化链路出发，分析 SEO 不只是冲排名，还要让关键词、页面内容和表单设计共同带来客户。"
 pubDate: 2025-09-13
 updatedDate: 2025-09-13
 heroImage: "/images/posts/2025-09-13-ranking-inquiry-seo/image-001-777d3daffe.png"
 category: "case-study"
 tags:
-  - "案例与陪跑"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "排名到询盘"
+  - "SEO转化链路"
+  - "询盘优化"
+  - "关键词转化"
+  - "外贸页面"
+  - "自然流量变现"
 ---
 像私家教练一样陪跑一年SEO，让你彻底突破流量困局，抢占全球市场！加微信 Xiao_Ping_Up 咨询课程详情
 

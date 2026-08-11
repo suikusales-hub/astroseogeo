@@ -1,15 +1,17 @@
 ---
 title: "谷歌AI Mode拉客进“包间” 传统SERP要变天？"
-description: "大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码"
+description: "从 SERP 变化角度分析 Google AI Mode，说明 AI 摘要、引用机会和内容结构如何影响未来自然搜索点击。"
 pubDate: 2025-05-22
 updatedDate: 2025-05-22
 heroImage: "/images/posts/2025-05-22-google-ai-mode-serp/image-001-fdf9495210.png"
 category: "ai-geo"
 tags:
-  - "AI与GEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "AI"
+  - "AI Mode SERP"
+  - "谷歌AI搜索结果"
+  - "AI摘要"
+  - "SERP变化"
+  - "内容引用"
+  - "搜索点击率"
 ---
 大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码
 

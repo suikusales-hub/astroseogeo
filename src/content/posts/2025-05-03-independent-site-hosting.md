@@ -1,14 +1,17 @@
 ---
 title: "独立站服务器、共享主机有啥区别，怎么选，新手秒懂"
-description: "大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "面向外贸独立站新手，拆解 SiteGround、Hostinger 等主机选择逻辑，说明速度、稳定性、预算与 SEO 的关系。"
 pubDate: 2025-05-03
 updatedDate: 2025-05-03
 heroImage: "/images/posts/2025-05-03-independent-site-hosting/image-001-22ac17292c.png"
 category: "website-building"
 tags:
-  - "独立站建站"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "独立站主机"
+  - "外贸网站服务器"
+  - "SiteGround"
+  - "Hostinger"
+  - "网站速度SEO"
+  - "建站托管"
 ---
 大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

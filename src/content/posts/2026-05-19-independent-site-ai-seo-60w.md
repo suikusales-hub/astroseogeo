@@ -1,9 +1,9 @@
 ---
 title: "AI 随手搞个SEO独立站做副业，一年做了60W"
-description: "大家好，我是做了10年独立站卖家的 SEO 小平，经常有粉丝朋友找到我问你的SEO适合做B2B还是B2C，我的回答是SEO是找到用户需求，根据搜索者的需求提供内容。不要用B2B还是B2C来划分SEO。因为SEO小平的朋友里很多人是做虚拟产品的，无法按照B2B 还是 B2C 划分，例如做学历提升的排…"
+description: "大家好，我是做了10年独立站卖家的 SEO 小平，经常有粉丝朋友找到我问你的SEO适合做B2B还是B2C，我的回答是SEO是找到用户需求，根据搜索者的需求提供内容。不要用B2B还是B2C来划分SEO。因为SEO小平的朋友里很多人是做虚拟产品的，无法按照B2B 还是 B2C 划分，"
 pubDate: 2026-05-19
 updatedDate: 2026-05-19
-heroImage: "/images/posts/2026-05-19-independent-site-ai-seo-60w/image-001-3dd276e540.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "AI"
 ---
+
 大家好，我是做了10年独立站卖家的 SEO 小平，经常有粉丝朋友找到我问你的SEO适合做B2B还是B2C，我的回答是SEO是找到用户需求，根据搜索者的需求提供内容。不要用B2B还是B2C来划分SEO。因为SEO小平的朋友里很多人是做虚拟产品的，无法按照B2B 还是 B2C 划分，例如做学历提升的排名，做保险销售，旅游业务，相亲网站这些很难界定B还是C。
 
 今天给大家分享个SEO小平陪跑学员的真实案例，随手搞了一个副业居然一年流水做了接近 60 万人民币。

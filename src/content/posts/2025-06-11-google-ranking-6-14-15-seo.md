@@ -1,15 +1,17 @@
 ---
 title: "6月14-15日SEO小平新增：谷歌AI Overview AI Mode排名方法，快报名"
-description: "大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up"
+description: "记录 6 月 14-15 日 SEO 实战分享重点，围绕 Google 排名、小语种避红海和关键词捕鱼模式展开具体方法。"
 pubDate: 2025-06-11
 updatedDate: 2025-06-11
 heroImage: "/images/posts/2025-06-11-google-ranking-6-14-15-seo/image-001-cce3ba325a.jpg"
 category: "ai-geo"
 tags:
-  - "AI与GEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "AI"
+  - "Google排名"
+  - "SEO实战分享"
+  - "小语种避红海"
+  - "关键词捕鱼"
+  - "线下课程"
+  - "独立站排名"
 ---
 大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up
 

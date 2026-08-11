@@ -1,16 +1,17 @@
 ---
 title: "Gemini 3震撼发布，AI纯血版小语种SEO能力大幅提升"
-description: "SEO的老铁们，大家好，我是死磕谷歌SEO独立站9年的SEO小平，专注英语以及各个国家小语种独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up"
+description: "结合 Gemini 3 能力升级，分析 AI 原生写作对纯血小语种 SEO 的影响，以及外贸独立站如何提升本地化内容质量。"
 pubDate: 2025-11-20
 updatedDate: 2025-11-20
 heroImage: "/images/posts/2025-11-20-multilingual-native-gemini-3-ai-seo/image-001-1edf829d9c.png"
 category: "ai-geo"
 tags:
-  - "AI与GEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "AI"
-  - "小语种SEO"
+  - "Gemini 3"
+  - "AI小语种SEO"
+  - "纯血小语种"
+  - "本地化内容"
+  - "AI原生写作"
+  - "外贸SEO"
 ---
 SEO的老铁们，大家好，我是死磕谷歌SEO独立站9年的SEO小平，专注英语以及各个国家小语种独立站SEO操盘手。欢迎关注我的公众号，加微信号直接复制 Xiao_Ping_Up
 

@@ -1,14 +1,17 @@
 ---
 title: "Google搞大动作，90%的网站收录集体下掉"
-description: "大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码"
+description: "围绕网站 90 天收录与排名观察，分析 Google 索引节奏、内容质量、站点结构和新站冷启动的实际表现。"
 pubDate: 2025-06-05
 updatedDate: 2025-06-05
 heroImage: "/images/posts/2025-06-05-indexing-website-google-90/image-001-fdf9495210.png"
 category: "technical-seo"
 tags:
-  - "技术SEO工具"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "Google收录90天"
+  - "新站索引"
+  - "网站冷启动"
+  - "收录观察"
+  - "SEO周期"
+  - "独立站排名"
 ---
 大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码
 

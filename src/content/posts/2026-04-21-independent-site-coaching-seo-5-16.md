@@ -1,9 +1,9 @@
 ---
 title: "独立站SEO陪跑开课 5月16-17日 深圳龙华"
-description: "你是否还在为网站流量发愁？ 是否试遍了各种方法，排名依然不见起色？ 是否觉得SEO知识零散，难以系统执行？"
+description: "### 你是否还在为网站流量发愁？ 是否试遍了各种方法，排名依然不见起色？ 是否觉得SEO知识零散，难以系统执行？  ### 如果你也在经历这些困境——SEO小平实战陪跑课，正是为你而来。  ![独立站SEO陪跑开课 5月16-17日 深圳龙华 配图](/images/posts"
 pubDate: 2026-04-21
 updatedDate: 2026-04-21
-heroImage: "/images/posts/2026-04-21-independent-site-coaching-seo-5-16/image-001-35f8a9bc0a.png"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "SEO陪跑"
 ---
+
 ### 你是否还在为网站流量发愁？
 是否试遍了各种方法，排名依然不见起色？
 是否觉得SEO知识零散，难以系统执行？

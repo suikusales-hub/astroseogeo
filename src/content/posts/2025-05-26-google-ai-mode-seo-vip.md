@@ -1,15 +1,17 @@
 ---
 title: "Google AI Mode 带来SEO新机会 ，你也能进 VIP 包间"
-description: "大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码"
+description: "解读 Google AI Mode 对 SEO 的影响，重点分析查询扇出、长尾内容覆盖和 GEO 布局如何改变独立站流量入口。"
 pubDate: 2025-05-26
 updatedDate: 2025-05-26
 heroImage: "/images/posts/2025-05-26-google-ai-mode-seo-vip/image-001-fdf9495210.png"
 category: "ai-geo"
 tags:
-  - "AI与GEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "AI"
+  - "Google AI Mode"
+  - "查询扇出"
+  - "AI搜索SEO"
+  - "GEO布局"
+  - "长尾内容覆盖"
+  - "AI时代流量"
 ---
 大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码
 

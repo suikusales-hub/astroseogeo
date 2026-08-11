@@ -1,14 +1,17 @@
 ---
 title: "黑帽SEO vs 白帽SEO：独立站的暗战与阳谋"
-description: "大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "从用户洞察、关键词调研和页面内容出发，说明独立站 SEO 的底层逻辑，适合外贸老板理解白帽 SEO 怎么真正见效。"
 pubDate: 2025-04-18
 updatedDate: 2025-04-18
 heroImage: "/images/posts/2025-04-18-independent-site-seo/image-001-2a8eb7357e.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "独立站SEO逻辑"
+  - "白帽SEO"
+  - "用户搜索意图"
+  - "外贸网站优化"
+  - "关键词洞察"
+  - "SEO基础方法"
 ---
 大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

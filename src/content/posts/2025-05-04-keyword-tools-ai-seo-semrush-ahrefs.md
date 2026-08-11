@@ -1,17 +1,17 @@
 ---
 title: "别盲目用AI工具做 SEO 关键词调研，Semrush或Ahrefs 才靠谱"
-description: "大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "比较 Semrush、Ahrefs 与 Gemini 在关键词调研中的优缺点，帮助独立站团队判断哪些数据可信、如何组合使用。"
 pubDate: 2025-05-04
 updatedDate: 2025-05-04
 heroImage: "/images/posts/2025-05-04-keyword-tools-ai-seo-semrush-ahrefs/image-001-0c28a8de28.png"
 category: "keyword-content"
 tags:
-  - "关键词与内容"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "AI"
-  - "Semrush"
-  - "Ahrefs"
+  - "Semrush关键词"
+  - "Ahrefs关键词"
+  - "Gemini关键词调研"
+  - "AI SEO工具"
+  - "关键词数据判断"
+  - "SEO工具对比"
 ---
 大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

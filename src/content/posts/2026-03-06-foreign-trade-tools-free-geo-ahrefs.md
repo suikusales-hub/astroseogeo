@@ -1,9 +1,9 @@
 ---
 title: "免费外贸GEO工具推荐 Ahrefs也是免费的"
-description: "#geo优化 #GEO #SEO #ahrefs #外贸工具 今天SEO小平给他家推荐 2 个亲测过的GEO工具，GEO工具其实有很多了，我推荐这2个重点是免费的。例如Semrush也有这个板块，但是商业版的会员才能查看。 第一个是老牌的SEO工具Ahrefs的GEO工具： https://ahr…"
+description: "#geo优化 #GEO #SEO #ahrefs #外贸工具   今天SEO小平给他家推荐 2 个亲测过的GEO工具，GEO工具其实有很多了，我推荐这2个重点是免费的。例如Semrush也有这个板块，但是商业版的会员才能查看。  第一个是老牌的SEO工具Ahrefs的GEO工具："
 pubDate: 2026-03-06
 updatedDate: 2026-03-06
-heroImage: "/images/posts/2026-03-06-foreign-trade-tools-free-geo-ahrefs/image-001-6885691a4d.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -12,6 +12,7 @@ tags:
   - "GEO"
   - "Ahrefs"
 ---
+
 #geo优化 #GEO #SEO #ahrefs #外贸工具 
 
 今天SEO小平给他家推荐 2 个亲测过的GEO工具，GEO工具其实有很多了，我推荐这2个重点是免费的。例如Semrush也有这个板块，但是商业版的会员才能查看。

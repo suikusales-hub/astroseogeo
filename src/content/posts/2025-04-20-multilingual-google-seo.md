@@ -1,14 +1,17 @@
 ---
 title: "Google内部的顶级域名变更对小语种 SEO 没有任何影响"
-description: "大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "讲解多语言 Google SEO 的核心难点，包括翻译、本地关键词、页面结构和国家市场选择，避免只做机器翻译站。"
 pubDate: 2025-04-20
 updatedDate: 2025-04-20
 heroImage: "/images/posts/2025-04-20-multilingual-google-seo/image-001-36d993f4c3.png"
 category: "multilingual-seo"
 tags:
-  - "小语种SEO"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "多语言Google SEO"
+  - "小语种独立站"
+  - "本地关键词"
+  - "多语种页面结构"
+  - "外贸多语言"
+  - "国际SEO"
 ---
 大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

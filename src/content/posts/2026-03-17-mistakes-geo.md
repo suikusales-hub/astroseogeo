@@ -1,9 +1,9 @@
 ---
 title: "GEO很火，乱象和误区也很多，我来捋一捋"
-description: "我是2016年开始搞谷歌SEO的深圳创业者，这几天刚刚参加了中国谷歌SEO & GEO大会，大会上众多嘉宾和我都分享了GEO的各种干货。"
+description: "我是2016年开始搞谷歌SEO的深圳创业者，这几天刚刚参加了中国谷歌SEO &amp; GEO大会，大会上众多嘉宾和我都分享了GEO的各种干货。  ![GEO很火，乱象和误区也很多，我来捋一捋 配图](/images/posts/2026-03-17-mistakes-geo/i"
 pubDate: 2026-03-17
 updatedDate: 2026-03-17
-heroImage: "/images/posts/2026-03-17-mistakes-geo/image-001-a936abeaa9.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "GEO"
 ---
+
 我是2016年开始搞谷歌SEO的深圳创业者，这几天刚刚参加了中国谷歌SEO &amp; GEO大会，大会上众多嘉宾和我都分享了GEO的各种干货。
 
 ![GEO很火，乱象和误区也很多，我来捋一捋 配图](/images/posts/2026-03-17-mistakes-geo/image-001-a936abeaa9.png)

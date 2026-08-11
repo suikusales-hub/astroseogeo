@@ -1,9 +1,9 @@
 ---
 title: "Shopify往AI时代冲刺，重磅推出 agents.md"
-description: "，在跨境圈彻底火了。Shopify的卖家们你们的sitemap.xml 地图里面第一行增加了sitemap_agentic_discovery.xml 打开这个链接是agents.md文件，这个就是最近Shopify的重大更新。所有Shopify店铺都被默认加上了这个。"
+description: "最近 Shopify 的  /agents.md  ，在跨境圈彻底火了。Shopify的卖家们你们的sitemap.xml 地图里面第一行增加了sitemap_agentic_discovery.xml 打开这个链接是agents.md文件，这个就是最近Shopify的重大更新。"
 pubDate: 2026-06-04
 updatedDate: 2026-06-04
-heroImage: "/images/posts/2026-06-04-shopify-ai-agents-md/image-001-d3a00b7553.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -12,6 +12,7 @@ tags:
   - "AI"
   - "Shopify"
 ---
+
 最近 Shopify 的
 
 /agents.md

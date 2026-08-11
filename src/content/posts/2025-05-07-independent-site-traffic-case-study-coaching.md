@@ -1,16 +1,17 @@
 ---
 title: "SEO流量暴涨20倍，陪跑学员独立站成功案例"
-description: "Hello 我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。2025年5月17-18日，在深圳有我们的线下陪跑课哦，本文末尾有课程详细介绍，报名加我微信 Xiao_Ping_Up"
+description: "复盘陪跑学员独立站流量暴涨 20 倍的真实路径，重点拆解关键词捕鱼模式、内容执行节奏与低成本 SEO 增长方法。"
 pubDate: 2025-05-07
 updatedDate: 2025-05-07
 heroImage: "/images/posts/2025-05-07-independent-site-traffic-case-study-coaching/image-001-661711cff8.png"
 category: "case-study"
 tags:
-  - "案例与陪跑"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "SEO案例"
-  - "SEO陪跑"
+  - "SEO流量案例"
+  - "陪跑学员案例"
+  - "独立站增长"
+  - "关键词捕鱼模式"
+  - "自然流量提升"
+  - "SEO实战复盘"
 ---
 Hello 我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。2025年5月17-18日，在深圳有我们的线下陪跑课哦，本文末尾有课程详细介绍，报名加我微信 Xiao_Ping_Up
 

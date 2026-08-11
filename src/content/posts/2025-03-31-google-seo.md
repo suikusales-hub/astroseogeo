@@ -1,14 +1,17 @@
 ---
 title: "Google SEO 术语扫盲贴，你是否都知道这些含义"
-description: "大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "围绕 Google SEO 实战经验，梳理关键词、内容、收录和排名之间的关系，帮助新手建立正确优化顺序。"
 pubDate: 2025-03-31
 updatedDate: 2025-03-31
 heroImage: "/images/posts/2025-03-31-google-seo/image-001-d77436c9ef.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "Google SEO实战"
+  - "优化顺序"
+  - "关键词内容"
+  - "收录排名"
+  - "SEO新手"
+  - "独立站优化"
 ---
 ## 大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

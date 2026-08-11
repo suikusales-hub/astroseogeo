@@ -1,15 +1,17 @@
 ---
 title: "谷歌3月算法更新，我的小语种SEO流量翻倍"
-description: "大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。"
+description: "结合 3 月谷歌算法与小语种流量变化，分析多语言独立站如何应对排名波动并维持稳定自然流量。"
 pubDate: 2025-03-19
 updatedDate: 2025-03-19
 heroImage: "/images/posts/2025-03-19-google-algorithm-traffic-multilingual-3-seo/image-001-726cbe8985.png"
 category: "multilingual-seo"
 tags:
-  - "小语种SEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "谷歌算法"
+  - "3月算法更新"
+  - "多语言流量"
+  - "排名波动应对"
+  - "小语种独立站"
+  - "自然流量稳定"
+  - "Google SEO"
 ---
 大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。
 

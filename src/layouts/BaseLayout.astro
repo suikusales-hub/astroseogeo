@@ -68,7 +68,7 @@ const {
     />
   </head>
   <body class={bodyClass}>
-    <div class="bokeh-background" aria-hidden="true">
+    <div class="galaxy-bg" aria-hidden="true">
       <span class="spot spot-1"></span>
       <span class="spot spot-2"></span>
       <span class="spot spot-3"></span>
@@ -79,7 +79,7 @@ const {
     <AnnouncementBar />
     <Navbar />
 
-    <main id="main-content" class="site-main">
+    <main id="main-content" class="site-main" data-pagefind-body>
       <slot />
     </main>
 
@@ -92,7 +92,7 @@ const {
   .site-main {
     position: relative;
     z-index: 1;
-    width: min(1120px, 100%);
+    width: min(var(--site-content-width), 100%);
     min-height: 60vh;
     margin: 0 auto;
     padding: clamp(1rem, 3vw, 2rem);

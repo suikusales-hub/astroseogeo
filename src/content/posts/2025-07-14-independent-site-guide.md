@@ -1,14 +1,17 @@
 ---
 title: "你缺的不是“独立站保姆级”教程，而是副驾上“纠错”的教练"
-description: "大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up"
+description: "给外贸独立站新手的一份建站与 SEO 入门指南，梳理域名、主机、内容、关键词、收录和长期运营的关键步骤。"
 pubDate: 2025-07-14
 updatedDate: 2025-07-14
 heroImage: "/images/posts/2025-07-14-independent-site-guide/image-001-777d3daffe.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "独立站指南"
+  - "外贸建站入门"
+  - "SEO入门流程"
+  - "域名主机"
+  - "网站收录"
+  - "长期运营"
 ---
 大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up
 

@@ -1,9 +1,9 @@
 ---
 title: "让 AI 免费搭建你的独立站只需3步"
-description: "我是一个SEO行业10年老油条SEO小平。去年开始我们使用AI建站越来越多，之前是部分代码辅助，今年基本上是AI全部代码写作。昨天SEO小平在发视频介绍了免费建站的3个步骤，今天把他写成公众号文字教程。"
+description: "我是一个SEO行业10年老油条SEO小平。去年开始我们使用AI建站越来越多，之前是部分代码辅助，今年基本上是AI全部代码写作。昨天SEO小平在发视频介绍了免费建站的3个步骤，今天把他写成公众号文字教程。  欢迎关注我的视频号，和我公众号同名的：SEO小平  以后干货会在视频号发布"
 pubDate: 2026-04-30
 updatedDate: 2026-04-30
-heroImage: "/images/posts/2026-04-30-independent-site-free-ai-3/image-001-4f30c1cc60.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "AI"
 ---
+
 我是一个SEO行业10年老油条SEO小平。去年开始我们使用AI建站越来越多，之前是部分代码辅助，今年基本上是AI全部代码写作。昨天SEO小平在发视频介绍了免费建站的3个步骤，今天把他写成公众号文字教程。
 
 欢迎关注我的视频号，和我公众号同名的：SEO小平

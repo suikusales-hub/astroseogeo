@@ -1,15 +1,16 @@
 ---
 title: "外贸人的OpenClaw龙虾王炸用法"
-description: "大家好，我是做了10年谷歌SEO独立站推广的SEO小平。"
+description: "大家好，我是做了10年谷歌SEO独立站推广的SEO小平。  听说你们都在AI养虾，我也来养一只。。。。。  ![外贸人的OpenClaw龙虾王炸用法 配图](/images/posts/2026-03-11-foreign-trade-openclaw/image-001-a21"
 pubDate: 2026-03-11
 updatedDate: 2026-03-11
-heroImage: "/images/posts/2026-03-11-foreign-trade-openclaw/image-001-a21da61a22.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好，我是做了10年谷歌SEO独立站推广的SEO小平。
 
 听说你们都在AI养虾，我也来养一只。。。。。

@@ -32,32 +32,91 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer">
   <div class="footer-shell glass-panel">
+    <div class="footer-glow footer-glow-primary"></div>
+    <div class="footer-glow footer-glow-secondary"></div>
+
+    <div class="footer-specials">
+      <section class="theory-banner" aria-labelledby="fishing-theory-title">
+        <div class="theory-content">
+          <div class="theory-heading">
+            <i class="fa-solid fa-fish-fins"></i>
+            <h2 id="fishing-theory-title">SEO小平 独创理论：<span class="text-gradient">捕鱼模式</span></h2>
+          </div>
+          <p>
+            长尾词就像海洋中的鱼群，我们就像渔夫。<br />
+            <strong>多撒网，广布局。</strong>网撒得越宽泛，捕获的精准长尾流量就越多，让转化源源不断！
+          </p>
+        </div>
+
+        <div class="fishing-stage" aria-hidden="true">
+          <div class="fish fish-1"><i class="fa-solid fa-fish-fins"></i><span>长尾词</span></div>
+          <div class="fish fish-2"><i class="fa-solid fa-fish-fins"></i><span>精准词</span></div>
+          <div class="fish fish-3"><i class="fa-solid fa-fish-fins"></i><span>转化词</span></div>
+          <div class="fish fish-4"><i class="fa-solid fa-fish-fins"></i><span>AI提示词（GEO）</span></div>
+          <div class="net-wrapper">
+            <svg width="56" height="72" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12C2 12 12 2 24 2C36 2 46 12 46 12V52C46 52 36 62 24 62C12 62 2 52 2 52V12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="rgba(217,83,0,0.1)" />
+              <path d="M12 7V57M24 2V62M36 7V57M2 22H46M2 32H46M2 42H46" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.4" />
+            </svg>
+            <span>流量网</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="theory-banner language-banner" aria-labelledby="language-theory-title">
+        <div class="theory-content">
+          <div class="theory-heading">
+            <i class="fa-solid fa-language"></i>
+            <h2 id="language-theory-title">SEO小平 独创理论：<span>纯血版小语种SEO</span></h2>
+          </div>
+          <p>
+            <strong>一站一个小语种。</strong>用AI原生写作实现深度本地化：法规、图片、视频、文化与UI设计。不仅翻译准确且自带流量，高度本地化内容更受当地用户喜欢，信任感拉满！
+          </p>
+        </div>
+
+        <div class="local-stage" aria-hidden="true">
+          <div class="local-item item-1"><i class="fa-solid fa-square-check"></i>翻译准确</div>
+          <div class="local-item item-2"><i class="fa-solid fa-arrow-trend-up"></i>关键词有流量</div>
+          <div class="local-item item-3"><i class="fa-solid fa-scale-balanced"></i>法规本地化</div>
+          <div class="local-item item-4"><i class="fa-solid fa-image"></i>图片本地化</div>
+          <div class="local-item item-5"><i class="fa-solid fa-video"></i>视频本地化</div>
+          <div class="local-item item-6"><i class="fa-solid fa-hands-clapping"></i>文化本地化</div>
+          <div class="local-item item-7"><i class="fa-solid fa-paintbrush"></i>UI设计本地化</div>
+          <div class="local-item item-8"><i class="fa-solid fa-robot"></i>AI原生写作</div>
+          <div class="local-item item-9"><i class="fa-solid fa-window-maximize"></i>一站一个小语种</div>
+
+          <div class="target-customer-group">
+            <div class="target-icon">
+              <i class="fa-solid fa-users text-users"></i>
+              <i class="fa-solid fa-circle-check check check-1"></i>
+              <i class="fa-solid fa-circle-check check check-2"></i>
+              <i class="fa-solid fa-circle-check check check-3"></i>
+            </div>
+            <span>小语种客户</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <div class="footer-inner">
       <section class="footer-brand" aria-label="站点信息">
         <a class="brand" href="/" aria-label="SEO小平首页">
           <img class="brand-mark" src="/images/seo-xiaoping-avatar.jpg" alt="" width="40" height="40" />
-          <span class="brand-name">SEO小平</span>
+          <span class="brand-name">SEO<span>小平</span></span>
         </a>
-        <p>技术 SEO、AI 搜索与内容工程笔记。</p>
+        <p>技术 SEO、AI 搜索与内容工程笔记。专注提供可落地、见效稳的跨境出海流量解决方案。</p>
         <p class="copyright">© {year} SEO小平. All rights reserved.</p>
       </section>
 
       <nav class="footer-nav" aria-label="页脚导航">
+        <h2>网站导航</h2>
         {navLinks.map((item) => (
           <a href={item.href}>{item.label}</a>
         ))}
       </nav>
 
       <div class="footer-connect">
-        <nav class="social-nav" aria-label="社交链接">
-          {socialLinks.map((item) => (
-            <a href={item.href} aria-label={item.label}>
-              <i class={item.icon} aria-hidden="true"></i>
-              <span>{item.label}</span>
-            </a>
-          ))}
-        </nav>
-
+        <h2>微信咨询</h2>
         <figure class="wechat-qr">
           <img
             src="/images/seo-xiaoping-wechat-qr.png"
@@ -67,17 +126,42 @@ const year = new Date().getFullYear();
             loading="lazy"
             decoding="async"
           />
-          <figcaption>微信咨询</figcaption>
+          <figcaption>Xiao_Ping_Up</figcaption>
         </figure>
+        <nav class="social-nav" aria-label="社交链接">
+          {socialLinks.map((item) => (
+            <a href={item.href} aria-label={item.label}>
+              <i class={item.icon} aria-hidden="true"></i>
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </nav>
+      </div>
+    <div class="social-proof-row">
+        <span class="social-proof-label">关注 SEO 小平：</span>
+        <a href="https://www.youtube.com/@seo8579/featured" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i><span>YouTube</span>
+        </a>
+        <a href="https://x.com/JamesWang110939" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <i class="fa-brands fa-x-twitter"></i><span>X</span>
+        </a>
+        <a href="https://www.zhihu.com/people/xiaopingseo" target="_blank" rel="noopener noreferrer" aria-label="知乎">
+          <i class="fa-brands fa-zhihu" style="font-weight:900;color:#0084ff;"></i><span>知乎</span>
+        </a>
+        <a href="https://m.cifnews.com/observer/ggsxp" target="_blank" rel="noopener noreferrer" aria-label="雨果网">
+          <i class="fa-solid fa-newspaper"></i><span>雨果网</span>
+        </a>
+        <a href="https://medium.com/@suikusales" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+          <i class="fa-brands fa-medium"></i><span>Medium</span>
+        </a>
+        <span class="social-proof-text"><i class="fa-brands fa-weixin"></i> 公众号：SEO小平</span>
       </div>
     </div>
   </div>
 </footer>
 
 <style>
-  .site-footer {
-    padding: 2rem 0 0;
-  }
+  .site-footer { padding: 2rem 0 0; }
 
   .footer-shell {
     position: relative;
@@ -87,152 +171,239 @@ const year = new Date().getFullYear();
     overflow: hidden;
     border-radius: 0;
     padding: 0 clamp(1rem, 3vw, 2rem);
+    background: rgba(13, 13, 18, 0.82);
   }
+
+  .footer-glow { position: absolute; border-radius: 999px; filter: blur(100px); opacity: 0.35; pointer-events: none; }
+  .footer-glow-primary { right: -7rem; top: -7rem; width: 24rem; height: 24rem; background: rgba(217, 83, 0, 0.28); }
+  .footer-glow-secondary { left: -8rem; bottom: -8rem; width: 25rem; height: 25rem; background: rgba(212, 8, 124, 0.2); }
+
+  .footer-specials {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 1.25rem;
+    width: min(var(--site-content-width), 100%);
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3rem) 0 0;
+  }
+
+  .theory-banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 2rem;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    background: rgba(255,255,255,0.045);
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .theory-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(217,83,0,0.13), rgba(245,158,11,0.08));
+    opacity: 0.65;
+    transition: opacity 0.5s ease;
+  }
+
+  .language-banner::before { background: linear-gradient(90deg, rgba(59,130,246,0.12), rgba(34,197,94,0.1)); }
+  .theory-banner:hover::before { opacity: 1; }
+
+  .theory-content, .fishing-stage, .local-stage { position: relative; z-index: 1; }
+  .theory-heading { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; }
+  .theory-heading i { color: #f59e0b; font-size: 1.8rem; }
+  .language-banner .theory-heading i { color: #60a5fa; }
+  .theory-heading h2 { margin: 0; color: #fff; font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 900; line-height: 1.25; }
+  .language-banner .theory-heading span { background: linear-gradient(90deg, #60a5fa, #4ade80); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .theory-content p { max-width: 32rem; margin: 0; color: rgba(255,255,255,0.76); line-height: 1.85; }
+  .theory-content strong { color: #fff; }
+
+  .fishing-stage, .local-stage {
+    min-height: 10rem;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    background: rgba(13,13,18,0.72);
+  }
+
+  .fish {
+    position: absolute;
+    left: -12%;
+    display: inline-flex;
+    width: max-content;
+    align-items: center;
+    gap: 0.35rem;
+    opacity: 0;
+    font-size: 0.82rem;
+    font-weight: 750;
+    color: rgba(255,255,255,0.78);
+    animation: swim 5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .fish i { color: #f59e0b; }
+  .fish-1 { top: 12%; animation-duration: 5s; }
+  .fish-2 { top: 32%; animation-duration: 6s; animation-delay: 1.5s; }
+  .fish-3 { top: 54%; animation-duration: 5.5s; animation-delay: 3s; }
+  .fish-4 { top: 76%; animation-duration: 6.5s; animation-delay: 4.2s; filter: drop-shadow(0 0 8px rgba(96,165,250,0.6)); }
+  .fish-4 i { color: #60a5fa; }
+
+  .net-wrapper {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #d95300;
+    transform: translateY(-50%);
+    animation: net-float 3s ease-in-out infinite;
+  }
+  .net-wrapper svg { filter: drop-shadow(0 0 12px rgba(217,83,0,0.6)); }
+  .net-wrapper span { margin-top: 0.4rem; border: 1px solid rgba(217,83,0,0.3); border-radius: 999px; background: rgba(217,83,0,0.2); padding: 0.15rem 0.55rem; color: #fff; font-size: 0.65rem; font-weight: 900; letter-spacing: 0.12em; }
+
+  .local-item {
+    position: absolute;
+    left: -24%;
+    display: inline-flex;
+    width: max-content;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.055);
+    padding: 0.38rem 0.75rem;
+    color: rgba(191,219,254,0.95);
+    font-size: 0.82rem;
+    font-weight: 750;
+    opacity: 0;
+    white-space: nowrap;
+    backdrop-filter: blur(8px);
+    animation: convey 15s linear infinite;
+  }
+  .item-1 { top: 12%; animation-delay: 0s; }
+  .item-4 { top: 12%; animation-delay: 5s; color: #fde68a; }
+  .item-7 { top: 12%; animation-delay: 10s; color: #f9a8d4; }
+  .item-2 { top: 42%; animation-delay: 1.6s; color: #86efac; }
+  .item-5 { top: 42%; animation-delay: 6.6s; color: #fca5a5; }
+  .item-8 { top: 42%; animation-delay: 11.6s; color: #67e8f9; }
+  .item-3 { top: 72%; animation-delay: 3.2s; color: #d8b4fe; }
+  .item-6 { top: 72%; animation-delay: 8.2s; color: #5eead4; }
+  .item-9 { top: 72%; animation-delay: 13.2s; color: #fdba74; }
+
+  .target-customer-group { position: absolute; right: 1.5rem; top: 50%; z-index: 2; display: flex; flex-direction: column; align-items: center; transform: translateY(-50%); }
+  .target-icon { position: relative; }
+  .text-users { color: #60a5fa; font-size: 3.2rem; filter: drop-shadow(0 0 12px rgba(96,165,250,0.6)); }
+  .check { position: absolute; color: #4ade80; filter: drop-shadow(0 0 8px rgba(34,197,94,0.8)); animation: pop 3s ease-in-out infinite; }
+  .check-1 { left: -1rem; top: -0.8rem; font-size: 1.25rem; animation-delay: 0.5s; }
+  .check-2 { right: 0; top: -1.7rem; font-size: 1.55rem; animation-duration: 3.5s; animation-delay: 1.5s; }
+  .check-3 { right: -1.25rem; top: 0.45rem; font-size: 1.05rem; animation-duration: 4s; animation-delay: 2.5s; }
+  .target-customer-group span { margin-top: 0.55rem; border: 1px solid rgba(96,165,250,0.4); border-radius: 999px; background: rgba(59,130,246,0.3); padding: 0.28rem 0.75rem; color: #fff; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.12em; box-shadow: 0 0 10px rgba(59,130,246,0.3); }
 
   .footer-inner {
     position: relative;
     z-index: 2;
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(10rem, 0.8fr) minmax(10rem, 0.8fr);
-    gap: 1.5rem;
-    width: min(1120px, 100%);
+    gap: 2rem;
+    width: min(var(--site-content-width), 100%);
     margin: 0 auto;
-    padding: clamp(1.25rem, 3vw, 2rem) 0;
+    padding: clamp(2rem, 5vw, 4rem) 0;
   }
 
-  .footer-brand {
-    display: grid;
-    gap: 0.75rem;
-  }
+  .footer-brand { display: grid; gap: 0.75rem; }
+  .brand { display: inline-flex; align-items: center; gap: 0.65rem; width: max-content; color: #fff; font-weight: 900; letter-spacing: 0.04em; text-decoration: none; }
+  .brand span span { color: rgba(255, 255, 255, 0.62); font-weight: 350; }
+  .brand-mark { display: block; width: 2.5rem; height: 2.5rem; border-radius: 999px; border: 1px solid rgba(217, 83, 0, 0.5); background: #fff; object-fit: cover; box-shadow: 0 0 24px rgba(217, 83, 0, 0.28); }
+  .brand-name { font-size: 1.15rem; }
 
-  .brand {
-    display: inline-flex;
+  .footer-inner h2 { margin: 0 0 0.65rem; color: #fff; font-size: 1rem; font-weight: 850; }
+  .footer-inner p { max-width: 32rem; margin: 0; color: rgba(255, 255, 255, 0.68); line-height: 1.8; }
+  .copyright { color: rgba(255, 255, 255, 0.46); font-size: 0.9rem; }
+  .footer-nav, .social-nav { display: grid; align-content: start; gap: 0.55rem; }
+  .footer-connect { display: grid; align-content: start; justify-items: start; gap: 0.85rem; }
+  .footer-nav a, .social-nav a { display: inline-flex; align-items: center; gap: 0.5rem; width: max-content; max-width: 100%; border-radius: 999px; color: rgba(255, 255, 255, 0.68); font-size: 0.95rem; font-weight: 650; text-decoration: none; transition: background 180ms ease, color 180ms ease; }
+  .footer-nav a { padding: 0.2rem 0; }
+  .social-nav a { padding: 0.25rem 0; }
+  .footer-nav a:hover, .social-nav a:hover { color: #f59e0b; }
+  .social-nav i { width: 1.1rem; color: var(--color-primary); text-align: center; }
+  .wechat-qr { display: grid; gap: 0.45rem; width: 7.5rem; margin: 0.35rem 0 0; }
+  .wechat-qr img { display: block; width: 7.5rem; height: 7.5rem; border: 1px solid rgba(217, 83, 0, 0.18); border-radius: 16px; background: #fff; object-fit: contain; padding: 0.35rem; box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24); }
+  .wechat-qr figcaption { color: rgba(255, 255, 255, 0.58); font-size: 0.82rem; font-weight: 750; line-height: 1.3; text-align: center; }
+
+  .social-proof-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 0.65rem;
-    width: max-content;
-    color: var(--color-text);
-    font-weight: 800;
-    text-decoration: none;
+    justify-content: center;
+    gap: 1rem;
+    width: min(var(--site-content-width), 100%);
+    margin: 0 auto;
+    padding: 1.2rem 0 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
-
-  .brand-mark {
-    display: block;
-    width: 2.35rem;
-    height: 2.35rem;
-    border-radius: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.82);
-    background: #fff;
-    object-fit: cover;
-    box-shadow: 0 12px 30px rgba(239, 125, 0, 0.28);
-  }
-
-  .brand-name {
-    font-size: 1.05rem;
-    letter-spacing: 0;
-  }
-
-  p {
-    max-width: 30rem;
-    margin: 0;
-    color: rgba(31, 21, 15, 0.7);
-    line-height: 1.8;
-  }
-
-  .copyright {
-    color: rgba(31, 21, 15, 0.52);
-    font-size: 0.9rem;
-  }
-
-  .footer-nav,
-  .social-nav {
-    display: grid;
-    align-content: start;
-    gap: 0.5rem;
-  }
-
-  .footer-connect {
-    display: grid;
-    align-content: start;
-    justify-items: start;
-    gap: 0.85rem;
-  }
-
-  .footer-nav a,
-  .social-nav a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    width: max-content;
-    max-width: 100%;
-    border-radius: 8px;
-    color: rgba(31, 21, 15, 0.72);
-    font-size: 0.95rem;
-    font-weight: 650;
-    text-decoration: none;
-    transition:
-      background 180ms ease,
-      color 180ms ease;
-  }
-
-  .footer-nav a {
-    padding: 0.2rem 0;
-  }
-
-  .social-nav a {
-    padding: 0.25rem 0;
-  }
-
-  .footer-nav a:hover,
-  .social-nav a:hover {
-    color: var(--color-text);
-  }
-
-  .social-nav i {
-    width: 1.1rem;
-    color: var(--color-primary);
-    text-align: center;
-  }
-
-  .wechat-qr {
-    display: grid;
-    gap: 0.45rem;
-    width: 7.5rem;
-    margin: 0.35rem 0 0;
-  }
-
-  .wechat-qr img {
-    display: block;
-    width: 7.5rem;
-    height: 7.5rem;
-    border: 1px solid rgba(239, 125, 0, 0.14);
-    border-radius: 8px;
-    background: #fff;
-    object-fit: contain;
-    padding: 0.35rem;
-    box-shadow: 0 14px 34px rgba(31, 21, 15, 0.08);
-  }
-
-  .wechat-qr figcaption {
-    color: rgba(31, 21, 15, 0.58);
+  .social-proof-label {
+    color: rgba(255,255,255,0.52);
     font-size: 0.82rem;
-    font-weight: 750;
-    line-height: 1.3;
-    text-align: center;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .social-proof-row a,
+  .social-proof-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: color 180ms ease;
+  }
+  .social-proof-row a:hover { color: #f59e0b; }
+  .social-proof-row i { font-size: 1rem; }
+  .social-proof-text { color: rgba(255,255,255,0.52); }
+  .social-proof-text i { color: #4ade80; }
+
+  @keyframes swim {
+    0% { left: -12%; transform: translateY(0) scale(0.8); opacity: 0; }
+    10% { opacity: 1; }
+    75% { left: 74%; transform: translateY(5px) scale(1.1); opacity: 1; }
+    90% { left: 85%; transform: translateY(0) scale(0.6); opacity: 0; }
+    100% { left: 90%; transform: translateY(0) scale(0); opacity: 0; }
+  }
+  @keyframes net-float { 0%, 100% { transform: translateY(-50%) scale(1); } 50% { transform: translateY(calc(-50% - 4px)) scale(1.02); } }
+  @keyframes convey {
+    0% { left: -24%; opacity: 0; transform: translateX(0); }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    95% { left: 78%; opacity: 0; transform: translateX(0); }
+    100% { left: 85%; opacity: 0; transform: translateX(0); }
+  }
+  @keyframes pop { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.2); } 80% { opacity: 1; transform: scale(1); } }
+
+  @media (max-width: 860px) {
+    .theory-banner { grid-template-columns: 1fr; }
+    .fishing-stage, .local-stage { min-height: 9rem; }
   }
 
   @media (max-width: 760px) {
-    .footer-shell {
-      padding-inline: clamp(1rem, 5vw, 1.25rem);
-    }
+    .footer-shell { padding-inline: clamp(1rem, 5vw, 1.25rem); }
+    .footer-inner { grid-template-columns: 1fr; }
+    .wechat-qr, .wechat-qr img { width: 6.75rem; height: 6.75rem; }
+    .target-customer-group { right: 0.75rem; }
+    .text-users { font-size: 2.6rem; }
+  }
 
-    .footer-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .wechat-qr,
-    .wechat-qr img {
-      width: 6.75rem;
-      height: 6.75rem;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    .fish, .net-wrapper, .local-item, .check { animation: none; opacity: 1; }
   }
 </style>

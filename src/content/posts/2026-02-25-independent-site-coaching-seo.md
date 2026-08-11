@@ -1,9 +1,9 @@
 ---
 title: "独立站 SEO外包 VS SEO陪跑 的优劣势"
-description: "大家好，我是SEO小平，在做SEO外贸陪跑的过程中，很多老板加微信之后和我聊聊半天才搞懂，他不是要陪跑，他是要SEO外包，只出钱就行，全部让别人来做独立站的SEO。所以SEO小平这里就详细介绍一下SEO代运营，也就是SEO外包，和 我们做的SEO陪跑的区别。"
+description: "大家好，我是SEO小平，在做SEO外贸陪跑的过程中，很多老板加微信之后和我聊聊半天才搞懂，他不是要陪跑，他是要SEO外包，只出钱就行，全部让别人来做独立站的SEO。所以SEO小平这里就详细介绍一下SEO代运营，也就是SEO外包，和 我们做的SEO陪跑的区别。  ![独立站 SEO"
 pubDate: 2026-02-25
 updatedDate: 2026-02-25
-heroImage: "/images/posts/2026-02-25-independent-site-coaching-seo/image-001-710faf8e28.png"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "SEO陪跑"
 ---
+
 大家好，我是SEO小平，在做SEO外贸陪跑的过程中，很多老板加微信之后和我聊聊半天才搞懂，他不是要陪跑，他是要SEO外包，只出钱就行，全部让别人来做独立站的SEO。所以SEO小平这里就详细介绍一下SEO代运营，也就是SEO外包，和 我们做的SEO陪跑的区别。
 
 ![独立站 SEO外包 VS SEO陪跑 的优劣势 配图](/images/posts/2026-02-25-independent-site-coaching-seo/image-001-710faf8e28.png)

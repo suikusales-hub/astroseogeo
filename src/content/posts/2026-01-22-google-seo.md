@@ -1,15 +1,16 @@
 ---
 title: "谷歌的“屠刀”再次挥向SEO翻译插件"
-description: "今天SEO小平的群里又见两个老铁在倒苦水：独立站流量断崖式下跌还有收录大面积下降的。"
+description: "大家好，我是SEO小平。  今天SEO小平的群里又见两个老铁在倒苦水：独立站流量断崖式下跌还有收录大面积下降的。  ![谷歌的“屠刀”再次挥向SEO翻译插件 配图](/images/posts/2026-01-22-google-seo/image-001-be5e908aa0."
 pubDate: 2026-01-22
 updatedDate: 2026-01-22
-heroImage: "/images/posts/2026-01-22-google-seo/image-001-be5e908aa0.png"
+heroImage: "/images/default-post.png"
 category: "multilingual-seo"
 tags:
   - "小语种SEO"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好，我是SEO小平。
 
 今天SEO小平的群里又见两个老铁在倒苦水：独立站流量断崖式下跌还有收录大面积下降的。

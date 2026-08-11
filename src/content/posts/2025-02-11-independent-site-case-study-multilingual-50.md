@@ -1,17 +1,17 @@
 ---
 title: "50.2万 曝光量真实案例，AI+小语种独立站SEO真的很轻松"
-description: "大家好，我是SEO小平，SEO捕鱼大师，9年谷歌SEO优化经验，熟悉B2B行业，B2C行业的Google关键词排名。对WordPress, Shopify, Shopline, 以及纯静态的PHP建站很精通。一直从事各个国家本土语言的独立站SEO实操。"
+description: "复盘 50.2 万曝光量的小语种独立站案例，分析 AI+多语言 SEO 如何降低执行成本并带来真实搜索增长。"
 pubDate: 2025-02-11
 updatedDate: 2025-02-11
 heroImage: "/images/posts/2025-02-11-independent-site-case-study-multilingual-50/image-001-73b3449243.png"
 category: "ai-geo"
 tags:
-  - "AI与GEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "AI"
-  - "小语种SEO"
-  - "SEO案例"
+  - "50万曝光案例"
+  - "小语种案例"
+  - "AI多语言站"
+  - "GSC曝光"
+  - "独立站增长案例"
+  - "多语言SEO实战"
 ---
 ## 大家好，我是SEO小平，SEO捕鱼大师，9年谷歌SEO优化经验，熟悉B2B行业，B2C行业的Google关键词排名。对WordPress, Shopify, Shopline, 以及纯静态的PHP建站很精通。一直从事各个国家本土语言的独立站SEO实操。
 

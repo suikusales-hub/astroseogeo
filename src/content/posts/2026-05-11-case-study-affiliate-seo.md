@@ -1,9 +1,9 @@
 ---
 title: "SEO小平真实案例：靠SEO做联盟营销赚睡后收入，没想到"
-description: "大家好，我是在深圳做了10独立站SEO的SEO小平。我自己长期是搞B2B和B2C独立站的SEO，其实在谷歌眼里SEO没有什么B2B和B2C之分，这是中国卖家的思维。就像我之前做了很多SEO副业联盟营销，你觉得联盟营销算B端还是C端呢？SEO其实就是研究谷歌需求的，谷歌需要什么内容，你就创作什么内容。"
+description: "大家好，我是在深圳做了10独立站SEO的SEO小平。我自己长期是搞B2B和B2C独立站的SEO，其实在谷歌眼里SEO没有什么B2B和B2C之分，这是中国卖家的思维。就像我之前做了很多SEO副业联盟营销，你觉得联盟营销算B端还是C端呢？SEO其实就是研究谷歌需求的，谷歌需要什么内容"
 pubDate: 2026-05-11
 updatedDate: 2026-05-11
-heroImage: "/images/posts/2026-05-11-case-study-affiliate-seo/image-001-279cd43291.png"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "SEO案例"
 ---
+
 大家好，我是在深圳做了10独立站SEO的SEO小平。我自己长期是搞B2B和B2C独立站的SEO，其实在谷歌眼里SEO没有什么B2B和B2C之分，这是中国卖家的思维。就像我之前做了很多SEO副业联盟营销，你觉得联盟营销算B端还是C端呢？SEO其实就是研究谷歌需求的，谷歌需要什么内容，你就创作什么内容。
 
 今天就来分享一个SEO小平曾经被Youtube博主小船吹上天的睡后收入。这个小船在YouTube普及睡后收入获得了很多粉丝的，估计很多人都看过她的YouTube频道。

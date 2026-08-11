@@ -1,9 +1,9 @@
 ---
 title: "Codex重构外贸业务：多站群、小语种、免费服务器"
-description: "大家好我是10外贸独立站操盘手，死磕谷歌SEO的SEO小平。昨天在深圳福田口岸参加了WordPress的线下沙龙：SEO小平参加深圳WordPress线下沙龙MeetUp，我的演讲主题是WordPress的内链建设，没想到现场提问AI建站的人太多 太多了。看来AI建站太火了，所以我今天再写一篇文章…"
+description: "大家好我是10外贸独立站操盘手，死磕谷歌SEO的SEO小平。昨天在深圳福田口岸参加了WordPress的线下沙龙：SEO小平参加深圳WordPress线下沙龙MeetUp，我的演讲主题是WordPress的内链建设，没想到现场提问AI建站的人太多 太多了。看来AI建站太火了，所以"
 pubDate: 2026-05-25
 updatedDate: 2026-05-25
-heroImage: "/images/posts/2026-05-25-foreign-trade-multilingual-hosting-free-codex/image-001-1a7ebc5563.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "小语种SEO"
 ---
+
 大家好我是10外贸独立站操盘手，死磕谷歌SEO的SEO小平。昨天在深圳福田口岸参加了WordPress的线下沙龙：SEO小平参加深圳WordPress线下沙龙MeetUp，我的演讲主题是WordPress的内链建设，没想到现场提问AI建站的人太多 太多了。看来AI建站太火了，所以我今天再写一篇文章介绍Codex的AI建站。
 
 这次 Codex 火起来，我最兴奋的不是它会写代码。因为之前的CC和Trae都可以写代码。

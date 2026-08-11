@@ -1,14 +1,17 @@
 ---
 title: "SEO 和 SEM 就是你和谷歌之间的人情世故"
-description: "大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up"
+description: "对比 Google SEO 与 SEM 的获客逻辑、成本结构和适用阶段，帮助外贸企业判断自然流量与广告投放如何配合。"
 pubDate: 2025-07-16
 updatedDate: 2025-07-16
 heroImage: "/images/posts/2025-07-16-google-seo-sem/image-001-d615c32c3b.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "Google SEO vs SEM"
+  - "谷歌广告"
+  - "自然流量"
+  - "付费获客"
+  - "外贸推广"
+  - "SEO SEM组合"
 ---
 大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up
 

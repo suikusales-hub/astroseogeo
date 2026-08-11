@@ -1,17 +1,17 @@
 ---
 title: "每月100+询盘的SEO文章怎么写？AI高质量内容写作教程"
-description: "大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up"
+description: "围绕“如何写出带询盘的 SEO 内容”，拆解 100 分内容标准、用户问题覆盖、转化引导和外贸文章写作细节。"
 pubDate: 2025-07-11
 updatedDate: 2025-07-11
 heroImage: "/images/posts/2025-07-11-inquiry-writing-content-guide-100-seo/image-001-412d307e5b.png"
 category: "keyword-content"
 tags:
-  - "关键词与内容"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "AI"
-  - "SEO内容"
-  - "SEO写作"
+  - "询盘型内容"
+  - "SEO文章写作"
+  - "外贸内容营销"
+  - "100分内容"
+  - "转化文案"
+  - "谷歌内容优化"
 ---
 大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up
 

@@ -1,9 +1,9 @@
 ---
 title: "独立站SEO陪跑 6月13-14日 深圳开课（全年陪跑落地）"
-description: "陪跑课又开课啦。SEO从来不是听懂就有用，而是做出来、改出来、复盘出来。"
+description: "陪跑课又开课啦。SEO从来不是听懂就有用，而是做出来、改出来、复盘出来。  如果你苦于网站流量停滞、SEO落地无思路、迫切获得GEO的引用、AI玩法不会落地、想抢占小语种蓝海市场，6月13-14日，深圳龙华，SEO小平陪跑课，陪你把独立站SEO真正落地、跑出结果！  ### 我们"
 pubDate: 2026-05-27
 updatedDate: 2026-05-27
-heroImage: "/images/posts/2026-05-27-independent-site-coaching-seo-6-13/image-001-79471ab219.jpg"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "SEO陪跑"
 ---
+
 陪跑课又开课啦。SEO从来不是听懂就有用，而是做出来、改出来、复盘出来。
 
 如果你苦于网站流量停滞、SEO落地无思路、迫切获得GEO的引用、AI玩法不会落地、想抢占小语种蓝海市场，6月13-14日，深圳龙华，SEO小平陪跑课，陪你把独立站SEO真正落地、跑出结果！

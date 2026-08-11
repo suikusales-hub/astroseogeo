@@ -1,15 +1,19 @@
 ---
 title: "B端SEO和C端不一样吗？谷歌会区别对待吗？"
-description: "大家好我是SEO小平，是一名实战在成人用品和电子Vape行业的卖家，我一直从事谷歌SEO独立站的实操。"
+description: "大家好我是SEO小平，是一名实战在成人用品和电子Vape行业的卖家，我一直从事谷歌SEO独立站的实操。  很多粉丝朋友还没开始做SEO，刚开始会问SEO小平这样的问题：  1.我是做B2B的独立站，你是C端的成人用品独立站的SEO经验，SEO操作不一样吧？  2.你做的CNC行业"
 pubDate: 2026-01-09
 updatedDate: 2026-01-09
-heroImage: "/images/posts/2026-01-09-google-b-seo-c/image-001-8be6ab116c.png"
+heroImage: "/images/default-post.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "B端SEO"
+  - "C端SEO"
+  - "B2B关键词"
+  - "C端转化"
+  - "页面结构"
+  - "Google优化"
 ---
+
 大家好我是SEO小平，是一名实战在成人用品和电子Vape行业的卖家，我一直从事谷歌SEO独立站的实操。
 
 很多粉丝朋友还没开始做SEO，刚开始会问SEO小平这样的问题：

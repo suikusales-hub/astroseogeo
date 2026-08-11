@@ -1,9 +1,9 @@
 ---
 title: "SEO小平参加深圳WordPress线下沙龙MeetUp"
-description: "5 月 24 日，由 WordPress 官方认证、深圳本地志愿者团队主办的WordPress Meetup Shenzhen线下交流会圆满举办。谷歌 SEO 实战专家、独立站操盘手 SEO 小平受邀做专场分享，你们WordPress后台如果定位是定位的深圳的话，应该收到了本场活动的通知，如下截图…"
+description: "5 月 24 日，由 WordPress 官方认证、深圳本地志愿者团队主办的WordPress Meetup Shenzhen线下交流会圆满举办。谷歌 SEO 实战专家、独立站操盘手 SEO 小平受邀做专场分享，你们WordPress后台如果定位是定位的深圳的话，应该收到了本场活"
 pubDate: 2026-05-24
 updatedDate: 2026-05-24
-heroImage: "/images/posts/2026-05-24-seo-wordpress-meetup/image-001-3f0201e030.jpg"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "WordPress"
 ---
+
 5 月 24 日，由 WordPress 官方认证、深圳本地志愿者团队主办的WordPress Meetup Shenzhen线下交流会圆满举办。谷歌 SEO 实战专家、独立站操盘手 SEO 小平受邀做专场分享，你们WordPress后台如果定位是定位的深圳的话，应该收到了本场活动的通知，如下截图就是WordPress后台官方推送给定位到深圳的朋友们的。所以SEO小平没提前通知本场活动，结果到场后还是有一半的熟人和粉丝朋友。
 
 ![SEO小平参加深圳WordPress线下沙龙MeetUp 配图](/images/posts/2026-05-24-seo-wordpress-meetup/image-001-3f0201e030.jpg)

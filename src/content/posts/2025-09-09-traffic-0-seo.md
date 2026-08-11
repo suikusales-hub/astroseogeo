@@ -1,14 +1,17 @@
 ---
 title: "新品牌 0 搜索量，SEO流量照样暴涨，方法详解"
-description: "像私家教练一样陪跑一年SEO，让你彻底突破流量困局，抢占全球市场！加微信 Xiao_Ping_Up 咨询课程详情"
+description: "针对独立站流量为 0 的情况，拆解常见原因与排查顺序，包括收录、关键词、内容质量、内链和执行周期。"
 pubDate: 2025-09-09
 updatedDate: 2025-09-09
 heroImage: "/images/posts/2025-09-09-traffic-0-seo/image-001-777d3daffe.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "流量为0"
+  - "独立站没流量"
+  - "SEO排查"
+  - "收录问题"
+  - "关键词缺失"
+  - "新站优化"
 ---
 像私家教练一样陪跑一年SEO，让你彻底突破流量困局，抢占全球市场！加微信 Xiao_Ping_Up 咨询课程详情
 

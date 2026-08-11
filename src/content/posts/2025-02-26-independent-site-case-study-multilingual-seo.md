@@ -1,15 +1,17 @@
 ---
 title: "小语种SEO独立站案例分析，越南语SEO独立站成功案例"
-description: "大家好，我是SEO小平，SEO捕鱼大师，9年谷歌SEO优化经验，熟悉B2B行业，B2C行业的Google关键词排名。对WordPress, Shopify, Shopline, 以及纯静态的PHP建站很精通。一直从事各个国家本土语言的独立站SEO实操。"
+description: "继续拆解小语种独立站成功案例，重点说明关键词捕鱼、AI 内容、团队 SOP 与外贸询盘之间的协同关系。"
 pubDate: 2025-02-26
 updatedDate: 2025-02-26
 heroImage: "/images/posts/2025-02-26-independent-site-case-study-multilingual-seo/image-001-229fa2f4c4.jpg"
 category: "multilingual-seo"
 tags:
-  - "小语种SEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "SEO案例"
+  - "小语种成功案例"
+  - "关键词捕鱼实操"
+  - "AI内容SOP"
+  - "外贸询盘"
+  - "多语言增长"
+  - "独立站案例"
 ---
 大家好，我是SEO小平，SEO捕鱼大师，9年谷歌SEO优化经验，熟悉B2B行业，B2C行业的Google关键词排名。对WordPress, Shopify, Shopline, 以及纯静态的PHP建站很精通。一直从事各个国家本土语言的独立站SEO实操。
 

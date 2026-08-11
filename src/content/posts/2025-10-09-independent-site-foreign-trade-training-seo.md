@@ -1,15 +1,17 @@
 ---
 title: "外贸SEO+GEO独立站培训，10月18-19号 深圳开课"
-description: "像私家教练一样陪跑一年SEO，让你彻底突破流量困局，抢占全球市场！加微信 Xiao_Ping_Up 咨询课程详情"
+description: "介绍外贸独立站 SEO 培训的实战内容，涵盖关键词调研、网站诊断、内容布局和学员陪跑执行重点。"
 pubDate: 2025-10-09
 updatedDate: 2025-10-09
 heroImage: "/images/posts/2025-10-09-independent-site-foreign-trade-training-seo/image-001-7a9128a66b.png"
 category: "ai-geo"
 tags:
-  - "AI与GEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "GEO"
+  - "外贸SEO培训"
+  - "独立站培训"
+  - "关键词实操"
+  - "网站诊断课程"
+  - "内容布局"
+  - "SEO陪跑"
 ---
 像私家教练一样陪跑一年SEO，让你彻底突破流量困局，抢占全球市场！加微信 Xiao_Ping_Up 咨询课程详情
 

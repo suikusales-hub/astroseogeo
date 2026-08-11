@@ -1,15 +1,17 @@
 ---
 title: "高价收购有毒外链！创造谷歌 SEO 暴富神话"
-description: "大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码"
+description: "围绕 Google 外链建设讲清白帽链接、资源选择、风险识别和权重提升逻辑，适合外贸独立站制定安全外链策略。"
 pubDate: 2025-04-30
 updatedDate: 2025-04-30
 heroImage: "/images/posts/2025-04-30-google-link-building-seo/image-001-c531516a16.png"
 category: "seo-tutorial"
 tags:
-  - "SEO基础教程"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "外链建设"
+  - "Google外链"
+  - "白帽外链"
+  - "外链建设策略"
+  - "独立站权重"
+  - "SEO链接资源"
+  - "外贸SEO"
 ---
 大家好！我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家小语种独立站SEO实操。加SEO小平微信的直接复制 Xiao_Ping_Up ，或者文末扫描二维码
 

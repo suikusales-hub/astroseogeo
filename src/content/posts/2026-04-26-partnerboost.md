@@ -1,15 +1,16 @@
 ---
 title: "受邀参加PartnerBoost的干货沙龙分享"
-description: "大家好，我是2016年开始做谷歌SEO的独立站创业者SEO小平。"
+description: "大家好，我是2016年开始做谷歌SEO的独立站创业者SEO小平。  2026年4月25日，SEO小平受邀参加PartnerBoost的干货沙龙，整个下午都是慢慢的干货分享。而且，都是干货互相交流，全部免费交流，SEO小平喜欢这种和大佬一起互相分享干货的沙龙，彼此都有收获，用讲我的"
 pubDate: 2026-04-26
 updatedDate: 2026-04-26
-heroImage: "/images/posts/2026-04-26-partnerboost/image-001-a1472825f9.png"
+heroImage: "/images/default-post.png"
 category: "case-study"
 tags:
   - "案例与陪跑"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好，我是2016年开始做谷歌SEO的独立站创业者SEO小平。
 
 2026年4月25日，SEO小平受邀参加PartnerBoost的干货沙龙，整个下午都是慢慢的干货分享。而且，都是干货互相交流，全部免费交流，SEO小平喜欢这种和大佬一起互相分享干货的沙龙，彼此都有收获，用讲我的干货，你讲你的干货。这个模式SEO小平在2022年的时候也搞过：独立站卖家线下沙龙-圆满结束，本次是由知名的联盟营销平台PartnerBoost在深圳龙岗星河双子塔举办的。很多朋友可能还不知道很多SEO大佬都是靠联盟营销发大财的，并不是传统的卖货或者工厂外贸询盘的那种SEO模式。SEO小平也做过一些联盟营销的SEO独立站，例如一些产品review的SEO网站，把流量导入给Amazon，赚Amazon的联盟佣金。有兴趣做SEO的联盟营销的朋友可以去了解一下。

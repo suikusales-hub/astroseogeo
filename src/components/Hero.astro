@@ -1,42 +1,143 @@
-<section class="grid items-center gap-12 py-10 lg:grid-cols-[1.35fr_0.85fr] lg:gap-8 lg:py-16" aria-labelledby="home-hero-title">
-  <div class="text-center lg:text-left">
-    <p class="mb-6 inline-flex items-center gap-2 rounded-lg border border-orange-200 bg-white px-4 py-2 text-sm font-semibold text-orange-600 shadow-sm">
+<section class="hero-shell relative -mt-6 min-h-[calc(100vh-7rem)] overflow-hidden rounded-b-[2rem] bg-[#030305] px-6 py-20 lg:px-8" aria-labelledby="home-hero-title">
+  <canvas id="starfield" class="absolute inset-0 z-0 h-full w-full"></canvas>
+  <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,8,124,0.18),transparent_44%),radial-gradient(circle_at_80%_60%,rgba(42,191,219,0.14),transparent_45%),radial-gradient(circle_at_50%_80%,rgba(139,87,165,0.18),transparent_48%)]"></div>
+
+  <div class="relative z-10 mx-auto flex min-h-[calc(100vh-11rem)] max-w-5xl flex-col items-center justify-center text-center">
+    <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d95300]/30 bg-[#0d0d12]/70 px-5 py-2 text-sm font-bold text-[#f59e0b] shadow-sm backdrop-blur-md">
       <i class="fa-solid fa-fire" aria-hidden="true"></i>
       <span>10年实战经验 · 独立站优化专家</span>
     </p>
 
-    <h1 id="home-hero-title" class="mb-5 text-lg font-black leading-snug tracking-normal text-[#1F150F] md:text-2xl lg:text-3xl">
-      专业<span class="bg-gradient-to-r from-[#D95300] to-amber-500 bg-clip-text text-transparent">谷歌SEO</span>优化专家
-      <span class="block">助力独立站抢占全球流量</span>
+    <h1 id="home-hero-title" class="mb-6 text-4xl font-black leading-tight tracking-tight text-white md:text-7xl">
+      专业谷歌 SEO 优化专家<br />
+      <span class="text-gradient">助力独立站抢占全球流量</span>
     </h1>
 
-    <p class="mx-auto mb-10 max-w-2xl text-lg font-medium leading-8 text-[#4A3E38] lg:mx-0">
-      死磕谷歌SEO | B2B/B2C独立站优化 | WordPress & Shopify专家
-      <span class="block">专注提供可落地、见效稳的跨境出海流量解决方案。</span>
+    <p class="mx-auto mt-2 max-w-3xl text-lg font-light leading-8 text-white/72 md:text-xl">
+      死磕谷歌 SEO | B2B/B2C 独立站优化 | WordPress & Shopify 专家<br />
+      专注提供可落地、见效稳的跨境出海流量解决方案。
     </p>
 
-    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-      <a
-        href="/contact"
-        class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-br from-orange-500 to-[#D67D22] px-6 font-bold text-white shadow-[0_14px_34px_rgba(239,125,0,0.24)] transition hover:brightness-105 sm:w-auto"
-      >
-        <i class="fa-brands fa-weixin text-lg" aria-hidden="true"></i>
+    <div class="mt-10 flex w-full flex-col justify-center gap-5 sm:w-auto sm:flex-row">
+      <a href="/contact" class="btn-primary inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-8 font-bold text-white shadow-[0_0_22px_rgba(217,83,0,0.42)] transition hover:brightness-110">
+        <i class="fa-brands fa-weixin text-xl" aria-hidden="true"></i>
         <span>微信咨询：Xiao_Ping_Up</span>
       </a>
-      <a
-        href="/contact"
-        class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border border-orange-300/70 bg-white/70 px-6 font-bold text-[#1F150F] backdrop-blur-lg transition hover:border-orange-400 hover:bg-white sm:w-auto"
-      >
-        <i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i>
-        <span>邮箱联系</span>
+      <a href="#services" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-white/20 bg-[#17171c]/50 px-8 font-bold text-white backdrop-blur-md transition hover:border-[#d95300] hover:text-[#f59e0b]">
+        <i class="fa-solid fa-lightbulb text-xl" aria-hidden="true"></i>
+        <span>了解核心服务</span>
       </a>
     </div>
   </div>
 
-  <div class="group flex justify-center lg:justify-end" aria-hidden="true">
-    <div class="relative grid aspect-square w-64 rotate-2 place-items-center overflow-hidden rounded-lg border-2 border-white bg-gradient-to-br from-orange-500/15 to-white/60 text-6xl font-black text-orange-500 shadow-[0_24px_70px_rgba(220,140,70,0.22)] backdrop-blur-lg transition duration-500 group-hover:rotate-0 group-hover:scale-[1.02] md:w-72">
-      <span class="absolute inset-0 bg-gradient-to-br from-white/70 via-transparent to-transparent"></span>
-      <span class="relative text-center text-5xl leading-tight bg-gradient-to-r from-[#D95300] to-amber-500 bg-clip-text text-transparent">SEO + GEO</span>
-    </div>
+  <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-white/55" aria-hidden="true">
+    <i class="fa-solid fa-chevron-down text-2xl"></i>
   </div>
 </section>
+
+<style>
+  .hero-shell {
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f59e0b 0%, #d95300 55%, #d4087c 100%);
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  .btn-primary span,
+  .btn-primary i {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas instanceof HTMLCanvasElement ? canvas.getContext('2d') : null;
+  let width = 0;
+  let height = 0;
+  let stars = [];
+
+  function initStars() {
+    if (!canvas || !ctx) return;
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    width = Math.max(1, Math.floor(rect.width));
+    height = Math.max(1, Math.floor(rect.height));
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    stars = [];
+
+    const count = Math.min(800, Math.max(260, Math.floor((width * height) / 1400)));
+    for (let i = 0; i < count; i += 1) {
+      stars.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 1.5,
+        opacity: Math.random(),
+        speedX: (Math.random() - 0.5) * 0.2 + 0.1,
+        speedY: (Math.random() - 0.5) * 0.2 - 0.1,
+        twinkleSpeed: 0.01 + Math.random() * 0.02,
+        twinkleDir: Math.random() > 0.5 ? 1 : -1,
+      });
+    }
+  }
+
+  function drawStars() {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, width, height);
+
+    stars.forEach((star) => {
+      star.x += star.speedX;
+      star.y += star.speedY;
+
+      if (star.x < 0) star.x = width;
+      if (star.x > width) star.x = 0;
+      if (star.y < 0) star.y = height;
+      if (star.y > height) star.y = 0;
+
+      star.opacity += star.twinkleSpeed * star.twinkleDir;
+      if (star.opacity <= 0.1) {
+        star.opacity = 0.1;
+        star.twinkleDir = 1;
+      } else if (star.opacity >= 1) {
+        star.opacity = 1;
+        star.twinkleDir = -1;
+      }
+
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(drawStars);
+  }
+
+  if (ctx) {
+    window.addEventListener('resize', initStars, { passive: true });
+    initStars();
+    drawStars();
+  }
+</script>

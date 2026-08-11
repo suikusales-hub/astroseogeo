@@ -1,15 +1,16 @@
 ---
 title: "2026年谷歌SEO实操建议"
-description: "大家好我是SEO小平，作为成人用品和电子Vape行业的卖家，我一直从事谷歌SEO独立站的实操，并且2025年为100多个公司（包括SOHO）的独立站陪跑了SEO的实战。"
+description: "大家好我是SEO小平，作为成人用品和电子Vape行业的卖家，我一直从事谷歌SEO独立站的实操，并且2025年为100多个公司（包括SOHO）的独立站陪跑了SEO的实战。  ![2026年谷歌SEO实操建议 配图](/images/posts/2026-01-05-google-p"
 pubDate: 2026-01-05
 updatedDate: 2026-01-05
-heroImage: "/images/posts/2026-01-05-google-practice-2026-seo/image-001-70678482ca.png"
+heroImage: "/images/default-post.png"
 category: "google-algorithm"
 tags:
   - "谷歌算法更新"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好我是SEO小平，作为成人用品和电子Vape行业的卖家，我一直从事谷歌SEO独立站的实操，并且2025年为100多个公司（包括SOHO）的独立站陪跑了SEO的实战。
 
 ![2026年谷歌SEO实操建议 配图](/images/posts/2026-01-05-google-practice-2026-seo/image-001-70678482ca.png)

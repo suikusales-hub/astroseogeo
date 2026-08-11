@@ -1,15 +1,17 @@
 ---
 title: "血泪忠告：代码小白千万别换WordPress主题！"
-description: "大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码"
+description: "围绕 WordPress 主题代码和 SEO 结构优化，说明模板、速度、代码干净度与搜索表现之间的关系。"
 pubDate: 2025-06-25
 updatedDate: 2025-06-25
 heroImage: "/images/posts/2025-06-25-code-theme-wordpress/image-001-2c4bb2b8a6.png"
 category: "website-building"
 tags:
-  - "独立站建站"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "WordPress"
+  - "WordPress主题代码"
+  - "WordPress SEO"
+  - "主题优化"
+  - "代码结构"
+  - "网站速度"
+  - "模板SEO"
 ---
 大家好！我是SEO小平，微信号直接复制 Xiao_Ping_Up ，或者扫描二维码
 

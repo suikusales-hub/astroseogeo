@@ -1,14 +1,17 @@
 ---
 title: "SEO检查网站收录的方法以及误区"
-description: "大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。"
+description: "总结网站收录常见错误，包括页面质量、内链、robots、sitemap 和重复内容问题，帮助独立站提高索引率。"
 pubDate: 2025-03-23
 updatedDate: 2025-03-23
 heroImage: "/images/posts/2025-03-23-indexing-mistakes-website-seo/image-001-75ed7a66a2.png"
 category: "technical-seo"
 tags:
-  - "技术SEO工具"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "网站收录错误"
+  - "索引率提升"
+  - "sitemap问题"
+  - "内链优化"
+  - "重复内容"
+  - "收录诊断"
 ---
 大家好，我是SEO小平，SEO捕鱼大师，9年独立站卖家，一直从事各个国家本土语言的独立站SEO实操。
 

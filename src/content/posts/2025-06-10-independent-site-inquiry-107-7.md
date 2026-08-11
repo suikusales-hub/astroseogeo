@@ -1,14 +1,17 @@
 ---
 title: "一个月107个询盘，小白用7个月打造如此牛叉的独立站"
-description: "大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up"
+description: "复盘独立站拿到 107 个询盘的增长案例，分析页面、关键词、内容和小语种布局如何共同推动外贸询盘转化。"
 pubDate: 2025-06-10
 updatedDate: 2025-06-10
 heroImage: "/images/posts/2025-06-10-independent-site-inquiry-107-7/image-001-97df64e9ba.png"
 category: "case-study"
 tags:
-  - "案例与陪跑"
-  - "谷歌SEO"
-  - "独立站SEO"
+  - "独立站询盘"
+  - "107个询盘案例"
+  - "外贸转化"
+  - "SEO询盘增长"
+  - "小语种布局"
+  - "B2B独立站"
 ---
 大家好！我是SEO小平，加微信号直接复制 Xiao_Ping_Up
 

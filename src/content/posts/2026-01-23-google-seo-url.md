@@ -1,15 +1,16 @@
 ---
 title: "要想Google SEO死得快，就勾选翻译URL"
-description: "大家好我是SEO小平，一个10年独立站SEO实操运营。昨天我发的文章引起很多共鸣：谷歌的“屠刀”再次挥向SEO翻译插件"
+description: "大家好我是SEO小平，一个10年独立站SEO实操运营。昨天我发的文章引起很多共鸣：谷歌的“屠刀”再次挥向SEO翻译插件  很多朋友也提到翻译插件其实效果尚可，我也赞同，但是只要翻译了URL的话，那SEO流量就掉的很快。今天我就告诉你为什么翻译RUL会下跌很快。  ![要想Goog"
 pubDate: 2026-01-23
 updatedDate: 2026-01-23
-heroImage: "/images/posts/2026-01-23-google-seo-url/image-001-63654e4664.png"
+heroImage: "/images/default-post.png"
 category: "multilingual-seo"
 tags:
   - "小语种SEO"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好我是SEO小平，一个10年独立站SEO实操运营。昨天我发的文章引起很多共鸣：谷歌的“屠刀”再次挥向SEO翻译插件
 
 很多朋友也提到翻译插件其实效果尚可，我也赞同，但是只要翻译了URL的话，那SEO流量就掉的很快。今天我就告诉你为什么翻译RUL会下跌很快。

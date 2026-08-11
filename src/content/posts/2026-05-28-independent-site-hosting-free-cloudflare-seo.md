@@ -1,15 +1,16 @@
 ---
 title: "免费服务器Cloudflare 独立站SEO人的福利"
-description: "大家好我是10年独立站SEO操盘手SEO小平，最近我提到了使用AI助手Codex创建外贸站群的思路，很多人说服务器太贵，网站多了，流量还没起来要支付很多网站的服务器费用，成本太高。"
+description: "大家好我是10年独立站SEO操盘手SEO小平，最近我提到了使用AI助手Codex创建外贸站群的思路，很多人说服务器太贵，网站多了，流量还没起来要支付很多网站的服务器费用，成本太高。  其实https://www.cloudflare.com Cloudflare Pages完全免"
 pubDate: 2026-05-28
 updatedDate: 2026-05-28
-heroImage: "/images/posts/2026-05-28-independent-site-hosting-free-cloudflare-seo/image-001-f8db4408d9.png"
+heroImage: "/images/default-post.png"
 category: "website-building"
 tags:
   - "独立站建站"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好我是10年独立站SEO操盘手SEO小平，最近我提到了使用AI助手Codex创建外贸站群的思路，很多人说服务器太贵，网站多了，流量还没起来要支付很多网站的服务器费用，成本太高。
 
 其实https://www.cloudflare.com Cloudflare Pages完全免费搭建独立站，专门适配外贸SEO建站、B2B长尾流量站、中小站群玩法。电商网站需要数据库，需要购物车结算模块，不能使用这个方法，仅限静态网站使用这个方法。

@@ -1,15 +1,16 @@
 ---
 title: "Clawdbot Moltbot最近很火，我一直跟着他换"
-description: "美国时间2026年1月27 日Clawdbot更名为 Moltbot， 美国时间2026 年 1 月 30 日Moltbot更为 OpenClaw， 他每更新一次名字，我跟着注册一个蹭流量的域名。 看他还要不要继续换名字（否则注册域名都能把人搞穷了） 我就是实战派，每次注册了域名立马要用Trae…"
+description: "美国时间2026年1月27 日Clawdbot更名为 Moltbot， 美国时间2026 年 1 月 30 日Moltbot更为 OpenClaw， 他每更新一次名字，我跟着注册一个蹭流量的域名。 看他还要不要继续换名字（否则注册域名都能把人搞穷了）  我就是实战派，每次注册了域"
 pubDate: 2026-01-31
 updatedDate: 2026-01-31
-heroImage: "/images/posts/2026-01-31-clawdbot-moltbot/image-001-5c88c4c07b.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 美国时间2026年1月27 日Clawdbot更名为 Moltbot，
 美国时间2026 年 1 月 30 日Moltbot更为 OpenClaw，
 他每更新一次名字，我跟着注册一个蹭流量的域名。

@@ -1,9 +1,9 @@
 ---
 title: "Codex、Claude +小语种SEO+外贸站群+捕鱼模式"
-description: "我是SEO小平，因为最近我提到了用AI智能工具Codex 或者 Claude 生成小语种外贸SEO站群的事情。SEO小平实战 Codex做小语种SEO 流量翻三倍"
+description: "我是SEO小平，因为最近我提到了用AI智能工具Codex 或者 Claude 生成小语种外贸SEO站群的事情。SEO小平实战 Codex做小语种SEO 流量翻三倍  ![Codex、Claude +小语种SEO+外贸站群+捕鱼模式 配图](/images/posts/2026-0"
 pubDate: 2026-06-01
 updatedDate: 2026-06-01
-heroImage: "/images/posts/2026-06-01-foreign-trade-multilingual-codex-claude-seo/image-001-249730f97a.png"
+heroImage: "/images/default-post.png"
 category: "ai-geo"
 tags:
   - "AI与GEO"
@@ -11,6 +11,7 @@ tags:
   - "独立站SEO"
   - "小语种SEO"
 ---
+
 我是SEO小平，因为最近我提到了用AI智能工具Codex 或者 Claude 生成小语种外贸SEO站群的事情。SEO小平实战 Codex做小语种SEO 流量翻三倍
 
 ![Codex、Claude +小语种SEO+外贸站群+捕鱼模式 配图](/images/posts/2026-06-01-foreign-trade-multilingual-codex-claude-seo/image-001-249730f97a.png)

@@ -1,15 +1,16 @@
 ---
 title: "image2搞定100+语种图片，小语种独立站零门槛了"
-description: "大家好，我是SEO小平，前几天我分享了0成本搭建自己独立站的方法。今天继续分享最近很火的OpenAI的作图工具image2"
+description: "大家好，我是SEO小平，前几天我分享了0成本搭建自己独立站的方法。今天继续分享最近很火的OpenAI的作图工具image2  因为SEO小平我本人是热衷于做各个国家小语种独立站的（注意：不是翻译工具那种，是一个国家做一种语言，用AI去写作每个国家的内容，精细化运营，不是使用插件自"
 pubDate: 2026-05-05
 updatedDate: 2026-05-05
-heroImage: "/images/posts/2026-05-05-independent-site-multilingual-image2-100/image-001-330fb33f42.png"
+heroImage: "/images/default-post.png"
 category: "multilingual-seo"
 tags:
   - "小语种SEO"
   - "谷歌SEO"
   - "独立站SEO"
 ---
+
 大家好，我是SEO小平，前几天我分享了0成本搭建自己独立站的方法。今天继续分享最近很火的OpenAI的作图工具image2
 
 因为SEO小平我本人是热衷于做各个国家小语种独立站的（注意：不是翻译工具那种，是一个国家做一种语言，用AI去写作每个国家的内容，精细化运营，不是使用插件自动化翻译），所以我们实战过程中肯定是把image2这些作图工具用来做自己独立站的电商图片设计，和小语种图片翻译。

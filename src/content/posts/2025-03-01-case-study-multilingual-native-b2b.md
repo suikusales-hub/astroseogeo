@@ -1,15 +1,17 @@
 ---
 title: "小语种B2B成功案例解析：告别翻译插件，进军纯血西班牙语机械市场"
-description: "大家好，我是SEO小平，SEO捕鱼大师，9年谷歌SEO优化经验，熟悉B2B行业，B2C行业的Google关键词排名。对WordPress, Shopify, Shopline, 以及纯静态的PHP建站很精通。一直从事各个国家本土语言的独立站SEO实操。"
+description: "从 B2B 视角分析纯血小语种独立站案例，关注关键词难度、市场空白、内容本地化和企业询盘机会。"
 pubDate: 2025-03-01
 updatedDate: 2025-03-01
 heroImage: "/images/posts/2025-03-01-case-study-multilingual-native-b2b/image-001-2c5568e891.png"
 category: "multilingual-seo"
 tags:
-  - "小语种SEO"
-  - "谷歌SEO"
-  - "独立站SEO"
-  - "SEO案例"
+  - "B2B小语种案例"
+  - "纯血小语种B2B"
+  - "关键词难度"
+  - "市场空白"
+  - "内容本地化"
+  - "B2B询盘"
 ---
 大家好，我是SEO小平，SEO捕鱼大师，9年谷歌SEO优化经验，熟悉B2B行业，B2C行业的Google关键词排名。对WordPress, Shopify, Shopline, 以及纯静态的PHP建站很精通。一直从事各个国家本土语言的独立站SEO实操。
 

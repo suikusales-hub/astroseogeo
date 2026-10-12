@@ -1,5 +1,5 @@
 ---
-import type { PostCategorySlug } from '../data/categories';
+import { getCollection } from 'astro:content';
 
 interface SidebarPost {
   title: string;
@@ -7,7 +7,7 @@ interface SidebarPost {
 }
 
 interface SidebarCategory {
-  slug: PostCategorySlug;
+  slug: string;
   name: string;
 }
 
@@ -17,13 +17,19 @@ interface Props {
 }
 
 const { categories, posts } = Astro.props as Props;
+
+const [sidebar] = await getCollection('sidebar');
+const settings = sidebar?.data;
+const categoriesTitle = settings?.categoriesTitle ?? '全部文章分类';
+const recommendedTitle = settings?.recommendedTitle ?? '推荐阅读';
+const cta = settings?.cta;
 ---
 
 <aside class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.25)] backdrop-blur-md" aria-label="文章分类与推荐文章">
   <div class="grid gap-6">
     <section aria-labelledby="sidebar-categories">
-      <h2 id="sidebar-categories" class="mb-4 text-lg font-black tracking-tight text-white">全部文章分类</h2>
-      <nav class="grid gap-2" aria-label="全部文章分类">
+      <h2 id="sidebar-categories" class="mb-4 text-lg font-black tracking-tight text-white">{categoriesTitle}</h2>
+      <nav class="grid gap-2" aria-label={categoriesTitle}>
         {categories.map((category) => (
           <a href={`/${category.slug}`} class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-extrabold text-white/72 transition hover:bg-[#d95300]/15 hover:text-[#f59e0b]">
             <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
@@ -34,7 +40,7 @@ const { categories, posts } = Astro.props as Props;
     </section>
 
     <section aria-labelledby="sidebar-recommended-posts">
-      <h2 id="sidebar-recommended-posts" class="mb-4 text-lg font-black tracking-tight text-white">推荐阅读</h2>
+      <h2 id="sidebar-recommended-posts" class="mb-4 text-lg font-black tracking-tight text-white">{recommendedTitle}</h2>
       <ol class="grid gap-2">
         {posts.map((post, index) => (
           <li class="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-2 text-sm leading-6">
@@ -46,5 +52,15 @@ const { categories, posts } = Astro.props as Props;
         ))}
       </ol>
     </section>
+
+    {cta?.enabled && (
+      <section class="rounded-2xl border border-[#d95300]/30 bg-gradient-to-br from-[#d95300]/15 to-white/5 p-5" aria-labelledby="sidebar-cta">
+        <h2 id="sidebar-cta" class="mb-2 text-base font-black tracking-tight text-white">{cta.title}</h2>
+        <p class="mb-3 text-sm leading-6 text-white/70">{cta.text}</p>
+        <a href={cta.buttonHref} class="inline-flex min-h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f59e0b] to-[#d95300] px-5 text-sm font-bold text-white shadow-[0_0_18px_rgba(217,83,0,0.3)] transition hover:brightness-110">
+          {cta.buttonLabel}
+        </a>
+      </section>
+    )}
   </div>
 </aside>

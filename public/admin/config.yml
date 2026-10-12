@@ -1,0 +1,188 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+app_title: SEO小平 内容管理
+site_url: https://seogeo.cc
+
+backend:
+  name: github
+  repo: suikusales-hub/astroseogeo
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+output:
+  omit_empty_optional_fields: true
+
+# 上面的 repo 配置改成你 Fork 后的仓库（你的GitHub用户名/astroseogeo），
+# 否则后台无法登录或无法保存内容。
+
+collections:
+  # ===== 博客内容 =====
+  - name: posts
+    label: 博客文章
+    label_singular: 文章
+    icon: article
+    folder: src/content/posts
+    create: true
+    delete: true
+    identifier_field: title
+    slug:
+      template: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "网址别名只能使用小写英文字母、数字和连字符，例如 my-first-post"]
+      hint: 网址别名会作为文章的文件名和访问网址（如 /my-first-post）。已发布文章请勿随意修改，否则原网址会失效。
+    summary: "{{pubDate | date('YYYY-MM-DD')}} {{title}}"
+    sortable_fields:
+      fields: [pubDate, updatedDate, title]
+    description: 网站的博客文章，保存后由 Cloudflare Pages 自动构建发布。
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 摘要描述, name: description, widget: text, hint: 显示在文章列表和搜索结果里的描述文字 }
+      - { label: 发布日期, name: pubDate, widget: datetime, type: date, format: "YYYY-MM-DD" }
+      - { label: 更新日期, name: updatedDate, widget: datetime, type: date, format: "YYYY-MM-DD" }
+      - { label: 封面图片, name: heroImage, widget: image, hint: 从媒体库选择或上传新图片，建议使用 16:9 比例 }
+      - label: 分类
+        name: category
+        widget: relation
+        collection: categories
+        value_field: "{{slug}}"
+        search_fields: [name]
+        display_fields: [name]
+        hint: 先在「博客分类」里创建分类，再回到文章里选择
+      - label: 标签
+        name: tags
+        widget: relation
+        collection: tags
+        value_field: name
+        search_fields: [name]
+        display_fields: [name]
+        multiple: true
+        hint: 可多选；新标签请先在「博客标签」里创建
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: categories
+    label: 博客分类
+    label_singular: 分类
+    icon: category
+    folder: src/content/categories
+    create: true
+    delete: true
+    format: yaml
+    extension: yml
+    identifier_field: name
+    slug:
+      template: "{{slug}}"
+      pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "分类别名只能使用小写英文字母、数字和连字符，例如 seo-tutorial"]
+      hint: 分类别名决定分类页网址（如 /seo-tutorial）。创建后请勿修改，否则已有文章的分类会丢失。
+    summary: "{{name}}"
+    description: 文章的分类。注意：现有的 8 个分类请勿删除或改名，页面上有对应的分类页。
+    fields:
+      - { label: 分类名称, name: name, widget: string }
+      - { label: 分类描述, name: description, widget: text, hint: 显示在分类页顶部的介绍文字 }
+
+  - name: tags
+    label: 博客标签
+    label_singular: 标签
+    icon: sell
+    folder: src/content/tags
+    create: true
+    delete: true
+    format: yaml
+    extension: yml
+    identifier_field: name
+    slug:
+      template: "{{slug}}"
+      hint: 标签文件名只是内部管理用，中文标签会自动使用中文文件名，不影响前台网址。
+    summary: "{{name}}"
+    description: 文章的标签。标签页网址为 /tag/标签名。
+    fields:
+      - { label: 标签名称, name: name, widget: string }
+      - { label: 标签描述, name: description, widget: text, required: false }
+
+  - divider: true
+
+  # ===== 自由页面 =====
+  - name: pages
+    label: 页面
+    label_singular: 页面
+    icon: description
+    folder: src/content/pages
+    create: true
+    delete: true
+    identifier_field: title
+    slug:
+      template: "{{slug}}"
+      pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "页面网址别名只能使用小写英文字母、数字和连字符，例如 sample-page"]
+      hint: 页面网址别名，决定页面网址（如 /p/sample-page）。创建后请勿修改。
+    summary: "{{title}}"
+    description: 自由排版页面，不绑定博客模板（无分类、标签、侧边栏），网址为 /p/页面别名。
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 描述, name: description, widget: text, hint: 页面的 SEO 描述文字 }
+      - { label: 头图, name: heroImage, widget: image, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+# ===== 站点设置（单例） =====
+singletons:
+  - name: blog-index
+    label: 博客列表页
+    icon: menu_book
+    file: src/data/blog-index.yml
+    fields:
+      - { label: 页面标题, name: title, widget: string }
+      - { label: 页面描述, name: description, widget: text }
+
+  - name: nav
+    label: 主导航菜单
+    icon: menu
+    file: src/data/nav.yml
+    fields:
+      - label: 菜单项
+        name: items
+        widget: list
+        summary: "{{label}}"
+        fields:
+          - { label: 菜单文字, name: label, widget: string }
+          - { label: 链接地址, name: href, widget: string, hint: 例如 /blog 或 /about }
+      - { label: 按钮文字, name: ctaLabel, widget: string }
+      - { label: 按钮链接, name: ctaHref, widget: string }
+
+  - name: footer
+    label: 页脚菜单
+    icon: dock_to_bottom
+    file: src/data/footer.yml
+    fields:
+      - label: 导航链接
+        name: navLinks
+        widget: list
+        summary: "{{label}}"
+        fields:
+          - { label: 链接文字, name: label, widget: string }
+          - { label: 链接地址, name: href, widget: string }
+      - label: 社交链接
+        name: socialLinks
+        widget: list
+        summary: "{{label}}"
+        fields:
+          - { label: 链接文字, name: label, widget: string }
+          - { label: 链接地址, name: href, widget: string }
+          - { label: 图标, name: icon, widget: string, required: false, hint: Font Awesome 图标类名，如 fa-solid fa-rss }
+
+  - name: sidebar
+    label: 侧边栏小部件
+    icon: view_sidebar
+    file: src/data/sidebar.yml
+    fields:
+      - { label: 分类栏目标题, name: categoriesTitle, widget: string }
+      - { label: 推荐栏目标题, name: recommendedTitle, widget: string }
+      - label: 咨询按钮（CTA）
+        name: cta
+        widget: object
+        collapsed: false
+        hint: 关闭后侧边栏不显示咨询按钮
+        fields:
+          - { label: 是否启用, name: enabled, widget: boolean, default: false }
+          - { label: 标题, name: title, widget: string, required: false }
+          - { label: 文字, name: text, widget: text, required: false }
+          - { label: 按钮文字, name: buttonLabel, widget: string, required: false }
+          - { label: 按钮链接, name: buttonHref, widget: string, required: false }

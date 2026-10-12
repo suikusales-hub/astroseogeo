@@ -1,0 +1,15 @@
+items:
+  - label: 首页
+    href: /
+  - label: 博客
+    href: /blog
+  - label: SEO教程
+    href: /seo-tutorial
+  - label: AI搜索
+    href: /ai-geo
+  - label: 案例库
+    href: /case-study
+  - label: 关于
+    href: /about
+ctaLabel: 咨询
+ctaHref: /contact

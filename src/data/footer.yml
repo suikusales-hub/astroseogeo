@@ -1,0 +1,18 @@
+navLinks:
+  - label: SEO教程
+    href: /seo-tutorial
+  - label: AI搜索
+    href: /ai-geo
+  - label: 案例库
+    href: /case-study
+  - label: 关于
+    href: /about
+  - label: 联系
+    href: /contact
+socialLinks:
+  - label: RSS
+    href: /rss.xml
+    icon: fa-solid fa-rss
+  - label: Email
+    href: mailto:hello@seogeo.cc
+    icon: fa-solid fa-envelope

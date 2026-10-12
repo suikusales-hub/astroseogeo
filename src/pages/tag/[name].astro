@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCardGrid from '../../components/PostCardGrid.astro';
+import { toPostSlug } from '../../lib/slug';
+
+interface Props {
+  tag: string;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const tags = new Set<string>();
+
+  for (const post of posts) {
+    for (const tag of post.data.tags) {
+      tags.add(tag);
+    }
+  }
+
+  return Array.from(tags).map((tag) => ({
+    params: { name: tag },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props as Props;
+
+const posts = (await getCollection('posts'))
+  .filter((post) => post.data.tags.includes(tag))
+  .map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    pubDate: post.data.pubDate,
+    heroImage: post.data.heroImage,
+    tags: post.data.tags,
+    slug: toPostSlug(post.id),
+  }))
+  .filter((post) => post.slug)
+  .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
+
+const canonicalUrl = `/tag/${encodeURIComponent(tag)}`;
+---
+
+<BaseLayout
+  title={`${tag}标签文章`}
+  description={`SEO小平博客中「${tag}」标签下的全部文章，共 ${posts.length} 篇。`}
+  canonicalUrl={canonicalUrl}
+  keywords={[tag, 'SEO小平', '谷歌SEO', '独立站SEO']}
+>
+  <section class="grid gap-8 py-10" aria-labelledby="tag-title">
+    <header class="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.25)] backdrop-blur-md">
+      <p class="mb-3 text-sm font-black text-[#f59e0b]">标签归档</p>
+      <h1 id="tag-title" class="mb-4 text-4xl font-black leading-tight tracking-tight text-white">{tag}</h1>
+      <p class="max-w-3xl text-lg leading-8 text-white/72">共 {posts.length} 篇相关文章</p>
+    </header>
+
+    <PostCardGrid posts={posts} />
+  </section>
+</BaseLayout>

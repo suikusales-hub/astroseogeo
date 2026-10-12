@@ -1,23 +1,36 @@
 ---
+import { existsSync } from 'node:fs';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ArticleSidebar from '../components/ArticleSidebar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryArchive from '../components/CategoryArchive.astro';
 import PostCover from '../components/PostCover.astro';
-import { getPostCategory, POST_CATEGORIES } from '../data/categories';
 import { toPostSlug } from '../lib/slug';
 
 type PostEntry = CollectionEntry<'posts'>;
+type CategoryEntry = CollectionEntry<'categories'>;
 
-interface Props {
+interface PostProps {
   post: PostEntry;
   slug: string;
+  type?: 'post';
 }
+
+interface CategoryProps {
+  category: CategoryEntry;
+  slug: string;
+  type: 'category';
+}
+
+type Props = PostProps | CategoryProps;
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
+  const categories = await getCollection('categories');
   const usedSlugs = new Map<string, string>();
+  const pagesDir = new URL('./', import.meta.url);
 
-  return posts.map((post) => {
+  const paths = posts.map((post) => {
     const slug = toPostSlug(post.id);
 
     if (!slug) {
@@ -34,15 +47,49 @@ export async function getStaticPaths() {
 
     return {
       params: { slug },
-      props: { post, slug },
+      props: { post, slug, type: 'post' } as PostProps,
     };
   });
+
+  // Categories that have no dedicated static page (src/pages/<slug>.astro)
+  // get a top-level archive route here. Posts and static pages win on conflicts.
+  for (const category of categories) {
+    const slug = category.id;
+
+    if (!slug || usedSlugs.has(slug) || existsSync(new URL(`./${slug}.astro`, pagesDir))) {
+      continue;
+    }
+
+    usedSlugs.set(slug, slug);
+
+    paths.push({
+      params: { slug },
+      props: { category, slug, type: 'category' } as CategoryProps,
+    });
+  }
+
+  return paths;
 }
 
-const { post, slug } = Astro.props as Props;
-const { Content } = await render(post);
-const { title, description, pubDate, updatedDate, heroImage, tags } = post.data;
-const category = getPostCategory(post.data.category);
+const props = Astro.props as Props;
+const isCategory = props.type === 'category';
+const { slug } = props;
+const post = isCategory ? undefined : (props as PostProps).post;
+const { Content } = post ? await render(post) : { Content: null };
+
+const allCategories = (await getCollection('categories')).map((entry) => ({
+  slug: entry.id,
+  name: entry.data.name,
+}));
+
+const postData = post?.data;
+const title = postData?.title ?? slug;
+const description = postData?.description ?? '';
+const pubDate = postData?.pubDate ?? new Date();
+const updatedDate = postData?.updatedDate ?? pubDate;
+const heroImage = postData?.heroImage ?? '/images/default-post.png';
+const tags = postData?.tags ?? [];
+const category = postData ? allCategories.find((item) => item.slug === postData.category) : undefined;
 const canonicalUrl = `/${slug}`;
 const publishedIso = pubDate.toISOString();
 const updatedIso = updatedDate.toISOString();
@@ -119,7 +166,10 @@ function buildMetaKeywords({
 }
 ---
 
-<BaseLayout
+{isCategory ? (
+  <CategoryArchive categorySlug={slug} />
+) : (
+  <BaseLayout
   title={title}
   description={description}
   canonicalUrl={canonicalUrl}
@@ -144,7 +194,7 @@ function buildMetaKeywords({
 
         <div class="tag-list" aria-label="文章标签">
           {tags.map((tag) => (
-            <span>{tag}</span>
+            <a href={`/tag/${encodeURIComponent(tag)}`}>{tag}</a>
           ))}
         </div>
       </header>
@@ -156,9 +206,10 @@ function buildMetaKeywords({
       </div>
     </article>
 
-    <ArticleSidebar categories={POST_CATEGORIES} posts={recommendedPosts} />
+    <ArticleSidebar categories={allCategories} posts={recommendedPosts} />
   </div>
 </BaseLayout>
+)}
 
 <style>
   .article-layout {
@@ -218,7 +269,8 @@ function buildMetaKeywords({
     gap: 0.55rem;
   }
 
-  .tag-list span {
+  .tag-list span,
+  .tag-list a {
     border: 1px solid rgba(217, 83, 0, 0.26);
     border-radius: 18px;
     background: rgba(217, 83, 0, 0.16);
@@ -227,6 +279,7 @@ function buildMetaKeywords({
     font-weight: 750;
     line-height: 1;
     padding: 0.48rem 0.65rem;
+    text-decoration: none;
   }
 
   .article-content {

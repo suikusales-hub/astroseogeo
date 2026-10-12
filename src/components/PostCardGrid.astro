@@ -1,0 +1,46 @@
+---
+import PostCover from './PostCover.astro';
+
+export interface GridPost {
+  title: string;
+  description: string;
+  pubDate: Date;
+  heroImage: string;
+  tags: string[];
+  slug: string;
+}
+
+interface Props {
+  posts: GridPost[];
+}
+
+const { posts } = Astro.props as Props;
+
+const dateFormatter = new Intl.DateTimeFormat('zh-CN', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+---
+
+<div class="grid gap-5 md:grid-cols-2">
+  {posts.map((post) => (
+    <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_18px_54px_rgba(0,0,0,0.2)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-[#d95300]/35">
+      <a href={`/${post.slug}`} class="block" aria-label={post.title}>
+        <PostCover image={post.heroImage} title={post.title} variant="archive" hoverable={true} />
+      </a>
+      <div class="flex flex-1 flex-col p-5 lg:p-6">
+        <div class="mb-3 flex flex-wrap gap-3 text-xs font-bold text-[#f59e0b]">
+          <time datetime={post.pubDate.toISOString()}>{dateFormatter.format(post.pubDate)}</time>
+          {post.tags.slice(0, 3).map((tag) => (
+            <a href={`/tag/${encodeURIComponent(tag)}`}>{tag}</a>
+          ))}
+        </div>
+        <h2 class="mb-2 text-[20px] font-black leading-snug tracking-tight text-white">
+          <a href={`/${post.slug}`} class="transition hover:text-[#f59e0b]">{post.title}</a>
+        </h2>
+        <p class="max-w-4xl text-sm leading-7 text-white/68">{post.description}</p>
+      </div>
+    </article>
+  ))}
+</div>

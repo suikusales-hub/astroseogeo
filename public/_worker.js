@@ -88,6 +88,13 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // Serve the Sveltia CMS admin SPA deterministically, bypassing the
+    // directory-index redirect behavior of the asset server.
+    if (url.pathname === '/admin' || url.pathname === '/admin/') {
+      url.pathname = '/admin/index.html';
+      return env.ASSETS.fetch(new Request(url.toString(), request));
+    }
+
     const routes = await loadRoutes(request, env);
 
     if (url.pathname === '/404' || url.pathname === '/404.html') {

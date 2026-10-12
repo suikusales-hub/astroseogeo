@@ -1,20 +1,23 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCover from './PostCover.astro';
-import { getPostCategory, POST_CATEGORIES, type PostCategorySlug } from '../data/categories';
+import PostCardGrid from './PostCardGrid.astro';
 import { toPostSlug } from '../lib/slug';
 
 interface Props {
-  categorySlug: PostCategorySlug;
+  categorySlug: string;
 }
 
 const { categorySlug } = Astro.props as Props;
-const category = getPostCategory(categorySlug);
+const allCategories = await getCollection('categories');
+const matched = allCategories.find((entry) => entry.id === categorySlug);
 
-if (!category) {
-  throw new Error(`Unknown category: ${categorySlug}`);
-}
+// Gracefully fall back when a static archive page outlives its category entry.
+const category = {
+  slug: categorySlug,
+  name: matched?.data.name ?? categorySlug,
+  description: matched?.data.description ?? '',
+};
 
 const posts = (await getCollection('posts'))
   .filter((post) => post.data.category === categorySlug)
@@ -27,17 +30,11 @@ const posts = (await getCollection('posts'))
     slug: toPostSlug(post.id),
   }))
   .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
-
-const dateFormatter = new Intl.DateTimeFormat('zh-CN', {
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-});
 ---
 
 <BaseLayout
   title={`${category.name}文章`}
-  description={category.description}
+  description={category.description || `${category.name}分类下的全部文章。`}
   canonicalUrl={`/${category.slug}`}
   keywords={[category.name, 'SEO小平', '谷歌SEO', '独立站SEO']}
 >
@@ -49,41 +46,21 @@ const dateFormatter = new Intl.DateTimeFormat('zh-CN', {
     </header>
 
     <div class="flex flex-wrap gap-3" aria-label="全部文章分类">
-      {POST_CATEGORIES.map((item) => (
+      {allCategories.map((item) => (
         <a
-          href={`/${item.slug}`}
+          href={`/${item.id}`}
           class:list={[
             'rounded-full border px-4 py-2 text-sm font-bold transition',
-            item.slug === category.slug
+            item.id === category.slug
               ? 'border-[#d95300] bg-[#d95300] text-white shadow-[0_0_18px_rgba(217,83,0,0.28)]'
               : 'border-white/10 bg-white/5 text-white/70 hover:border-[#d95300]/40 hover:text-[#f59e0b]',
           ]}
         >
-          {item.name}
+          {item.data.name}
         </a>
       ))}
     </div>
 
-    <div class="grid gap-5 md:grid-cols-2">
-      {posts.map((post) => (
-        <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_18px_54px_rgba(0,0,0,0.2)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-[#d95300]/35">
-          <a href={`/${post.slug}`} class="block" aria-label={post.title}>
-            <PostCover image={post.heroImage} title={post.title} variant="archive" hoverable={true} />
-          </a>
-          <div class="flex flex-1 flex-col p-5 lg:p-6">
-            <div class="mb-3 flex flex-wrap gap-3 text-xs font-bold text-[#f59e0b]">
-              <time datetime={post.pubDate.toISOString()}>{dateFormatter.format(post.pubDate)}</time>
-              {post.tags.slice(0, 3).map((tag) => (
-                <span>{tag}</span>
-              ))}
-            </div>
-            <h2 class="mb-2 text-[20px] font-black leading-snug tracking-tight text-white">
-              <a href={`/${post.slug}`} class="transition hover:text-[#f59e0b]">{post.title}</a>
-            </h2>
-            <p class="max-w-4xl text-sm leading-7 text-white/68">{post.description}</p>
-          </div>
-        </article>
-      ))}
-    </div>
+    <PostCardGrid posts={posts} />
   </section>
 </BaseLayout>
